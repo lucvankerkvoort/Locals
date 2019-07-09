@@ -1,0 +1,11 @@
+.leftside {
+  background: url("../images/travellers-background.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.rightside {
+  background: url("../images/locals-background.jpg");
+  background-size: cover;
+  height: 100vh;
+}

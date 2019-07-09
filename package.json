@@ -1,0 +1,27 @@
+{
+  "name": "Locals",
+  "version": "1.0.0",
+  "description": "A travel application that is peer to peer based",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucvankerkvoort/Locals.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucvankerkvoort/Locals/issues"
+  },
+  "homepage": "https://github.com/lucvankerkvoort/Locals#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "geolocator": "^2.1.5",
+    "mysql": "^2.17.1"
+  }
+}

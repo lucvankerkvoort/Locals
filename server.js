@@ -9,11 +9,10 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var routes = require("./controller/localController");
-
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+var routes = require("./controller/localController");
 app.use(routes);
 
 app.listen(PORT, function() {
