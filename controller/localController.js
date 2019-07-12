@@ -1,34 +1,35 @@
-var traveller = require("../models/traveller");
-var local = require("../models/local");
+// Requiring npm modules
+var mongoose = require("mongoose");
 // var geolocator = require("geolocator");
 var express = require("express");
 var router = express.Router();
 
+// Requiring the models
+var Local = require("../models/local");
+var Traveller = require("../models/traveller");
+
+// requiring Path
 var path = require("path");
 
 // ================= HTML ROUTES =================
-
+// This is the route to the homepage
 router.get("/", function(req, res) {
-  res.render("login");
+  res.sendFile(path.join(__dirname, "../views/login.html"));
 });
 
-router.get("/home", function(req, res) {
-  var userInfo = req.body;
-  console.log(userInfo);
-  res.render("home", userInfo);
+// This is the login flow
+router.get("/login", function(req, res) {
+  res.sendFile(path.join("../views/index.html"));
 });
 
-router.post("/home", function(req, res) {
+// This is the registration flow
+router.post("/registration", function(req, res) {
   var userInfo = req.body;
-  console.log(userInfo);
-  res.render("home", { user: userInfo });
-});
-router.get("/search", function(req, res) {
-  var hbsobj = {
-    name: name,
-    address: address
-  };
-  res.render("search", hbsobj);
+  console.log({ userInfo });
+  Traveller.create(userInfo).then(function(response) {
+    console.log(response);
+  });
+  res.sendFile(path.join(__dirname, "../views/index.html"));
 });
 
 module.exports = router;

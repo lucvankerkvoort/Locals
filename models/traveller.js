@@ -1,21 +1,26 @@
-var orm = require("../config/orm");
+// requiring mongoDB from the config folder
+var mongoose = require("../config/connection");
 
-var traveller = {
-  create: function(col, val, cb) {
-    orm.create("traveller", col, val, function(res) {
-      cb(res);
-    });
+// using mongo's build in logic to create a schema constructor
+var Schema = mongoose.Schema;
+
+// The instance of the schema used for Travellers
+var TravellerSchema = new Schema({
+  name: {
+    type: String,
+    required: "String is Required"
   },
-  read: function(cb) {
-    orm.read("traveller", function(res) {
-      cb(res);
-    });
+  username: {
+    type: String,
+    required: "String is Required"
   },
-  update: function(input, val, cb) {
-    orm.update("traveller", input, val, function(res) {
-      cb(res);
-    });
+  password: {
+    type: String,
+    required: "String is Required"
   }
-};
+});
 
-module.exports = traveller;
+// We use MongoDB's build in module to create a container so we can export the schema
+var Traveller = mongoose.model("Traveller", TravellerSchema);
+
+module.exports = Traveller;
