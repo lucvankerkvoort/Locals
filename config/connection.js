@@ -1,16 +1,8 @@
-var mysql = require("mysql");
+// Mongoose is required
+var mongoose = require("mongoose");
 
-var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "yourRootPassword",
-  database: "tranquil_db"
-});
+// A connection to the database is being made
+mongoose.connect("mongodb://localhost/local", { useNewUrlParser: true });
 
-connection.connect(function(err) {
-  if (err) throw err;
-  console.log("you are connected through " + connection.threadId);
-});
-
-module.exports = connection;
+// This document gets exported
+module.exports = mongoose;

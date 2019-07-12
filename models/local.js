@@ -1,21 +1,42 @@
-var orm = require("../config/orm");
+// requiring mongoDB from the config folder
+var mongoose = require("../config/connection");
 
-var local = {
-  create: function(col, val, cb) {
-    orm.create("local", col, val, function(res) {
-      cb(res);
-    });
+// using mongo's build in logic to create a schema constructor
+var Schema = mongoose.Schema;
+
+// The schema instance used for Locals
+var LocalSchema = new Schema({
+  name: {
+    type: String,
+    trim: true,
+    required: "String is Required"
   },
-  read: function(cb) {
-    orm.read("local", function(res) {
-      cb(res);
-    });
+  username: {
+    type: String,
+    trim: true,
+    required: "String is required"
   },
-  update: function(input, val, cb) {
-    orm.update("local", input, val, function(res) {
-      cb(res);
-    });
+  password: {
+    type: String,
+    required: "String is required"
+  },
+  Address: {
+    street: {
+      type: String,
+      trim: true
+    },
+    postal: {
+      type: Number,
+      required: "String is Required"
+    },
+    city: {
+      type: String,
+      required: "String is Required"
+    }
   }
-};
+});
 
-module.exports = local;
+// We use MongoDB's build in module to create a container so we can export the schema
+var Local = mongoose.model("Local", LocalSchema);
+
+module.exports = Local;
