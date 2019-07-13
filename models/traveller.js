@@ -8,15 +8,21 @@ var Schema = mongoose.Schema;
 var TravellerSchema = new Schema({
   name: {
     type: String,
-    required: "String is Required"
+    required: "Name is Required"
   },
   username: {
     type: String,
-    required: "String is Required"
+    required: "Username is Required"
   },
   password: {
     type: String,
-    required: "String is Required"
+    required: "Password is Required",
+    validate: [
+      function(input) {
+        return input.length >= 8;
+      },
+      "Password is not long enough"
+    ]
   }
 });
 
