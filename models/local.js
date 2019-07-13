@@ -9,16 +9,22 @@ var LocalSchema = new Schema({
   name: {
     type: String,
     trim: true,
-    required: "String is Required"
+    required: "Name is Required"
   },
   username: {
     type: String,
     trim: true,
-    required: "String is required"
+    required: "Username is required"
   },
   password: {
     type: String,
-    required: "String is required"
+    required: "String is required",
+    validation: [
+      function(input) {
+        return input.length >= 8;
+      },
+      "Password is not long enough"
+    ]
   },
   Address: {
     street: {
@@ -26,12 +32,10 @@ var LocalSchema = new Schema({
       trim: true
     },
     postal: {
-      type: Number,
-      required: "String is Required"
+      type: String
     },
     city: {
-      type: String,
-      required: "String is Required"
+      type: String
     }
   }
 });
