@@ -2,6 +2,7 @@
 var express = require("express");
 var exphbs = require("express-handlebars");
 var app = express();
+var mongoose = require("mongoose");
 
 // This is the Port we are listening at
 var PORT = process.env.PORT || 8080;
@@ -20,6 +21,12 @@ app.set("view engine", "handlebars");
 // The localcontroller is getting required by the document and executed
 var routes = require("./controller/localController");
 app.use(routes);
+
+// We create a container that
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/local";
+
+// A connection to the database is being made
+mongoose.connect(MONGODB_URI);
 
 // We listen for the Port on the localhost
 app.listen(PORT, function() {

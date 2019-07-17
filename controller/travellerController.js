@@ -1,7 +1,7 @@
-// We require the NPM Modules needed to setup the controller/ORM
+// We require the module from the models
 const db = require("../models");
 
-// we export the entire module which will hold our CRUD (create, read, update and delete) methods for the database collection at hand this will hold the locals collection
+// we export the entire module which will hold our CRUD (create, read, update and delete) methods for the database collection at hand this will hold the Travellers collection
 module.exports = {
   // we create the create method to store data into the database
   create: function(req, res) {
