@@ -21,7 +21,7 @@ var LocalSchema = new Schema({
     required: "String is required",
     validation: [
       function(input) {
-        return input.length >= 8;
+        return input.length >= 8 || input.length <= 20;
       },
       "Password is not long enough"
     ]
@@ -29,13 +29,16 @@ var LocalSchema = new Schema({
   Address: {
     street: {
       type: String,
-      trim: true
+      trim: true,
+      required: true
     },
     postal: {
-      type: String
+      type: String,
+      required: true
     },
     city: {
-      type: String
+      type: String,
+      required: true
     }
   }
 });
