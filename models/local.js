@@ -1,5 +1,5 @@
 // requiring mongoDB from the config folder
-var mongoose = require("../config/connection");
+var mongoose = require("mongoose");
 
 // using mongo's build in logic to create a schema constructor
 var Schema = mongoose.Schema;
