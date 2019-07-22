@@ -26,7 +26,7 @@ var LocalSchema = new Schema({
       "Password is not long enough"
     ]
   },
-  Address: {
+  address: {
     street: {
       type: String,
       trim: true,
@@ -40,7 +40,9 @@ var LocalSchema = new Schema({
       type: String,
       required: true
     }
-  }
+  },
+  booking: { type: Array },
+  availability: { type: Array }
 });
 
 // We use MongoDB's build in module to create a container so we can export the schema

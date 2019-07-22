@@ -2,9 +2,10 @@
 // we start with requiring the NPM modules needed
 const path = require("path");
 const router = require("express").Router();
-
 // we require the api routes
 const apiRoutes = require("./api");
+
+router.get("/", apiRoutes);
 
 // We setup the basics for the api route
 
