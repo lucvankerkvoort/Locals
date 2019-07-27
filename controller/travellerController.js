@@ -5,10 +5,7 @@ const db = require("../models");
 module.exports = {
   // we create the create method to store data into the database
   create: function(req, res) {
-    db.traveller
-      .create(req.body)
-      .sort({ name: -1 })
-      .then(dbModel => res.json(dbModel));
+    db.traveller.create(req.body).then(dbModel => res.json(dbModel));
     // Here we will use mongo's queries and the schema's we setup to add data to the database
   },
   // we create the read method, possibly split into different options (findAll, findById, findByAddress)

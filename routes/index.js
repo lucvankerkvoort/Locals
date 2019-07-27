@@ -5,11 +5,12 @@ const router = require("express").Router();
 // we require the api routes
 const apiRoutes = require("./api");
 
-router.get("/", apiRoutes);
+router.use("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "../views/public/index.html"));
+});
 
 // We setup the basics for the api route
-
-// we setup the basic route for our react app
+router.use("/api", apiRoutes);
 
 // we export all the logic on this page and its underlaying components, in this case all of the api routes
 module.exports = router;

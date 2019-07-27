@@ -9,16 +9,16 @@ var LocalSchema = new Schema({
   name: {
     type: String,
     trim: true,
-    required: "Name is Required"
+    required: true
   },
   username: {
     type: String,
     trim: true,
-    required: "Username is required"
+    required: true
   },
   password: {
     type: String,
-    required: "String is required",
+    required: true,
     validation: [
       function(input) {
         return input.length >= 8 || input.length <= 20;

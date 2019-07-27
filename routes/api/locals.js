@@ -4,6 +4,17 @@ const router = require("express").Router();
 const controller = require("../../controller");
 
 // Setup the routes for the  api's to hit
+router
+  .route("/")
+  .get(controller.localController.findAll)
+  .post(controller.localController.create);
 
+// Setup the routes for whenever we are passing through data
+router
+  .route("/:id")
+  .get(controller.localController.findById)
+  .put(controller.localController.update)
+  .delete(controller.localController.delete);
 // We export the entire document
+
 module.exports = router;
