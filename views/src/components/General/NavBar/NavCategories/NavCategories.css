@@ -1,0 +1,6 @@
+.element {
+  display: flex;
+  flex-direction: row-reverse;
+  cursor: pointer;
+  align-self: flex-start;
+}
