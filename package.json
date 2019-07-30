@@ -4,9 +4,10 @@
   "description": "A travel application that is peer to peer based",
   "main": "server.js",
   "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'views/*'\" \"\"npm run views\"",
+    "start:dev": "concurrently \"nodemon --ignore 'views/*'\" \"npm run views\"",
     "views": "cd views && npm run start",
     "install": "cd views && npm install",
     "build": "cd views && npm run build",

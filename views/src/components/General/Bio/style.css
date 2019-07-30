@@ -1,0 +1,25 @@
+.bio {
+  display: inline-flex;
+  width: 20em;
+  height: 10em;
+  background: #d94f70;
+  border-radius: 0.5em;
+  padding-left: 2%;
+  padding-right: 2%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  display: inline;
+  margin-bottom: 0.5em;
+  color: white;
+}
+
+.text {
+  display: flex;
+  margin: 0.1%;
+  text-align: center;
+  color: white;
+}

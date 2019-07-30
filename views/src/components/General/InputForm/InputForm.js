@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 import { local, traveller } from "./elements";
 
 function Question(props) {
@@ -12,29 +13,37 @@ function Question(props) {
 }
 
 class InputForm extends React.Component {
+  state = {
+    user: "t"
+  };
   render() {
-    // conditional to find out if it is a local or traveller
-    // change the local to traveller according
-    const localQuestions = local.map(question => (
-      <Question
-        label={question.label}
-        type={question.type}
-        placeholder={question.placeholder}
-      />
-    ));
-    const travellerQuestions = traveller.map(question => (
-      <Question
-        label={question.label}
-        type={question.type}
-        placeholder={question.placeholder}
-      />
-    ));
-    return (
-      <div className="inputform">
-        <h1>Registration</h1>
-        {localQuestions}
-      </div>
-    );
+    if (this.state.user === "local") {
+      return (
+        <div className="inputform">
+          <h1>Local Registration</h1>
+          {local.map(question => (
+            <Question
+              label={question.label}
+              type={question.type}
+              placeholder={question.placeholder}
+            />
+          ))}
+        </div>
+      );
+    } else {
+      return (
+        <div className="inputform">
+          <h1>Traveller Registration</h1>
+          {traveller.map(question => (
+            <Question
+              label={question.label}
+              type={question.type}
+              placeholder={question.placeholder}
+            />
+          ))}
+        </div>
+      );
+    }
   }
 }
 
