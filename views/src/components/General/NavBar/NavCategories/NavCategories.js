@@ -7,24 +7,25 @@ function Element(props) {
   console.log(props.name);
   const background = {
     background: `url(${props.pic})`,
-    backgroundSize: "contain",
-    width: "2rem",
-    height: "2rem",
-    display: "flex",
-    margin: "1em"
+    backgroundSize: "cover",
+    width: "2em",
+    height: "2em",
+    display: "flex"
   };
 
   return (
     <div className="element">
-      <h2>{props.name}</h2>
-      <div className="pic" style={background} alt={props.name} />
+      <div className="container">
+        <div className="pic" style={background} alt={props.name} />
+      </div>
+      <h3>{props.name}</h3>
     </div>
   );
 }
 
 class NavCategories extends React.Component {
   state = {
-    user: "traveller"
+    user: "local"
   };
   render() {
     if (this.state.user === "local") {

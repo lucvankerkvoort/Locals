@@ -1,6 +1,18 @@
 .element {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   cursor: pointer;
-  align-self: flex-start;
+  align-self: flex-end;
+  object-fit: contain;
+  width: 90%;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 2em;
+  height: 2em;
 }
