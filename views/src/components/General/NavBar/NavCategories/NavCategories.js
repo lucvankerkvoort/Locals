@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavCategories.css";
-import elements from "./elements";
+import { local, traveller } from "./elements";
 
 function Element(props) {
   // conditional to see whether the user is a local or a traveller and filter through to check which one of these we need
@@ -23,11 +23,19 @@ function Element(props) {
 }
 
 class NavCategories extends React.Component {
+  state = {
+    user: "traveller"
+  };
   render() {
-    const input = elements.map((element, i) => (
-      <Element key={i} name={element.name} pic={element.pic} />
-    ));
-    return [input];
+    if (this.state.user === "local") {
+      return local.map((element, i) => (
+        <Element key={i} name={element.name} pic={element.pic} />
+      ));
+    } else {
+      return traveller.map((element, i) => (
+        <Element key={i} name={element.name} pic={element.pic} />
+      ));
+    }
   }
 }
 

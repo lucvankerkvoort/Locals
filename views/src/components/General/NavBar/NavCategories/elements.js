@@ -1,4 +1,4 @@
-const elements = [
+export const local = [
   {
     name: "Settings",
     pic:
@@ -14,4 +14,10 @@ const elements = [
   }
 ];
 
-export default elements;
+export const traveller = [
+  {
+    name: "Settings",
+    pic:
+      "https://upload.wikimedia.org/wikipedia/commons/6/6d/Windows_Settings_app_icon.png"
+  }
+];
