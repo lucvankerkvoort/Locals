@@ -21,8 +21,24 @@
 
 .background {
   z-index: 1;
+  background-size: cover;
 }
 
+h1 {
+  color: grey;
+  text-shadow: 2px 1px gold;
+  font-family: helvetica;
+}
 .title {
   z-index: 2;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+label {
+  font-family: Arial, Helvetica, sans-serif;
+}
+p {
+  font-family: Arial, Helvetica, sans-serif;
 }
