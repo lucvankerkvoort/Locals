@@ -42,7 +42,8 @@ var LocalSchema = new Schema({
     }
   },
   booking: { type: Array },
-  availability: { type: Array }
+  availability: { type: Array },
+  type: { type: String, default: "Local" }
 });
 
 // We use MongoDB's build in module to create a container so we can export the schema
