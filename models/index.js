@@ -2,6 +2,6 @@
 
 // index.js is holding both the models needed in this application
 module.exports = {
-  local: require("./local"),
-  traveller: require("./traveller")
+  Local: require("./local"),
+  Traveller: require("./traveller")
 };

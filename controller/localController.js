@@ -13,10 +13,10 @@ module.exports = {
   },
   // we create the read method, possibly split into different options (findAll, findById, findByAddress)
   findAll: function(req, res) {
-    db.local
-      .find({})
+    db.Local.find({})
       .sort({ name: -1 })
-      .then(dbModel => res.json(dbModel));
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(500).json(err));
     // here we will use mongo's queries to itterate through the database to retrieve data
   },
   findById: function(req, res) {

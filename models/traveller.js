@@ -24,7 +24,8 @@ var TravellerSchema = new Schema({
       "Password is not long enough"
     ]
   },
-  booking: { type: Array }
+  booking: { type: Array },
+  type: { type: String, default: "traveller" }
 });
 
 // We use MongoDB's build in module to create a container so we can export the schema
