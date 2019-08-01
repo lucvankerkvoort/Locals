@@ -15,10 +15,10 @@ function Element(props) {
 
   return (
     <div className="element">
-      <div className="container">
+      <div className="elementContainer">
         <div className="pic" style={background} alt={props.name} />
       </div>
-      <h3>{props.name}</h3>
+      <h3 className="elementName">{props.name}</h3>
     </div>
   );
 }
