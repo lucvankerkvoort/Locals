@@ -6,7 +6,7 @@ import React from "react";
 import Login from "./components/LoginPage/LoginPage";
 import Test from "./test";
 function App() {
-  return <Test />;
+  return <Login />;
 }
 
 export default App;

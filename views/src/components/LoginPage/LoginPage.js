@@ -1,30 +1,31 @@
 import React from "react";
 import "./style.css";
-import Pictures from "./images/";
+import { travellerArray, localArray } from "./images/";
 import BackgroundSlideshow from "react-background-slideshow";
 
 class Login extends React.Component {
-  // handleImage(){
-  //   for (let i = 0; i < Pictures.length; i++) {
-  //     setTimeout(this.setState{background: Pictures[i]}, 1000);
-  //   }
-  // }
-
+  state = {
+    user: "local"
+  };
   render() {
-    console.log(Pictures.length);
-
-    const styles = {
-      background: `url('${Pictures[1]}')`,
-      backgroundSize: "cover",
-      backgroundPosition: "center"
-    };
-
+    console.log(travellerArray);
+    let pictures;
+    let title;
+    if (this.state.user === "local") {
+      title = "Welcome Local";
+      pictures = <BackgroundSlideshow images={localArray} />;
+      console.log(pictures);
+    } else {
+      title = "Welcome Traveller";
+      pictures = <BackgroundSlideshow images={travellerArray} />;
+      console.log(pictures);
+    }
     return (
       <div className="background">
-        <BackgroundSlideshow images={Pictures} />
+        {pictures}
         <div className="body">
           <div className="title">
-            <h1>Welcome Travellers</h1>
+            <h1>{title}</h1>
           </div>
           <div className="container">
             <h2>Login</h2>
