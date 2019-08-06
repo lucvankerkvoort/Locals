@@ -24,7 +24,7 @@ body {
 }
 
 .searchTerm:focus {
-  color: #d94f70;
+  color: rgb(53, 50, 50);
 }
 
 .searchButton {
