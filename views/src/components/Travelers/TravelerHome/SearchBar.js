@@ -29,11 +29,6 @@ class SearchBar extends React.Component {
     this.props.onPlaceChanged(place);
   };
 
-  handleChange = event => {
-    this.setState({ place: event.target.value });
-    console.log(this.state.place);
-  };
-
   render() {
     return (
       <div className="wrap">
@@ -43,7 +38,7 @@ class SearchBar extends React.Component {
             type="text"
             className="searchTerm"
             placeholder="Enter your destination here"
-            onChange={this.handleChange}
+            onChange={this.props.handleChange}
           />
           <button type="submit" className="searchButton">
             <i className="fa fa-search" />

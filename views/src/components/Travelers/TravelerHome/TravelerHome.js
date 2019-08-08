@@ -15,6 +15,11 @@ class TravelerHome extends React.Component {
     console.log(this.state.place.formatted_address);
   }
 
+  handleChange = event => {
+    this.setState({ place: event.target.value });
+    console.log(this.state.place);
+  };
+
   render() {
     const AddressDetails = props => {
       return (
@@ -28,7 +33,7 @@ class TravelerHome extends React.Component {
       <div className="background">
         {pictures}
         <SearchBar
-          onChange={this.handleChange}
+          handleChange={this.handleChange}
           onPlaceChanged={this.showPlaceDetails.bind(this)}
           value={this.state.value}
         />
