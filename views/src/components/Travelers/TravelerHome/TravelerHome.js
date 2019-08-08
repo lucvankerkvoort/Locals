@@ -1,8 +1,8 @@
 import React from "react";
 import SearchBar from "./SearchBar";
-import { travellerArray } from "../components/LoginPage/images/index";
+import { travellerArray } from "../../General/images";
 import BackgroundSlideshow from "react-background-slideshow";
-import "./App.css";
+import "./TravelerHome.css";
 
 class TravelerHome extends React.Component {
   state = {

@@ -1,6 +1,6 @@
 import React from "react";
 import "./SearchBar.css";
-import SearchBarLogoSVG from "../components/General/SearchBar/SearchBarLogoSVG/SearchBarLogoSVG";
+import SearchBarLogoSVG from "../../../components/General/SearchBar/SearchBarLogoSVG/SearchBarLogoSVG";
 
 const google = window.google;
 

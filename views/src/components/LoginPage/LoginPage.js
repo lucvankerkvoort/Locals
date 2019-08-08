@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { travellerArray, localArray } from "./images/";
+import { travellerArray, localArray } from "../General/images";
 import BackgroundSlideshow from "react-background-slideshow";
 
 class Login extends React.Component {
