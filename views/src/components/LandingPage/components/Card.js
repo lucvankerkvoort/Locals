@@ -7,7 +7,10 @@ class Card extends React.Component {
     return (
       <article className="card">
         <CardHeader cardTitle={this.props.details} />
-        <CardFooter />
+        <CardFooter
+          input={this.props.input}
+          handleChange={this.props.handleChange}
+        />
       </article>
     );
   }

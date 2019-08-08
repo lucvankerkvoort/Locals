@@ -10,13 +10,23 @@ class App extends React.Component {
     user: ""
   };
 
+  handleChange = input => {
+    console.log("input inside App.js", input);
+    this.setState({ user: input });
+  };
+
   render() {
+    console.log(this.state.user);
     return (
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" component={LandingPage} />
-            <Route exact path="/login" component={LoginPage} />
+            <Route
+              exact
+              path="/"
+              render={() => <LandingPage handleChange={this.handleChange} />}
+            />
+            <Route exact path="/login" component={() => <LoginPage />} />
             <Route exact path="/localhome" component={LocalsHomePage} />
             <Route exact path="/travelerhome" component={TravelerHome} />
           </Switch>
