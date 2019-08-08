@@ -26,9 +26,21 @@ class App extends React.Component {
               path="/"
               render={() => <LandingPage handleChange={this.handleChange} />}
             />
-            <Route exact path="/login" component={() => <LoginPage />} />
-            <Route exact path="/localhome" component={LocalsHomePage} />
-            <Route exact path="/travelerhome" component={TravelerHome} />
+            <Route
+              exact
+              path="/login"
+              component={() => <LoginPage user={this.state.user} />}
+            />
+            <Route
+              exact
+              path="/localhome"
+              component={() => <LocalsHomePage user={this.state.user} />}
+            />
+            <Route
+              exact
+              path="/travelerhome"
+              component={() => <TravelerHome user={this.state.user} />}
+            />
           </Switch>
         </div>
       </Router>

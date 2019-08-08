@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "../LandingPage/components/Card";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import "./LandingPage.css";
 
 class LandingPage extends React.Component {
@@ -15,7 +14,7 @@ class LandingPage extends React.Component {
           {/* <Link to="/login"> */}
           <Card
             handleChange={this.handleChange}
-            input="traveler"
+            value="traveler"
             details="Are you a traveler?"
           />
           {/* </Link> */}
@@ -24,7 +23,7 @@ class LandingPage extends React.Component {
           {/* <Link to="/login"> */}
           <Card
             handleChange={this.handleChange}
-            input="local"
+            value="local"
             details="Are you a local?"
           />
           {/* </Link> */}
