@@ -5,7 +5,7 @@ import BackgroundSlideshow from "react-background-slideshow";
 
 class Login extends React.Component {
   state = {
-    user: "local"
+    user: this.props.user
   };
   render() {
     console.log(this.props);
