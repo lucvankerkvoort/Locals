@@ -7,6 +7,9 @@ const google = window.google;
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      place: ""
+    };
     this.autocompleteInput = React.createRef();
     this.autocomplete = null;
     this.handlePlaceChanged = this.handlePlaceChanged.bind(this);
@@ -23,7 +26,12 @@ class SearchBar extends React.Component {
 
   handlePlaceChanged = () => {
     const place = this.autocomplete.getPlace();
-    this.props.onPlaceLoaded(place);
+    this.props.onPlaceChanged(place);
+  };
+
+  handleChange = event => {
+    this.setState({ place: event.target.value });
+    console.log(this.state.place);
   };
 
   render() {
@@ -35,6 +43,7 @@ class SearchBar extends React.Component {
             type="text"
             className="searchTerm"
             placeholder="Enter your destination here"
+            onChange={this.handleChange}
           />
           <button type="submit" className="searchButton">
             <i className="fa fa-search" />
@@ -45,5 +54,4 @@ class SearchBar extends React.Component {
     );
   }
 }
-
 export default SearchBar;
