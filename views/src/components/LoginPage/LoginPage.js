@@ -8,7 +8,7 @@ class Login extends React.Component {
     user: "local"
   };
   render() {
-    console.log(travellerArray);
+    console.log(this.props);
     let pictures;
     let title;
     if (this.state.user === "local") {
