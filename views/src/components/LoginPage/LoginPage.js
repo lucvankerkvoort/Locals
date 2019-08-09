@@ -2,13 +2,63 @@ import React from "react";
 import "./style.css";
 import { travellerArray, localArray } from "../General/images";
 import BackgroundSlideshow from "react-background-slideshow";
+import API from "../../controller/index";
 
 class Login extends React.Component {
   state = {
-    user: this.props.user
+    user: this.props.user,
+    travelers: "",
+    locals: "",
+    username: "",
+    password: ""
+  };
+
+  componentDidMount() {
+    this.loadAll();
+  }
+
+  loadAll = () => {
+    API.getTravelers().then(res => this.setState({ travelers: res }));
+    API.getLocals().then(res => this.setState({ locals: res }));
+  };
+
+  handleChange = event => {
+    const target = event.target;
+    const name = target.name;
+    this.setState({ [name]: event.target.value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    if (this.state.user === "local") {
+      if (
+        this.state.locals.data.some(
+          user =>
+            user.username === this.state.username &&
+            user.password === this.state.password
+        )
+      ) {
+        alert("it works");
+      } else {
+        console.log("incorrect password and username");
+      }
+    } else if (this.state.user === "traveler") {
+      if (
+        this.state.travelers.data.some(
+          user =>
+            user.username === this.state.username &&
+            user.password === this.state.password
+        )
+      ) {
+        alert("it works");
+        //
+      } else {
+        console.log("incorrect password and username");
+      }
+    }
   };
   render() {
-    console.log(this.props);
+    console.log(this.state);
     let pictures;
     let title;
     if (this.state.user === "local") {
@@ -30,14 +80,26 @@ class Login extends React.Component {
           <div className="logincontainer">
             <h2>Login</h2>
             <form className="form">
-              <label>Username</label>
+              <input
+                name="username"
+                type="text"
+                onChange={this.handleChange}
+                placeholder="Username"
+              />
               <br />
-              <input type="text" placeholder="" />
+              <br />
+              <input
+                name="password"
+                onChange={this.handleChange}
+                type="password"
+                placeholder="Password"
+              />
               <br />
               <br />
-              <label>Password</label>
+              <button type="submit" onClick={this.handleSubmit}>
+                Submit
+              </button>
               <br />
-              <input type="password" placeholder="" />
               <p>
                 if this is your first time visiting <br />
                 <a href="#">Register Here</a>
