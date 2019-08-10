@@ -13,34 +13,42 @@ function Question(props) {
 }
 
 class InputForm extends React.Component {
-  state = {
-    user: "t"
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.handleRegistration();
   };
   render() {
-    if (this.state.user === "local") {
+    console.log(this.props.handleRegistration);
+    if (this.props.user === "local") {
       return (
         <div className="inputform">
           <h1>Local Registration</h1>
-          {local.map(question => (
+          {local.map((question, i) => (
             <Question
+              key={i}
               label={question.label}
               type={question.type}
               placeholder={question.placeholder}
             />
           ))}
+          <br />
+          <button onClick={this.handleSubmit}>Submit</button>
         </div>
       );
     } else {
       return (
         <div className="inputform">
           <h1>Traveller Registration</h1>
-          {traveller.map(question => (
+          {traveller.map((question, i) => (
             <Question
+              key={i}
               label={question.label}
               type={question.type}
               placeholder={question.placeholder}
             />
           ))}
+          <br />
+          <button onClick={this.handleSubmit}>Submit</button>
         </div>
       );
     }
