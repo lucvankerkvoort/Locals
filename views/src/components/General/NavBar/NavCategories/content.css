@@ -13,6 +13,7 @@
   height: 5em;
   width: 5em;
   object-fit: cover;
+  border-radius: 50%;
 }
 .names {
   align-self: center;

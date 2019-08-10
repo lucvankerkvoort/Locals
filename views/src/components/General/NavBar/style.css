@@ -1,8 +1,37 @@
-.navbar {
+.wrapper-login {
   display: inline-flex;
   flex-direction: column;
-  background: #d94f70;
+  background: url("./navbarimg.jpg");
+  background-size: cover;
   align-items: center;
   width: 20%;
-  height: 100vh;
+  height: 110vh;
+  border-bottom-right-radius: 24px;
+  border-top-right-radius: 24px;
+  z-index: 2;
+}
+
+.navbar {
+  background: linear-gradient(
+    60deg,
+    rgba(10, 35, 57, 0.5),
+    rgba(45, 117, 140, 0.8)
+  );
+  z-index: 15;
+  height: 110vh;
+  width: 100%;
+  border-bottom-right-radius: 24px;
+  border-top-right-radius: 24px;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* rgba(10, 35, 57, 0.5),
+rgba(5, 39, 189, 0.8) */
+
+.title {
+  display: flex;
+  justify-content: center;
 }
