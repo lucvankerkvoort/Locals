@@ -19,6 +19,10 @@ class Login extends React.Component {
     this.loadAll();
   }
 
+  closeRegistration = input => {
+    console.log({ input });
+    this.setState({ showComponent: input });
+  };
   handleClick = () => {
     this.setState({ showComponent: true });
   };
@@ -35,7 +39,9 @@ class Login extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    console.log("runs");
     if (this.state.user === "local") {
+      console.log("this runs");
       if (
         this.state.locals.data.some(
           user =>
@@ -49,6 +55,7 @@ class Login extends React.Component {
         console.log("incorrect password and username");
       }
     } else if (this.state.user === "traveler") {
+      console.log("this is running");
       if (
         this.state.travelers.data.some(
           user =>
@@ -72,11 +79,9 @@ class Login extends React.Component {
     if (this.state.user === "local") {
       title = "Welcome Local";
       pictures = <BackgroundSlideshow images={localArray} />;
-      console.log(pictures);
     } else {
       title = "Welcome Traveller";
       pictures = <BackgroundSlideshow images={travellerArray} />;
-      console.log(pictures);
     }
 
     return (
@@ -111,14 +116,16 @@ class Login extends React.Component {
               <br />
               <p>
                 if this is your first time visiting <br />
-                <a onClick={this.handleClick}>Register Here</a>
+                <a className="registration-tag" onClick={this.handleClick}>
+                  Register Here
+                </a>
               </p>
             </form>
           </div>
         </div>
 
         {this.state.showComponent ? (
-          <Registration user={this.state.user} />
+          <Registration close={this.closeRegistration} user={this.state.user} />
         ) : null}
       </div>
     );
