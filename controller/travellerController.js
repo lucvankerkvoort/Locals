@@ -5,6 +5,7 @@ const db = require("../models");
 module.exports = {
   // we create the create method to store data into the database
   create: function(req, res) {
+    console.log(req.body);
     db.Traveller.create(req.body).then(dbModel => res.json(dbModel));
     // Here we will use mongo's queries and the schema's we setup to add data to the database
   },

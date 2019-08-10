@@ -6,17 +6,21 @@ var Schema = mongoose.Schema;
 
 // The instance of the schema used for Travellers
 var TravellerSchema = new Schema({
-  name: {
+  firstname: {
     type: String,
-    required: "Name is Required"
+    required: true
+  },
+  lastname: {
+    type: String,
+    required: true
   },
   username: {
     type: String,
-    required: "Username is Required"
+    required: true
   },
   password: {
     type: String,
-    required: "Password is Required",
+    required: true,
     validate: [
       function(input) {
         return input.length >= 8;

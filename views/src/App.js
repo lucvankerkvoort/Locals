@@ -27,14 +27,16 @@ class App extends React.Component {
               render={() => <LandingPage handleChange={this.handleChange} />}
             />
             <Route
-              exact
               path="/login"
-              component={() => <LoginPage user={this.state.user} />}
+              render={props => <LoginPage {...props} user={this.state.user} />}
             />
             <Route
               exact
               path="/localhome"
-              component={() => <LocalsHomePage user={this.state.user} />}
+              render={props => {
+                console.log(props);
+                return <LocalsHomePage user={this.state.user} />;
+              }}
             />
             <Route
               exact

@@ -6,11 +6,13 @@ import NavCategories from "./NavCategories/NavCategories";
 class Navbar extends React.Component {
   render() {
     return (
-      <div className="navbar">
-        <h1>Locals</h1>
-        <Content />
-        <br />
-        <NavCategories />
+      <div className="wrapper-login">
+        <div className="navbar">
+          <h3 className="title">Locals</h3>
+          <Content />
+          <br />
+          <NavCategories />
+        </div>
       </div>
     );
   }

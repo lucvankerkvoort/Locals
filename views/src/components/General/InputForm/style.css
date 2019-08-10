@@ -4,5 +4,22 @@
   align-items: center;
   border-radius: 1em;
   box-shadow: 0px 0px 10px 5px black;
+  justify-content: center;
   padding: 1em;
+}
+
+.close {
+  align-self: flex-end;
+  cursor: pointer;
+  color: gray;
+}
+
+:hover.close {
+  color: darkslateblue;
+}
+
+input {
+  border-radius: 24px;
+  border: 1px solid black;
+  padding: 5px;
 }
