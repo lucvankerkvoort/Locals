@@ -3,6 +3,7 @@ import "./style.css";
 import { travellerArray, localArray } from "../General/images";
 import BackgroundSlideshow from "react-background-slideshow";
 import API from "../../controller/index";
+import Registration from "./RegisterBlurb/RegisterBlurb";
 
 class Login extends React.Component {
   state = {
@@ -10,13 +11,17 @@ class Login extends React.Component {
     travelers: "",
     locals: "",
     username: "",
-    password: ""
+    password: "",
+    showComponent: false
   };
 
   componentDidMount() {
     this.loadAll();
   }
 
+  handleClick = () => {
+    this.setState({ showComponent: true });
+  };
   loadAll = () => {
     API.getTravelers().then(res => this.setState({ travelers: res }));
     API.getLocals().then(res => this.setState({ locals: res }));
@@ -39,6 +44,7 @@ class Login extends React.Component {
         )
       ) {
         alert("it works");
+        // link it to the homepage for the locals
       } else {
         console.log("incorrect password and username");
       }
@@ -51,7 +57,7 @@ class Login extends React.Component {
         )
       ) {
         alert("it works");
-        //
+        // link it to the homepage  for the travelers
       } else {
         console.log("incorrect password and username");
       }
@@ -59,8 +65,10 @@ class Login extends React.Component {
   };
   render() {
     console.log(this.state);
+
     let pictures;
     let title;
+
     if (this.state.user === "local") {
       title = "Welcome Local";
       pictures = <BackgroundSlideshow images={localArray} />;
@@ -70,6 +78,7 @@ class Login extends React.Component {
       pictures = <BackgroundSlideshow images={travellerArray} />;
       console.log(pictures);
     }
+
     return (
       <div className="background">
         {pictures}
@@ -102,11 +111,15 @@ class Login extends React.Component {
               <br />
               <p>
                 if this is your first time visiting <br />
-                <a href="#">Register Here</a>
+                <a onClick={this.handleClick}>Register Here</a>
               </p>
             </form>
           </div>
         </div>
+
+        {this.state.showComponent ? (
+          <Registration user={this.state.user} />
+        ) : null}
       </div>
     );
   }
