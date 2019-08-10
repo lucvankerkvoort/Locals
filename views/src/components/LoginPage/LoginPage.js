@@ -50,7 +50,8 @@ class Login extends React.Component {
         )
       ) {
         alert("it works");
-        // link it to the homepage for the locals
+
+        this.props.history.push("/localhome");
       } else {
         console.log("incorrect password and username");
       }
@@ -65,6 +66,7 @@ class Login extends React.Component {
       ) {
         alert("it works");
         // link it to the homepage  for the travelers
+        this.props.history.push("/travelerhome");
       } else {
         console.log("incorrect password and username");
       }
