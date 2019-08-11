@@ -1,23 +1,29 @@
+import settings from "./images/settings.png";
+import calendar from "./images/calendar.png";
+import tours from "./images/tours.png";
+
 export const local = [
   {
     name: "Settings",
-    pic:
-      "https://upload.wikimedia.org/wikipedia/commons/6/6d/Windows_Settings_app_icon.png"
+    pic: settings
   },
   {
     name: "Calendar",
-    pic: "https://image.flaticon.com/icons/png/512/4/4430.png"
+    pic: calendar
   },
   {
     name: "Tours",
-    pic: "https://png.pngtree.com/svg/20170817/2fa6641e9d.svg"
+    pic: tours
   }
 ];
 
 export const traveller = [
   {
     name: "Settings",
-    pic:
-      "https://upload.wikimedia.org/wikipedia/commons/6/6d/Windows_Settings_app_icon.png"
+    pic: settings
+  },
+  {
+    name: "Tours",
+    pic: tours
   }
 ];

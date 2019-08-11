@@ -112,7 +112,7 @@ class Login extends React.Component {
               />
               <br />
               <br />
-              <button type="submit" onClick={this.handleSubmit}>
+              <button className="btn" type="submit" onClick={this.handleSubmit}>
                 Submit
               </button>
               <br />

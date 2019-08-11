@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "champagne__limousinesregular";
+  src: url("./webfontkit-20190811-105135/champagne__limousines-webfont.woff2")
+      format("woff2"),
+    url("./webfontkit-20190811-105135/champagne__limousines-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "champagne__limousinesregular", sans-serif;
+}
+
+body {
+  font-family: "champagne__limousinesregular", sans-serif;
+}
