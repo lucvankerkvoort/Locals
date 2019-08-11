@@ -54,17 +54,17 @@ class MapContainer extends React.Component {
     ));
     return (
       <div className="component-container">
-        <SearchBar
-          handleChange={this.handleChange}
-          onPlaceChanged={this.showPlaceDetails.bind(this)}
-          value={this.state.place}
-        />
         <Map
           google={this.props.google}
           zoom={10}
           style={mapStyles}
           initialCenter={{ lat: 32.3182, lng: -86.9023 }}
         >
+          <SearchBar
+            handleChange={this.handleChange}
+            onPlaceChanged={this.showPlaceDetails.bind(this)}
+            value={this.state.place}
+          />
           {markers}
           <InfoWindow
             marker={this.state.activeMarker}
