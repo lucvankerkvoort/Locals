@@ -1,0 +1,22 @@
+.element {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  align-self: flex-start;
+  object-fit: contain;
+  width: 90%;
+  overflow: hidden;
+  margin-left: 15px;
+}
+
+.elementName {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 1em;
+}
+
+.elementContainer {
+  width: 2em;
+  height: 2em;
+  align-self: center;
+}
