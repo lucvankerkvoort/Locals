@@ -43,7 +43,7 @@ body {
 .wrap {
   width: 30%;
   position: relative;
-  top: 50%;
-  left: 40%;
+  top: 3%;
+  left: 50%;
   z-index: 15;
 }
