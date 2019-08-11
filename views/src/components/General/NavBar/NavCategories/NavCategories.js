@@ -8,7 +8,7 @@ function Element(props) {
   const background = {
     background: `url(${props.pic})`,
     backgroundSize: "cover",
-    width: "2em",
+    width: "2.1em",
     height: "2em",
     display: "flex"
   };

@@ -4,7 +4,7 @@
   align-items: center;
   border-radius: 1em;
   padding: 2em;
-  background: white;
+  background: linear-gradient(gray, white, white, white, GRAY);
   box-shadow: 0px 0px 10px 5px black;
   z-index: 15;
 }
@@ -26,22 +26,30 @@
 
 h1 {
   text-shadow: 2px 2px gold;
-  font-family: helvetica;
 }
 .title {
   z-index: 2;
 }
 
-h2 {
-  font-family: Arial, Helvetica, sans-serif;
-}
 label {
   font-family: Arial, Helvetica, sans-serif;
 }
-p {
-  font-family: Arial, Helvetica, sans-serif;
+
+.btn {
+  background: linear-gradient(60deg, #122169, #2d758c);
+  border: 0px;
+  border-radius: 24px;
+  padding: 0.5em 1em;
+  color: white;
+  box-shadow: 0px 0px 5px #122169;
+  font-family: "champagne__limousinesregular", sans-serif;
+  cursor: pointer;
 }
 
+.btn:hover {
+  box-shadow: 0 0 0;
+  transform: scale(1.1);
+}
 .registration {
   display: inline-flex;
   align-content: center;

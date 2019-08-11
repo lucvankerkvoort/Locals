@@ -46,7 +46,9 @@ class InputForm extends React.Component {
             />
           ))}
           <br />
-          <button onClick={this.handleSubmit}>Submit</button>
+          <button className="btn" onClick={this.handleSubmit}>
+            Submit
+          </button>
         </div>
       );
     } else {
@@ -67,7 +69,9 @@ class InputForm extends React.Component {
             />
           ))}
           <br />
-          <button onClick={this.handleSubmit}>Submit</button>
+          <button className="btn" onClick={this.handleSubmit}>
+            Submit
+          </button>
         </div>
       );
     }
