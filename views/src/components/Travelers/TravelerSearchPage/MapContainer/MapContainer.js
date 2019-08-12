@@ -14,13 +14,16 @@ class MapContainer extends React.Component {
     place: "",
     activeMarker: {},
     selectedPlace: {},
-    showingInfoWindow: false
+    showingInfoWindow: false,
+    lat: 32.3812,
+    lng: -86.9023
   };
 
   showPlaceDetails(place) {
-    // this.setState({ place: place.formatted_address });
-    this.setState({ place: place.formatted_address });
-    console.log(this.state.place);
+    this.setState({ place });
+    console.log(this.state.place.formatted_address);
+    console.log(this.state.place.geometry.viewport.ia.j); // lat
+    console.log(this.state.place.geometry.viewport.na.l); // lng
   }
 
   handleChange = event => {
@@ -41,6 +44,13 @@ class MapContainer extends React.Component {
       showingInfoWindow: false
     });
 
+  zoomInOnMapSearch = query => {
+    this.setState({
+      lat: query.geometry.viewport.ia.j,
+      lng: query.geometry.viewport.na.l
+    });
+  };
+
   render() {
     const markers = data.map((info, i) => (
       <Marker
@@ -58,12 +68,13 @@ class MapContainer extends React.Component {
           google={this.props.google}
           zoom={10}
           style={mapStyles}
-          initialCenter={{ lat: 32.3182, lng: -86.9023 }}
+          initialCenter={{ lat: this.state.lat, lng: this.state.lng }}
         >
           <SearchBar
             handleChange={this.handleChange}
             onPlaceChanged={this.showPlaceDetails.bind(this)}
             value={this.state.place}
+            searchPlace={this.zoomInOnMapSearch}
           />
           {markers}
           <InfoWindow

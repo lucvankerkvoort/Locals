@@ -37,7 +37,11 @@ class SearchBar extends React.Component {
             placeholder="Enter your destination here"
             onChange={this.props.handleChange}
           />
-          <button type="submit" className="searchButton">
+          <button
+            type="submit"
+            className="searchButton"
+            onClick={this.props.zoomInOnMapSearch}
+          >
             <i className="fa fa-search" />
             <SearchBarLogoSVG />
           </button>

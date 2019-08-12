@@ -4,6 +4,7 @@ import MapContainer from "./MapContainer//MapContainer";
 const App = () => {
   return (
     <div>
+      <NavBar />
       <MapContainer />
     </div>
   );
