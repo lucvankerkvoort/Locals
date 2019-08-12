@@ -40,7 +40,7 @@ class SearchBar extends React.Component {
           <button
             type="submit"
             className="searchButton"
-            onClick={this.props.zoomInOnMapSearch}
+            onClick={this.props.searchPlace}
           >
             <i className="fa fa-search" />
             <SearchBarLogoSVG />
