@@ -44,11 +44,13 @@ class MapContainer extends React.Component {
       showingInfoWindow: false
     });
 
-  zoomInOnMapSearch = query => {
+  zoomInOnMapSearch = () => {
     this.setState({
-      lat: query.geometry.viewport.ia.j,
-      lng: query.geometry.viewport.na.l
+      lat: this.state.place.geometry.viewport.ia.j,
+      lng: this.state.place.geometry.viewport.na.l
     });
+    console.log(this.state.lat);
+    console.log(this.state.lng);
   };
 
   render() {
