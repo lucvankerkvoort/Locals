@@ -1,0 +1,8 @@
+.localbody {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 89vh;
+  border: 2px solid black;
+}
