@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 class Homebody extends React.Component {
   render() {

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "../../General/NavBar/NavBar";
 import Homebody from "./HomeBody/HomeBody";
 import Settings from "./SettingsBody/SettingsBody";
+
 class Localhome extends React.Component {
   state = {
     user: "local"
@@ -12,16 +13,16 @@ class Localhome extends React.Component {
     return (
       <Router>
         <div>
+          <Navbar />
           <Switch>
-            <Navbar />
             <Route
               exact
-              path="/home"
+              path="/localhome"
               render={props => <Homebody {...props} user={this.state.user} />}
             />
             <Route
               exact
-              path="/settings"
+              path="/localhome/settings"
               render={props => <Settings {...props} user={this.state.user} />}
             />
           </Switch>
