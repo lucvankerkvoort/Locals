@@ -1,7 +1,7 @@
 import React from "react";
 import SearchBar from "./SearchBar/SearchBar";
+import MatchCard from "./MapContainer/MatchCard/MatchCard";
 import { Map, InfoWindow, GoogleApiWrapper, Marker } from "google-maps-react";
-import data from "./data";
 import "./MapContainer.css";
 
 const mapStyles = {
@@ -15,8 +15,8 @@ class MapContainer extends React.Component {
     activeMarker: {},
     selectedPlace: {},
     showingInfoWindow: false,
-    lat: 32.3812,
-    lng: -86.9023
+    lat: 37.7749295,
+    lng: -122.41941550000001
   };
 
   showPlaceDetails(place) {
@@ -54,17 +54,16 @@ class MapContainer extends React.Component {
   };
 
   render() {
-    const markers = data.map((info, i) => (
+    const markers = (
       <Marker
-        name={info.name}
-        address={info.address}
-        hours={info.hours}
+        name={this.state.place.formatted_address}
         onClick={this.onMarkerClick}
-        position={{ lat: info.latitude, lng: info.longitude }}
-        key={i}
+        position={{ lat: this.state.lat, lng: this.state.lng }}
+        key={this.state.place.formatted_address}
       />
-    ));
-    console.log(this.state.place.formatted_address);
+    );
+    console.log(this.state.lat);
+    console.log(this.state.lng);
     return (
       <div className="component-container">
         <Map
@@ -81,18 +80,8 @@ class MapContainer extends React.Component {
             searchPlace={this.zoomInOnMapSearch}
           />
           {markers}
-          <InfoWindow
-            marker={this.state.activeMarker}
-            onClose={this.onInfoWindowClose}
-            visible={this.state.showingInfoWindow}
-          >
-            <div className="info-window">
-              <h2>{this.state.selectedPlace.name}</h2>
-              <h4>Address: {this.state.selectedPlace.address}</h4>
-              <h4>Hours: {this.state.selectedPlace.hours}</h4>
-            </div>
-          </InfoWindow>
         </Map>
+        <MatchCard />
       </div>
     );
   }
