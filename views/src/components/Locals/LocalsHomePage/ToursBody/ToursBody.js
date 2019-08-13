@@ -15,14 +15,15 @@ class Tours extends React.Component {
     return (
       <div>
         <div className="tours">
+          <h1>Hello World</h1>
           <div className="info" />
-          {this.props.tours.map((res, i) => {
+          {/* {this.props.tours.map((res, i) => {
             <div key={i}>
               <p>{res.name}</p>
               <p>{res.startdate}</p>
               <p>{res.enddate}</p>
-            </div>;
-          })}
+            </div>; */}
+          {/* })} */}
         </div>
       </div>
     );

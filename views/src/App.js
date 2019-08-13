@@ -31,15 +31,14 @@ class App extends React.Component {
               render={props => <LoginPage {...props} user={this.state.user} />}
             />
             <Route
-              exact
               path="/localhome"
               render={props => {
                 console.log(props);
-                return <LocalsHomePage user={this.state.user} />;
+                return <LocalsHomePage {...props} user={this.state.user} />;
               }}
             />
+            />
             <Route
-              exact
               path="/travelerhome"
               component={() => <TravelerHome user={this.state.user} />}
             />

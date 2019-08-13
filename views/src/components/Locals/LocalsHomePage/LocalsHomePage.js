@@ -1,33 +1,39 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Navbar from "../../General/NavBar/NavBar";
 import Homebody from "./HomeBody/HomeBody";
 import Settings from "./SettingsBody/SettingsBody";
+import Tours from "./ToursBody/ToursBody";
+import "./style.css";
 
 class Localhome extends React.Component {
   state = {
     user: "local"
   };
-
   render() {
+    const { match } = this.props;
     return (
-      <Router>
-        <div>
-          <Navbar />
-          <Switch>
-            <Route
-              exact
-              path="/localhome"
-              render={props => <Homebody {...props} user={this.state.user} />}
-            />
-            <Route
-              exact
-              path="/localhome/settings"
-              render={props => <Settings {...props} user={this.state.user} />}
-            />
-          </Switch>
-        </div>
-      </Router>
+      <div className="localhome">
+        <Navbar />
+        <Route
+          path={`${match.path}/settings`}
+          render={props => {
+            return <Settings {...props} user={this.state.user} />;
+          }}
+        />
+
+        <Route
+          path={`${match.path}/tours`}
+          render={props => {
+            return <Tours {...props} user={this.state.user} />;
+          }}
+        />
+        <Route
+          exact
+          path={`${match.path}`}
+          render={props => <Homebody {...props} user={this.state.user} />}
+        />
+      </div>
     );
   }
 }
