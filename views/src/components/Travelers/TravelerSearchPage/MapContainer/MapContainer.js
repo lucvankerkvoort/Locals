@@ -1,7 +1,6 @@
 import React from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import { Map, InfoWindow, GoogleApiWrapper, Marker } from "google-maps-react";
-import data from "./data";
 import "./MapContainer.css";
 
 const mapStyles = {
@@ -54,22 +53,20 @@ class MapContainer extends React.Component {
   };
 
   render() {
-    const markers = data.map((info, i) => (
+    const markers = (
       <Marker
-        name={info.name}
-        address={info.address}
-        hours={info.hours}
+        address={this.state.place.formatted_address}
         onClick={this.onMarkerClick}
-        position={{ lat: info.latitude, lng: info.longitude }}
-        key={i}
+        position={{ lat: this.state.lat, lng: this.state.lng }}
+        key={this.state.place.formatted_address}
       />
-    ));
-    console.log(this.state.place.formatted_address);
+    );
+    console.log(this.state.place);
     return (
       <div className="component-container">
         <Map
           google={this.props.google}
-          zoom={10}
+          zoom={12}
           style={mapStyles}
           initialCenter={{ lat: this.state.lat, lng: this.state.lng }}
           center={{ lat: this.state.lat, lng: this.state.lng }}
