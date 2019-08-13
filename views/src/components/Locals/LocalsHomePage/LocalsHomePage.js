@@ -29,6 +29,12 @@ class Localhome extends React.Component {
           }}
         />
         <Route
+          path={`${match.path}/calendar`}
+          render={props => {
+            return <Tours {...props} user={this.state.user} />;
+          }}
+        />
+        <Route
           exact
           path={`${match.path}`}
           render={props => <Homebody {...props} user={this.state.user} />}

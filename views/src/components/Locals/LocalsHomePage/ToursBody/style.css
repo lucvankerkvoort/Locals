@@ -1,0 +1,41 @@
+.tours {
+  display: flex;
+  border: 2px solid black;
+  width: 100%;
+  height: 100vh;
+}
+
+.info {
+  display: flex;
+  border: 2px solid black;
+  height: 20%;
+  width: 100%;
+}
+
+.tour-picture {
+  display: flex;
+  width: 15%;
+  border: 2px solid black;
+}
+
+.tour-name {
+  width: 28%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+.startdate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  width: 28%;
+}
+.enddate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28%;
+  border: 2px solid black;
+}
