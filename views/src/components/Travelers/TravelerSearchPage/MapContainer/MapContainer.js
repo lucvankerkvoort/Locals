@@ -1,5 +1,6 @@
 import React from "react";
 import SearchBar from "./SearchBar/SearchBar";
+import MatchCard from "./MapContainer/MatchCard/MatchCard";
 import { Map, InfoWindow, GoogleApiWrapper, Marker } from "google-maps-react";
 import "./MapContainer.css";
 
@@ -80,13 +81,7 @@ class MapContainer extends React.Component {
           />
           {markers}
         </Map>
-        <div className="matches-container">
-          <div className="match-1">
-            <div className="photo-big-container">
-              <div className="photo" />
-            </div>
-          </div>
-        </div>
+        <MatchCard />
       </div>
     );
   }
