@@ -21,14 +21,10 @@ class MapContainer extends React.Component {
 
   showPlaceDetails(place) {
     this.setState({ place });
-    console.log(this.state.place.formatted_address);
-    console.log(this.state.place.geometry.viewport.ia.j); // lat
-    console.log(this.state.place.geometry.viewport.na.l); // lng
   }
 
   handleChange = event => {
     this.setState({ place: event.target.value });
-    console.log(this.state.place);
   };
 
   onMarkerClick = (props, marker) =>
@@ -45,12 +41,16 @@ class MapContainer extends React.Component {
     });
 
   zoomInOnMapSearch = () => {
-    this.setState({
-      lat: this.state.place.geometry.viewport.ia.j,
-      lng: this.state.place.geometry.viewport.na.l
-    });
-    console.log(this.state.lat);
-    console.log(this.state.lng);
+    const lat =
+      this.state.place.geometry && this.state.place.geometry.location.lat();
+    const lng =
+      this.state.place.geometry && this.state.place.geometry.location.lng();
+    if (lat && lng) {
+      this.setState({
+        lat,
+        lng
+      });
+    }
   };
 
   render() {
@@ -64,6 +64,7 @@ class MapContainer extends React.Component {
         key={i}
       />
     ));
+    console.log(this.state.place.formatted_address);
     return (
       <div className="component-container">
         <Map
@@ -71,11 +72,12 @@ class MapContainer extends React.Component {
           zoom={10}
           style={mapStyles}
           initialCenter={{ lat: this.state.lat, lng: this.state.lng }}
+          center={{ lat: this.state.lat, lng: this.state.lng }}
         >
           <SearchBar
             handleChange={this.handleChange}
             onPlaceChanged={this.showPlaceDetails.bind(this)}
-            value={this.state.place}
+            value={this.state.place.formatted_address}
             searchPlace={this.zoomInOnMapSearch}
           />
           {markers}
