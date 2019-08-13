@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./style.css";
 class Tours extends React.Component {
   state = {
     tours: ""
@@ -13,10 +13,18 @@ class Tours extends React.Component {
   //   }
   render() {
     return (
-      <div>
-        <div className="tours">
-          <h1>Hello World</h1>
-          <div className="info" />
+      <div className="tours">
+        <div className="info">
+          <div className="tour-picture" />
+          <div className="tour-name">
+            <p>Name</p>
+          </div>
+          <div className="startdate">
+            <p>Start date</p>
+          </div>
+          <div className="enddate">
+            <p>End date</p>
+          </div>
           {/* {this.props.tours.map((res, i) => {
             <div key={i}>
               <p>{res.name}</p>
