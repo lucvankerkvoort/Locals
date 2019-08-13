@@ -1,23 +1,33 @@
 import React from "react";
 import "./style.css";
+import { BrowserRouter as Link } from "react-router-dom";
 
 class Homebody extends React.Component {
   render() {
     return (
       <div className="localbody">
         <div className="profile">
-          <img src />
-          <div className="upcoming">
-            <h6>Upcoming Tour</h6>
+          <div className="profile-picture" />
+          <div className="profile-info">
+            <h2> Profile Name</h2>
+            <h4> Username</h4>
           </div>
-          <div className="description">
-            <h6>Description</h6>
+        </div>
+        <div className="profile-body">
+          <div className="FAQ">
+            <h3>Tips and Tricks</h3>
+          </div>
+          <div className="center-body">
+            <div className="upcoming">
+              <h3>Your Upcoming Tour</h3>
+            </div>
+            <div className="completed">
+              <h3>You Have Completed X Tours</h3>
+            </div>
           </div>
           <div className="rating">
-            <h6>Rating</h6>
-          </div>
-          <div className="completed tours">
-            <h6>Completed Tours</h6>
+            <h2>Rating</h2>
+            <h3>Your score</h3>
           </div>
         </div>
       </div>

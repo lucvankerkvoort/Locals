@@ -1,8 +1,13 @@
 import settings from "./images/settings.png";
 import calendar from "./images/calendar.png";
 import tours from "./images/tours.png";
+import home from "./images/home.png";
 
 export const local = [
+  {
+    name: "Home",
+    pic: home
+  },
   {
     name: "Settings",
     pic: settings

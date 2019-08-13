@@ -1,8 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "../../General/NavBar/NavBar";
 import Homebody from "./HomeBody/HomeBody";
 import Settings from "./SettingsBody/SettingsBody";
+import "./style.css";
 
 class Localhome extends React.Component {
   state = {
@@ -11,23 +12,17 @@ class Localhome extends React.Component {
 
   render() {
     return (
-      <Router>
-        <div>
-          <Navbar />
-          <Switch>
-            <Route
-              exact
-              path="/localhome"
-              render={props => <Homebody {...props} user={this.state.user} />}
-            />
-            <Route
-              exact
-              path="/localhome/settings"
-              render={props => <Settings {...props} user={this.state.user} />}
-            />
-          </Switch>
-        </div>
-      </Router>
+      <div className="localhome">
+        <Navbar />
+        <Route
+          path="/localhome"
+          render={props => <Homebody {...props} user={this.state.user} />}
+        />
+        <Route
+          path="/localhome/settings"
+          render={props => <Settings {...props} user={this.state.user} />}
+        />
+      </div>
     );
   }
 }
