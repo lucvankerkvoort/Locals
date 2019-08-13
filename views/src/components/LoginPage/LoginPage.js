@@ -118,9 +118,9 @@ class Login extends React.Component {
               <br />
               <p>
                 if this is your first time visiting <br />
-                <a className="registration-tag" onClick={this.handleClick}>
+                <p className="registration-tag" onClick={this.handleClick}>
                   Register Here
-                </a>
+                </p>
               </p>
             </form>
           </div>

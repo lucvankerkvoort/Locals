@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.css";
-import { BrowserRouter as Link } from "react-router-dom";
 
 class Homebody extends React.Component {
   render() {
