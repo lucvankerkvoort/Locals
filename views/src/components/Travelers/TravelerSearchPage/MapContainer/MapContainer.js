@@ -81,7 +81,9 @@ class MapContainer extends React.Component {
           />
           {markers}
         </Map>
-        <MatchCard />
+        <div className="matches-container">
+          <MatchCard />
+        </div>
       </div>
     );
   }

@@ -1,18 +1,11 @@
-.matches-container {
-  background: rgb(112, 211, 224);
-  position: relative;
-  top: 60vh;
-  height: 50vh;
-  width: 80vw;
-  left: 20%;
-  z-index: 1;
-}
-
 .match-1 {
   height: 25vh;
   border: 3px;
   border-bottom-style: solid;
   border-color: black;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
 }
 
 .photo-big-container {
@@ -31,4 +24,21 @@
   top: 2vh;
   background-position: center;
   background-size: cover;
+}
+
+.matches-info-container {
+  background: yellowgreen;
+  width: 60vw;
+  height: 25vh;
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: #2196f3;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
 }
