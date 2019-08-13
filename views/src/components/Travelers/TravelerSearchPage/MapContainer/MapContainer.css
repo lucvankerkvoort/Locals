@@ -1,0 +1,34 @@
+.matches-container {
+  background: rgb(112, 211, 224);
+  position: relative;
+  top: 60vh;
+  height: 50vh;
+  width: 80vw;
+  left: 20%;
+  z-index: 1;
+}
+
+.match-1 {
+  height: 25vh;
+  border: 3px;
+  border-bottom-style: solid;
+  border-color: black;
+}
+
+.photo-big-container {
+  width: 20vw;
+  height: 25vh;
+  /* background: greenyellow; */
+}
+
+.photo {
+  /* background: url("https://via.placeholder.com/80"); */
+  background: url("../Images/match-photo1.jpg");
+  width: 15vw;
+  height: 20vh;
+  margin-left: 2.5vw;
+  position: relative;
+  top: 2vh;
+  background-position: center;
+  background-size: cover;
+}

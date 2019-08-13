@@ -80,6 +80,13 @@ class MapContainer extends React.Component {
           />
           {markers}
         </Map>
+        <div className="matches-container">
+          <div className="match-1">
+            <div className="photo-big-container">
+              <div className="photo" />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
