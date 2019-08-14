@@ -4,6 +4,7 @@ import Navbar from "../../General/NavBar/NavBar";
 import Homebody from "./HomeBody/HomeBody";
 import Settings from "./SettingsBody/SettingsBody";
 import Tours from "./ToursBody/ToursBody";
+import Availability from "./Calendar/calendar";
 import "./style.css";
 
 class Localhome extends React.Component {
@@ -14,7 +15,7 @@ class Localhome extends React.Component {
     const { match } = this.props;
     return (
       <div className="localhome">
-        <Navbar />
+        <Navbar status={this.props} />
         <Route
           path={`${match.path}/settings`}
           render={props => {
@@ -31,7 +32,7 @@ class Localhome extends React.Component {
         <Route
           path={`${match.path}/calendar`}
           render={props => {
-            return <Tours {...props} user={this.state.user} />;
+            return <Availability {...props} user={this.state.user} />;
           }}
         />
         <Route

@@ -14,9 +14,11 @@ class Registration extends React.Component {
         password: form.password
       };
       API.pushTravelers(traveler).then(res => console.log(res));
+      this.props.close(false);
     } else {
       console.log("pushin into travelers");
       API.pushLocals(form).then(res => console.log(res));
+      this.props.close(false);
     }
   };
   handleCloser = () => {

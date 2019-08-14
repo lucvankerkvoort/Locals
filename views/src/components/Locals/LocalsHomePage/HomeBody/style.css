@@ -2,7 +2,7 @@
   display: inline-flex;
   background: linear-gradient(360deg, #304352, #d7d2cc);
   width: 100%;
-  height: 94.5vh;
+  height: 93.9vh;
   flex-direction: column;
   padding: 1.5em;
 }
@@ -17,7 +17,7 @@
 
 .profile-picture {
   display: flex;
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
   box-shadow: 6px 6px 10px gray;
   border-radius: 5px;
   height: 100%;
@@ -26,7 +26,7 @@
 }
 .profile-info {
   display: flex;
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
@@ -43,7 +43,7 @@
 
 .upcoming {
   border-radius: 5px;
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
   box-shadow: 6px 6px 10px gray;
   height: 60%;
   width: 100%;
@@ -54,7 +54,7 @@
 .rating {
   box-shadow: 6px 6px 10px gray;
   border-radius: 5px;
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
   width: 20%;
   height: 100%;
   text-align: center;
@@ -63,7 +63,7 @@
 .completed {
   box-shadow: 6px 6px 10px gray;
   border-radius: 5px;
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
   width: 100%;
   height: 40%;
   text-align: center;
@@ -79,7 +79,7 @@
   width: 30%;
   border-radius: 5px;
   height: 100%;
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
   text-align: center;
   margin-right: 1em;
   box-shadow: 6px 6px 10px gray;

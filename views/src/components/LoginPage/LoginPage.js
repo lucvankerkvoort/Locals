@@ -39,9 +39,7 @@ class Login extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log("runs");
     if (this.state.user === "local") {
-      console.log("this runs");
       if (
         this.state.locals.data.some(
           user =>
@@ -49,11 +47,8 @@ class Login extends React.Component {
             user.password === this.state.password
         )
       ) {
-        alert("it works");
-
         this.props.history.push("/localhome");
       } else {
-        console.log("incorrect password and username");
       }
     } else if (this.state.user === "traveler") {
       console.log("this is running");
