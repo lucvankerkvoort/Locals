@@ -4,6 +4,7 @@ import Navbar from "../../General/NavBar/NavBar";
 import Homebody from "./HomeBody/HomeBody";
 import Settings from "./SettingsBody/SettingsBody";
 import Tours from "./ToursBody/ToursBody";
+import Calendar from "./Calendar/calendar";
 import "./style.css";
 
 class Localhome extends React.Component {
@@ -31,7 +32,7 @@ class Localhome extends React.Component {
         <Route
           path={`${match.path}/calendar`}
           render={props => {
-            return <Tours {...props} user={this.state.user} />;
+            return <Calendar {...props} user={this.state.user} />;
           }}
         />
         <Route

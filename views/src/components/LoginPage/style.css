@@ -2,10 +2,10 @@
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 1em;
+  border-radius: 5px;
+  background: rgba(250, 250, 250, 0.7);
   padding: 2em;
-  background: linear-gradient(gray, white, white, white, GRAY);
-  box-shadow: 0px 0px 10px 5px black;
+  box-shadow: 6px 6px 10px gray;
   z-index: 15;
 }
 
@@ -54,6 +54,9 @@ label {
   display: inline-flex;
   align-content: center;
   justify-content: center;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 6px 6px 10px dimgrey;
   background: white;
   overflow: hidden;
   z-index: 21;
@@ -63,7 +66,7 @@ label {
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
-  z-index: 19;
+  z-index: 15;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -72,11 +75,9 @@ label {
 }
 
 .registration-tag {
-  color: gray;
   cursor: pointer;
 }
 
 .registration-tag:hover {
   color: darkslateblue;
-  font-size: 1.1em;
 }
