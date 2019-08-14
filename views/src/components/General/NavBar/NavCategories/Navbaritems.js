@@ -2,20 +2,25 @@ import React from "react";
 
 class NavbarItems extends React.Component {
   handleClick = () => {
+    let url;
+    if (this.props.state === "local") {
+      url = "localhome";
+    } else {
+      url = "travelerhome";
+    }
     const propname = this.props.name;
-    console.log(propname);
     switch (propname) {
       case "Home":
-        this.props.handleNav("/localhome");
+        this.props.handleNav(`/${url}`);
         break;
       case "Settings":
-        this.props.handleNav("/localhome/settings");
+        this.props.handleNav(`/${url}/settings`);
         break;
       case "Calendar":
-        this.props.handleNav("/localhome/calendar");
+        this.props.handleNav(`/${url}/calendar`);
         break;
       case "Tours":
-        this.props.handleNav("/localhome/tours");
+        this.props.handleNav(`/${url}/tours`);
         break;
       default:
         console.log(propname);

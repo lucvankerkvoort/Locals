@@ -15,6 +15,7 @@ class NavCategories extends React.Component {
           name={element.name}
           pic={element.pic}
           handleNav={this.props.handleNav}
+          state={this.state.user}
         />
       ));
     } else {
@@ -24,6 +25,7 @@ class NavCategories extends React.Component {
           name={element.name}
           pic={element.pic}
           handleNav={this.props.handleNav}
+          state={this.state.user}
         />
       ));
     }

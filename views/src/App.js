@@ -7,12 +7,17 @@ import TravelerHome from "./components/Travelers/TravelerHome/TravelerHome";
 
 class App extends React.Component {
   state = {
-    user: ""
+    user: "",
+    currentUser: []
   };
 
   handleChange = input => {
     console.log("input inside App.js", input);
     this.setState({ user: input });
+  };
+
+  handleUser = input => {
+    this.setState({ currentUser: input });
   };
 
   render() {
@@ -28,7 +33,13 @@ class App extends React.Component {
             />
             <Route
               path="/login"
-              render={props => <LoginPage {...props} user={this.state.user} />}
+              render={props => (
+                <LoginPage
+                  {...props}
+                  user={this.state.user}
+                  currentUser={this.handleUser}
+                />
+              )}
             />
             <Route
               path="/localhome"
