@@ -15,7 +15,7 @@ class Localhome extends React.Component {
     const { match } = this.props;
     return (
       <div className="localhome">
-        <Navbar />
+        <Navbar status={this.props} />
         <Route
           path={`${match.path}/settings`}
           render={props => {
