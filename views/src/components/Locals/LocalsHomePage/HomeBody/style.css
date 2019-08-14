@@ -1,37 +1,40 @@
 .localbody {
   display: inline-flex;
+  background: linear-gradient(360deg, #304352, #d7d2cc);
   width: 100%;
-  height: 100vh;
+  height: 94.5vh;
   flex-direction: column;
-  border: 2px solid black;
+  padding: 1.5em;
 }
 
 .profile {
   display: inline-flex;
   width: 96%;
   height: 30%;
-  border: 2px solid black;
   margin: 1em;
   justify-content: center;
 }
 
 .profile-picture {
   display: flex;
-  border: 2px solid black;
+  background: white;
+  box-shadow: 6px 6px 10px gray;
+  border-radius: 5px;
   height: 100%;
   width: 20%;
   margin-right: 1em;
 }
 .profile-info {
   display: flex;
+  background: white;
   flex-direction: column;
   align-items: center;
-  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 6px 6px 10px gray;
   height: 100%;
   width: 60%;
 }
 .profile-body {
-  border: 2px solid black;
   height: 70%;
   width: 100%;
   display: flex;
@@ -39,20 +42,28 @@
 }
 
 .upcoming {
-  border: 2px solid black;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 6px 6px 10px gray;
   height: 60%;
   width: 100%;
+  margin-bottom: 1em;
   text-align: center;
 }
 
 .rating {
-  border: 2px solid black;
+  box-shadow: 6px 6px 10px gray;
+  border-radius: 5px;
+  background: white;
   width: 20%;
   height: 100%;
   text-align: center;
+  margin-left: 1em;
 }
 .completed {
-  border: 2px solid black;
+  box-shadow: 6px 6px 10px gray;
+  border-radius: 5px;
+  background: white;
   width: 100%;
   height: 40%;
   text-align: center;
@@ -65,8 +76,11 @@
 }
 
 .FAQ {
-  border: 2px solid black;
   width: 30%;
+  border-radius: 5px;
   height: 100%;
+  background: white;
   text-align: center;
+  margin-right: 1em;
+  box-shadow: 6px 6px 10px gray;
 }
