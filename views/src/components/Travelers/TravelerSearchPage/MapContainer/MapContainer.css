@@ -1,4 +1,4 @@
-.matches-container {
+.accordion-container {
   background: #d94f70;
   position: relative;
   top: 60vh;
@@ -6,4 +6,5 @@
   width: 80vw;
   left: 20%;
   z-index: 1;
+  overflow-y: auto;
 }
