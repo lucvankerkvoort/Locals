@@ -8,11 +8,10 @@ import TravelerHome from "./components/Travelers/TravelerHome/TravelerHome";
 class App extends React.Component {
   state = {
     user: "",
-    currentUser: []
+    currentUser: "patrick"
   };
 
   handleChange = input => {
-    console.log("input inside App.js", input);
     this.setState({ user: input });
   };
 
@@ -21,7 +20,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.currentUser);
     return (
       <Router>
         <div>

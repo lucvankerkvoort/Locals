@@ -29,7 +29,6 @@ class NavbarItems extends React.Component {
 
   render() {
     // conditional to see whether the user is a local or a traveller and filter through to check which one of these we need
-    console.log(this.props);
     const background = {
       background: `url(${this.props.pic})`,
       backgroundSize: "cover",

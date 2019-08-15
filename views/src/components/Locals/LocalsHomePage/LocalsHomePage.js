@@ -6,25 +6,14 @@ import Settings from "./SettingsBody/SettingsBody";
 import Tours from "./ToursBody/ToursBody";
 import Availability from "./Calendar/calendar";
 import "./style.css";
-import API from "../../../controller";
 
 class Localhome extends React.Component {
   state = {
     user: "local",
-    currentUser: []
-  };
-  componentDidMount() {
-    this.loadUser();
-  }
-  loadUser = () => {
-    console.log(this.props.currentUser);
-    API.getLocalById(this.props.currentUser).then(user =>
-      this.setState({ currentUser: user })
-    );
+    currentUser: this.props.currentUser
   };
   render() {
     const { match } = this.props;
-    console.log("after render", this.state.currentUser);
     return (
       <div className="localhome">
         <Navbar status={this.props} user={this.state.currentUser} />
