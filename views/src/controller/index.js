@@ -14,5 +14,18 @@ export default {
   pushTravelers: function(dataTraveler) {
     console.log(dataTraveler);
     return axios.post("api/traveller", dataTraveler);
+  },
+  loginSearchLocal: function(data) {
+    console.log(data);
+    return axios.post("api/locals/login/", data);
+  },
+  loginSearchTraveler: function(data) {
+    return axios.post("api/traveller/login/", data);
+  },
+  getLocalById: function(id) {
+    return axios.get("api/locals/" + id);
+  },
+  getTravelerById: function(id) {
+    return axios.get("api/traveller/" + id);
   }
 };

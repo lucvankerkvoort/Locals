@@ -17,4 +17,8 @@ router
   .delete(controller.localController.delete);
 // We export the entire document
 
+router
+  .route("/login")
+  .post(controller.localController.findByUsernameAndPassword);
+
 module.exports = router;
