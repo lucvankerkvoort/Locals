@@ -57,7 +57,7 @@ class InputForm extends React.Component {
           <p className="close" onClick={this.handleClose}>
             close
           </p>
-          <h1>Traveller Registration</h1>
+          <h1>Traveler Registration</h1>
           {traveller.map((question, i) => (
             <Question
               storeData={this.handleChange}
