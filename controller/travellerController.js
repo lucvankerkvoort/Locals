@@ -22,6 +22,15 @@ module.exports = {
       .then(dbModel => res.json(dbModel));
     // here  we will use mongo's queries to itterate through the database to retrieve data based of off the documents id
   },
+  findByUsernameAndPassword: function(req, res) {
+    console.log(req.body);
+    db.Traveller.find(
+      { username: req.body.username },
+      { password: req.body.password }
+    )
+      .then(dbModel => res.json(dbModel))
+      .catch(err => json(err));
+  },
   // we create the update method to update certain documents in the collection
   update: function(req, res) {
     db.Traveller.findOneAndUpdate({ _id: req.params.id }, req.body)

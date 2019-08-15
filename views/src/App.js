@@ -21,7 +21,7 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.user);
+    console.log(this.state.currentUser);
     return (
       <Router>
         <div>
@@ -45,7 +45,13 @@ class App extends React.Component {
               path="/localhome"
               render={props => {
                 console.log(props);
-                return <LocalsHomePage {...props} user={this.state.user} />;
+                return (
+                  <LocalsHomePage
+                    {...props}
+                    currentUser={this.state.currentUser}
+                    user={this.state.user}
+                  />
+                );
               }}
             />
             />

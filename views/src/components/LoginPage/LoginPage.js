@@ -15,20 +15,12 @@ class Login extends React.Component {
     showComponent: false
   };
 
-  componentDidMount() {
-    this.loadAll();
-  }
-
   closeRegistration = input => {
     console.log({ input });
     this.setState({ showComponent: input });
   };
   handleClick = () => {
     this.setState({ showComponent: true });
-  };
-  loadAll = () => {
-    API.getTravelers().then(res => this.setState({ travelers: res }));
-    API.getLocals().then(res => this.setState({ locals: res }));
   };
 
   handleChange = event => {
@@ -39,32 +31,36 @@ class Login extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    let user = {
+      username: this.state.username,
+      password: this.state.password
+    };
     if (this.state.user === "local") {
-      if (
-        this.state.locals.data.some(
-          user =>
-            user.username === this.state.username &&
-            user.password === this.state.password
-        )
-      ) {
-        this.props.history.push("/localhome");
-      } else {
-      }
+      API.loginSearchLocal(user).then(result => {
+        console.log(result.data.length);
+        if (result.data.length <= 0) {
+          console.log("wrong username or password");
+        } else {
+          for (let i = 0; i < result.data.length; i++) {
+            console.log(result.data[i]);
+            this.props.currentUser(result.data[i]._id);
+          }
+          this.props.history.push("/localhome");
+        }
+      });
     } else if (this.state.user === "traveler") {
-      console.log("this is running");
-      if (
-        this.state.travelers.data.some(
-          user =>
-            user.username === this.state.username &&
-            user.password === this.state.password
-        )
-      ) {
-        alert("it works");
-        // link it to the homepage  for the travelers
-        this.props.history.push("/travelerhome");
-      } else {
-        console.log("incorrect password and username");
-      }
+      API.loginSearchTraveler(user).then(result => {
+        console.log(result.data.length);
+        if (result.data.length <= 0) {
+          console.log("wrong username or password");
+        } else {
+          for (let i = 0; i < result.data.length; i++) {
+            console.log(result.data[i]);
+            this.props.currentUser(result.data[i]._id);
+          }
+          this.props.history.push("/travelerhome");
+        }
+      });
     }
   };
   render() {
@@ -111,12 +107,12 @@ class Login extends React.Component {
                 Submit
               </button>
               <br />
-              <p>
+              <div>
                 if this is your first time visiting <br />
                 <p className="registration-tag" onClick={this.handleClick}>
                   Register Here
                 </p>
-              </p>
+              </div>
             </form>
           </div>
         </div>

@@ -14,5 +14,10 @@ router
   .get(controller.travellerController.findById)
   .put(controller.travellerController.update)
   .delete(controller.travellerController.delete);
+
+router
+  .route("/login")
+  .get(controller.travellerController.findByUsernameAndPassword);
+
 // We export the entire document
 module.exports = router;

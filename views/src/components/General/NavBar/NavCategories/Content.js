@@ -2,17 +2,15 @@ import React from "react";
 import "./content.css";
 
 class Content extends React.Component {
-  state = {
-    name: "Luc",
-    username: "luc12345"
-  };
   render() {
+    const { user } = this.props;
+    console.log(user.data);
     return (
       <div className="content">
         <div className="image" />
         <div className="names">
-          <p>Username: {this.state.username}</p>
-          <p>Name: {this.state.name}</p>
+          <p>Username: {user.username}</p>
+          <p>Name: {user.name}</p>
         </div>
       </div>
     );

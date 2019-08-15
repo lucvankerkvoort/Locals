@@ -12,6 +12,7 @@ module.exports = {
   },
   // we create the read method, possibly split into different options (findAll, findById, findByAddress)
   findAll: function(req, res) {
+    console.log("im running");
     db.Local.find({})
       .sort({ name: -1 })
       .then(dbModel => res.json(dbModel))
@@ -19,10 +20,19 @@ module.exports = {
     // here we will use mongo's queries to itterate through the database to retrieve data
   },
   findById: function(req, res) {
+    console.log(req.params.id);
     db.Local.find({ _id: req.params.id })
       .sort({ name: -1 })
       .then(dbModel => res.json(dbModel));
     // here  we will use mongo's queries to itterate through the database to retrieve data based of off the documents id
+  },
+  findByUsernameAndPassword: function(req, res) {
+    db.Local.find(
+      { username: req.body.username },
+      { password: req.body.password }
+    )
+      .then(dbModel => res.json(dbModel))
+      .catch(err => json(err));
   },
   // we create the update method to update certain documents in the collection
   update: function(req, res) {

@@ -8,11 +8,12 @@ class Navbar extends React.Component {
     this.props.status.history.push(input);
   };
   render() {
+    console.log(this.props.user);
     return (
       <div className="wrapper-login">
         <div className="navbar">
           <h3 className="title">Locals</h3>
-          <Content />
+          <Content user={this.props.user} />
           <br />
           <NavCategories handleNav={this.handleNavbar} />
         </div>
