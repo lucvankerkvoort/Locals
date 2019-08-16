@@ -8,7 +8,7 @@ class Navbar extends React.Component {
     return (
       <div className="wrapper-login">
         <div className="navbar">
-          <h3 className="title">Locals</h3>
+          <h3 className="title">Travelers</h3>
           <Content />
           <br />
           <NavCategories />

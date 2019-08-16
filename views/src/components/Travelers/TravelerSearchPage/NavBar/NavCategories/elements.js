@@ -17,13 +17,17 @@ export const local = [
   }
 ];
 
-export const traveller = [
+export const traveler = [
   {
-    name: "Settings",
-    pic: settings
+    name: "Search",
+    pic: calendar
   },
   {
     name: "Tours",
     pic: tours
+  },
+  {
+    name: "Settings",
+    pic: settings
   }
 ];
