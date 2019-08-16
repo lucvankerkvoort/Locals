@@ -43,9 +43,12 @@ class Login extends React.Component {
         } else {
           for (let i = 0; i < result.data.length; i++) {
             console.log(result.data[i]);
-            this.props.currentUser(result.data[i]._id);
+            API.getLocalById(result.data[i]._id).then(result => {
+              console.log(result);
+              this.props.currentUser(result.data);
+              this.props.history.push("/localhome");
+            });
           }
-          this.props.history.push("/localhome");
         }
       });
     } else if (this.state.user === "traveler") {
