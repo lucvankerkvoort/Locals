@@ -5,6 +5,19 @@
   /* border: 3px;
   border-bottom-style: solid;
   border-color: black; */
+  border: 3px;
+  border-bottom-style: solid;
+  border-color: black;
+}
+
+.small-match-container {
+  width: 65vw;
+  border: 0 solid rgba(255, 255, 255, 0.7);
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 6px 6px 25px dimgray;
 }
 
 .match-1 {
@@ -14,22 +27,26 @@
 
 .photo-big-container {
   width: 20vw;
-  height: 25vh;
+  height: 24vh;
   display: flex;
   align-items: center;
+  position: relative;
+  left: 7vw;
   /* background: greenyellow; */
 }
 
 .photo {
   /* background: url("https://via.placeholder.com/80"); */
   background: url("../Images/match-photo1.jpg");
-  width: 15vw;
+  width: 14vw;
   height: 18vh;
-  margin-left: 2.5vw;
+  left: 1vh;
   position: relative;
   top: 2vh;
   background-position: center;
   background-size: cover;
+  border-radius: 50px;
+  box-shadow: 6px 6px 25px dimgray;
 }
 
 .matches-info-container {
@@ -49,22 +66,44 @@
   text-align: center;
 } */
 
-.grid-item-top {
+.grid-item-top-left {
   padding: 20px;
   font-weight: normal;
-  font-size: 1.2em;
+  font-size: 1em;
   text-align: center;
   position: relative;
   top: 5vh;
+  left: 7vh;
 }
 
-.grid-item-bottom {
+.grid-item-top-right {
   padding: 20px;
   font-weight: normal;
-  font-size: 1.2em;
+  font-size: 1em;
+  text-align: center;
+  position: relative;
+  top: 5vh;
+  right: 3vh;
+}
+
+.grid-item-bottom-left {
+  padding: 20px;
+  font-weight: normal;
+  font-size: 1em;
   text-align: center;
   position: relative;
   top: 1vh;
+  left: 7vh;
+}
+
+.grid-item-bottom-right {
+  padding: 20px;
+  font-weight: normal;
+  font-size: 1em;
+  text-align: center;
+  position: relative;
+  top: 1vh;
+  right: 3vh;
 }
 
 .accordion-section {
@@ -73,7 +112,7 @@
 }
 
 .accordion {
-  background: #d94f70;
+  background: rgba(252, 199, 199, 0.7);
   border: none;
   cursor: pointer;
   transition: background-color 0.6s ease;
@@ -81,7 +120,7 @@
 
 .accordion:hover,
 .active {
-  background-color: #c24763;
+  background-color: #f8bbbb;
 }
 
 .accordion__icon {
@@ -94,12 +133,9 @@
 }
 
 .accordion__content {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
   overflow: hidden;
   transition: max-height 0.6s ease;
-  border: 3px;
-  border-bottom-style: solid;
-  border-color: black;
 }
 
 .accordion__text {
@@ -107,4 +143,8 @@
   font-weight: 400;
   font-size: 14px;
   padding: 18px;
+}
+
+.book-me-button {
+  text-align: center;
 }

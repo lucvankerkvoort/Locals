@@ -21,32 +21,37 @@ const Accordion = props => {
 
   return (
     <div className="huge-match-container">
-      <div className="match-1">
-        <div className="photo-big-container">
-          <div className="photo" />
+      <div className="small-match-container">
+        <div className="match-1">
+          <div className="photo-big-container">
+            <div className="photo" />
+          </div>
+          <div className="matches-info-container">
+            <div className="grid-item-top-left">Name</div>
+            <div className="grid-item-top-right">Rate</div>
+            <div className="grid-item-bottom-left">Start Date</div>
+            <div className="grid-item-bottom-right">End Date</div>
+          </div>
         </div>
-        <div className="matches-info-container">
-          <div className="grid-item-top">Gregory Tang</div>
-          <div className="grid-item-top">$30/hour</div>
-          <div className="grid-item-bottom">Madrid, Spain</div>
-          <div className="grid-item-bottom">5 stars</div>
-        </div>
-      </div>
-      <div className="accordion-section">
-        <button className={`accordion ${setActive}`} onClick={toggleAccordion}>
-          <p className="accordion__title">{props.title}</p>
-          <Chevron className={`${setRotate}`} width={12} fill={"#000"} />
-        </button>
-        <div
-          ref={content}
-          style={{ maxHeight: `${setHeight}` }}
-          className="accordion__content"
-        >
+        <div className="accordion-section">
+          <button
+            className={`accordion ${setActive}`}
+            onClick={toggleAccordion}
+          >
+            <p className="accordion__title">{props.title}</p>
+            <Chevron className={`${setRotate}`} width={12} fill={"#000"} />
+          </button>
           <div
-            className="accordion__text"
-            dangerouslySetInnerHTML={{ __html: props.content }}
-          />
-          <BookButton />
+            ref={content}
+            style={{ maxHeight: `${setHeight}` }}
+            className="accordion__content"
+          >
+            <div
+              className="accordion__text"
+              dangerouslySetInnerHTML={{ __html: props.content }}
+            />
+            <BookButton />
+          </div>
         </div>
       </div>
     </div>
