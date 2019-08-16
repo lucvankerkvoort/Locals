@@ -45,8 +45,8 @@
   top: 2vh;
   background-position: center;
   background-size: cover;
-  border-radius: 50px;
-  box-shadow: 6px 6px 25px dimgray;
+  border-radius: 10px;
+  box-shadow: 3px 3px 20px dimgray;
 }
 
 .matches-info-container {
