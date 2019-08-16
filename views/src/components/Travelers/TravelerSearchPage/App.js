@@ -1,11 +1,17 @@
 import React from "react";
-import MapContainer from "./MapContainer//MapContainer";
+import MapContainer from "./components/Map/MapContainer";
+import Settings from "./components/SettingsBody/SettingsBody";
+import ToursBody from "./components/ToursBody/ToursBody";
+import NavBar from "./components/NavBar/NavBar";
+import "./App.css";
 
 const App = () => {
   return (
     <div>
       <NavBar />
-      <MapContainer />
+      {/* <MapContainer /> */}
+      {/* <Settings /> */}
+      <ToursBody />
     </div>
   );
 };
