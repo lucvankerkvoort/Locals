@@ -5,6 +5,7 @@ import Homebody from "./HomeBody/HomeBody";
 import Settings from "./SettingsBody/SettingsBody";
 import Tours from "./ToursBody/ToursBody";
 import Availability from "./Calendar/calendar";
+import ToursBody from "./LocalsToursBody/ToursBody";
 import "./style.css";
 
 class Localhome extends React.Component {
@@ -29,7 +30,7 @@ class Localhome extends React.Component {
         <Route
           path={`${match.path}/tours`}
           render={props => {
-            return <Tours {...props} user={this.state.currentUser} />;
+            return <ToursBody {...props} user={this.state.currentUser} />;
           }}
         />
         <Route
