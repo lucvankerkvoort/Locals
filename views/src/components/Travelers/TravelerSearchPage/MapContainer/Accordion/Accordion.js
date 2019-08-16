@@ -46,6 +46,7 @@ const Accordion = props => {
             className="accordion__text"
             dangerouslySetInnerHTML={{ __html: props.content }}
           />
+          <BookButton />
         </div>
       </div>
     </div>
