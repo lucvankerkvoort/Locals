@@ -1,6 +1,7 @@
 import settings from "./images/settings.png";
 import calendar from "./images/calendar.png";
 import tours from "./images/tours.png";
+import search from "./images/search.png";
 
 export const local = [
   {
@@ -20,7 +21,7 @@ export const local = [
 export const traveler = [
   {
     name: "Search",
-    pic: calendar
+    pic: search
   },
   {
     name: "Tours",
