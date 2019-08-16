@@ -10,9 +10,11 @@ import "./style.css";
 class Localhome extends React.Component {
   state = {
     user: "local",
-    currentUser: this.props.currentUser
+    currentUser: this.props.currentUser[0]
   };
   render() {
+    console.log(this.state.currentUser);
+
     const { match } = this.props;
     return (
       <div className="localhome">
@@ -20,26 +22,28 @@ class Localhome extends React.Component {
         <Route
           path={`${match.path}/settings`}
           render={props => {
-            return <Settings {...props} user={this.state.user} />;
+            return <Settings {...props} user={this.state.currentUser} />;
           }}
         />
 
         <Route
           path={`${match.path}/tours`}
           render={props => {
-            return <Tours {...props} user={this.state.user} />;
+            return <Tours {...props} user={this.state.currentUser} />;
           }}
         />
         <Route
           path={`${match.path}/calendar`}
           render={props => {
-            return <Availability {...props} user={this.state.user} />;
+            return <Availability {...props} user={this.state.currentUser} />;
           }}
         />
         <Route
           exact
           path={`${match.path}`}
-          render={props => <Homebody {...props} user={this.state.user} />}
+          render={props => (
+            <Homebody {...props} user={this.state.currentUser} />
+          )}
         />
       </div>
     );
