@@ -1,4 +1,4 @@
-export const traveller = [
+export const traveler = [
   {
     label: "First Name",
     name: "firstname",
