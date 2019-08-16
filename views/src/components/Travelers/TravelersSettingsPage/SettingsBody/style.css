@@ -1,0 +1,26 @@
+.settings {
+  background: linear-gradient(360deg, #304352, #d7d2cc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80vw;
+  height: 100vh;
+  margin-left: 20vw;
+}
+
+.setting-body {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  box-shadow: 6px 6px 25px dimgray;
+  padding: 2em;
+  height: 50vh;
+}
+
+.settings-form {
+  padding: 0.6em;
+}
+
+.submit-btn {
+  margin-left: 0.7vw;
+}
