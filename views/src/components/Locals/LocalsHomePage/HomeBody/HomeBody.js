@@ -3,13 +3,14 @@ import "./style.css";
 
 class Homebody extends React.Component {
   render() {
+    const { user } = this.props;
     return (
       <div className="localbody">
         <div className="profile">
           <div className="profile-picture" />
           <div className="profile-info">
-            <h2> Profile Name</h2>
-            <h4> Username</h4>
+            <h2> {user.name}</h2>
+            <h4> {user.username}</h4>
           </div>
         </div>
         <div className="profile-body">

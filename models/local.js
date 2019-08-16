@@ -6,7 +6,12 @@ var Schema = mongoose.Schema;
 
 // The schema instance used for Locals
 var LocalSchema = new Schema({
-  name: {
+  firstname: {
+    type: String,
+    trim: true,
+    required: true
+  },
+  lastname: {
     type: String,
     trim: true,
     required: true
@@ -26,20 +31,10 @@ var LocalSchema = new Schema({
       "Password is not long enough"
     ]
   },
-  address: {
-    street: {
-      type: String,
-      trim: true,
-      required: true
-    },
-    postal: {
-      type: String,
-      required: true
-    },
-    city: {
-      type: String,
-      required: true
-    }
+  city: {
+    type: String,
+    trim: true,
+    required: true
   },
   booking: { type: Array },
   availability: { type: Array },

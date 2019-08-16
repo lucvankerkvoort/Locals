@@ -7,17 +7,11 @@ class Content extends React.Component {
     console.log(user);
     return (
       <div className="content">
-        {user.map(result => {
-          return (
-            <div>
-              <div className="image" />
-              <div className="names">
-                <p>Username: {result.username}</p>
-                <p>Name: {result.name}</p>
-              </div>
-            </div>
-          );
-        })}
+        <div className="image" />
+        <div className="names">
+          <p>Username: {user.username}</p>
+          <p>Name: {user.name}</p>
+        </div>
       </div>
     );
   }
