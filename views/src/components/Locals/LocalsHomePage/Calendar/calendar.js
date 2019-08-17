@@ -5,7 +5,8 @@ import API from "../../../../controller";
 
 class Availability extends React.Component {
   state = {
-    date: [new Date(), new Date()]
+    date: [new Date(), new Date()],
+    availability: this.props.user.availability
   };
 
   handleSubmit = () => {
@@ -13,6 +14,7 @@ class Availability extends React.Component {
     console.log(this.state.date);
     API.pushDates(this.props.user._id, this.state.date).then(result => {
       console.log(result);
+      this.setState({ availability: result.data.availability });
     });
   };
 
@@ -37,7 +39,10 @@ class Availability extends React.Component {
           <h3>Availability</h3>
         </div>
         <div className="availability">
-          <div className="available-dates" />
+          {this.state.availability.map(dates => {
+            const input = dates.date.toString();
+            return <div className="available-dates">{input}</div>;
+          })}
         </div>
       </div>
     );

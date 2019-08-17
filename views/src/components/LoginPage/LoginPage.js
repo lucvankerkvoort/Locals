@@ -12,7 +12,9 @@ class Login extends React.Component {
     locals: "",
     username: "",
     password: "",
-    showComponent: false
+    showComponent: false,
+    incorrect: "Incorrect Username or Password",
+    showMessage: false
   };
 
   closeRegistration = input => {
@@ -39,15 +41,15 @@ class Login extends React.Component {
       API.loginSearchLocal(user).then(result => {
         console.log(result);
         if (result.data.length <= 0) {
-          console.log("Wrong Username and/or Password");
+          this.setState({ showMessage: true });
         } else if (user.password !== result.data[0].password) {
-          console.log("wrong Password");
+          this.setState({ showMessage: true });
         } else {
           for (let i = 0; i < result.data.length; i++) {
             console.log(result.data[i]);
             API.getLocalById(result.data[i]._id).then(result => {
               console.log(result);
-              this.props.currentUser(result.data);
+              this.props.currentUser(result.data[0]);
               this.props.history.push("/localhome");
             });
           }
@@ -57,13 +59,18 @@ class Login extends React.Component {
       API.loginSearchTraveler(user).then(result => {
         console.log(result.data.length);
         if (result.data.length <= 0) {
-          console.log("wrong username or password");
+          this.setState({ showMessage: true });
+        } else if (user.password !== result.data[0].password) {
+          this.setState({ showMessage: true });
         } else {
           for (let i = 0; i < result.data.length; i++) {
             console.log(result.data[i]);
-            this.props.currentUser(result.data[i]._id);
+            API.getTravelerById(result.data[i]._id).then(result => {
+              console.log(result);
+              this.props.currentUser(result.data[0]);
+              this.props.history.push("/localhome");
+            });
           }
-          this.props.history.push("/travelerhome");
         }
       });
     }
@@ -91,6 +98,11 @@ class Login extends React.Component {
           </div>
           <div className="logincontainer">
             <h2>Login</h2>
+            <p>
+              {this.state.showMessage
+                ? this.state.incorrect
+                : console.log("your good")}
+            </p>
             <form className="form">
               <input
                 name="username"

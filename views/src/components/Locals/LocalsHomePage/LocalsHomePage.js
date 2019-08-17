@@ -11,7 +11,7 @@ import "./style.css";
 class Localhome extends React.Component {
   state = {
     user: "local",
-    currentUser: this.props.currentUser[0]
+    currentUser: this.props.currentUser
   };
   render() {
     console.log(this.state.currentUser);
