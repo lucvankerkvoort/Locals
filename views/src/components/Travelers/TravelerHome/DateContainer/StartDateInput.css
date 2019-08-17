@@ -1,0 +1,26 @@
+.start-date-container {
+  width: 10vw;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  z-index: 15;
+  margin-left: 0.5vw;
+}
+
+.start-date-search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.start-date-searchTerm {
+  width: 100%;
+  border: 3px solid #d94f70;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+  color: rgb(53, 50, 50);
+  font-weight: bold;
+}
