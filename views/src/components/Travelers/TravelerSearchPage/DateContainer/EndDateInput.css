@@ -8,15 +8,10 @@
   position: relative;
   left: 1.5vw;
 }
-
-.end-date-search {
-  width: 100%;
-}
-
 .end-date-searchTerm {
   /* width: 100%; */
   border: 3px solid #d94f70;
-  padding: 5px;
+  padding: 3px;
   height: 20px;
   border-radius: 5px 5px 5px 5px;
   outline: none;

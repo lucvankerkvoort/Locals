@@ -1,5 +1,6 @@
 import React from "react";
 import MapContainer from "./components/Map/MapContainer";
+import DateContainer from "./DateContainer/DateContainer";
 import Settings from "./components/SettingsBody/SettingsBody";
 import ToursBody from "./components/ToursBody/ToursBody";
 import NavBar from "./components/NavBar/NavBar";
@@ -9,9 +10,10 @@ const App = () => {
   return (
     <div>
       <NavBar />
-      {/* <MapContainer /> */}
-      {/* <Settings /> */}
-      <ToursBody />
+      <MapContainer />
+      <DateContainer />
+      {/* <Settings />
+      <ToursBody /> */}
     </div>
   );
 };
