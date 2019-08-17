@@ -19,7 +19,7 @@ body {
   height: 20px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #9dbfaf;
+  color: rgb(53, 50, 50);
   font-weight: bold;
 }
 
@@ -41,7 +41,7 @@ body {
 
 /*Resize the wrap to see the search bar change!*/
 .wrap {
-  width: 30%;
+  width: 23%;
   position: absolute;
   top: 50%;
   left: 50%;

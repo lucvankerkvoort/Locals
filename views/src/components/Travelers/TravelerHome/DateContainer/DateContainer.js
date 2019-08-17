@@ -1,7 +1,7 @@
 import React from "react";
 import "./DateContainer.css";
 import StartDateInput from "./StartDateInput";
-import EndDateInput from "./StartDateInput";
+import EndDateInput from "./EndDateInput";
 
 const DateContainer = () => {
   return (
