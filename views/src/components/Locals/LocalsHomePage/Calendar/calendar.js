@@ -9,8 +9,8 @@ class Availability extends React.Component {
   };
 
   handleSubmit = () => {
+    console.log(this.props.user._id);
     console.log(this.state.date);
-    console.log(this.props.user._id, this.state.date);
     API.pushDates(this.props.user._id, this.state.date).then(result => {
       console.log(result);
     });

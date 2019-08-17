@@ -37,9 +37,11 @@ class Login extends React.Component {
     };
     if (this.state.user === "local") {
       API.loginSearchLocal(user).then(result => {
-        console.log(result.data.length);
+        console.log(result);
         if (result.data.length <= 0) {
-          console.log("wrong username or password");
+          console.log("Wrong Username and/or Password");
+        } else if (user.password !== result.data[0].password) {
+          console.log("wrong Password");
         } else {
           for (let i = 0; i < result.data.length; i++) {
             console.log(result.data[i]);

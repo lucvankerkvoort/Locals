@@ -1,5 +1,5 @@
 import React from "react";
-import { local, traveller } from "../../../General/InputForm/elements";
+import { local, traveler } from "../../../General/InputForm/elements";
 import "./style.css";
 import API from "../../../../controller";
 
@@ -24,7 +24,7 @@ class Settings extends React.Component {
     if (this.props.user.type === "Local") {
       user = local;
     } else {
-      user = traveller;
+      user = traveler;
     }
     return (
       <div className="settings">

@@ -11,14 +11,15 @@ router
 
 // Setup the routes for whenever we are passing through data
 // Same as /api/locals/:id
+
+router.route("/dates/:id").post(controller.localController.addAvailability);
+
 router
   .route("/:id")
   .put(controller.localController.update)
   .get(controller.localController.findById)
   .delete(controller.localController.delete);
 // We export the entire document
-
-router.route("/dates/:people").put(controller.localController.addAvailability);
 
 router
   .route("/login")
