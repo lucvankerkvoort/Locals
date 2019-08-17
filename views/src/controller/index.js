@@ -27,5 +27,15 @@ export default {
   },
   getTravelerById: function(id) {
     return axios.get("api/traveller/" + id);
+  },
+  pushDates: function(id, data) {
+    console.log("ID", id, "Data", data);
+    return axios.put("api/locals/dates/" + id, data);
+  },
+  updateLocal: function(id, data) {
+    return axios.put("/api/locals/" + id, data);
+  },
+  updateTraveler: function(id, data) {
+    return axios;
   }
 };

@@ -57,8 +57,8 @@ export const local = [
     placeholder: "Upload your image here"
   },
   {
-    label: "Address",
-    name: "address",
+    label: "City",
+    name: "city",
     type: "text",
     placeholder: "Your Address Here"
   },

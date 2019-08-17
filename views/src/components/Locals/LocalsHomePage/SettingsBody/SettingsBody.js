@@ -4,14 +4,13 @@ import "./style.css";
 import API from "../../../../controller";
 
 class Settings extends React.Component {
-  state = {
-    currentUser: this.props.user
-  };
+  state = {};
 
   handleClick = event => {
     event.preventDefault();
-
-    API.put;
+    API.updateLocal(this.props.user._id, this.state).then(result => {
+      console.log(result);
+    });
   };
 
   handleChange = event => {
