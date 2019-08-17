@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import LocalsHomePage from "./components/Locals/LocalsHomePage/LocalsHomePage";
-import TravelerHome from "./components/Travelers/TravelerHome/TravelerHome";
+import TravelerRouter from "./components/Travelers/TravelerRouter";
 
 class App extends React.Component {
   state = {
@@ -55,7 +55,13 @@ class App extends React.Component {
             />
             <Route
               path="/travelerhome"
-              component={() => <TravelerHome user={this.state.user} />}
+              render={props => (
+                <TravelerRouter
+                  {...props}
+                  user={this.state.user}
+                  currentUser={this.state.currentUser}
+                />
+              )}
             />
           </Switch>
         </div>

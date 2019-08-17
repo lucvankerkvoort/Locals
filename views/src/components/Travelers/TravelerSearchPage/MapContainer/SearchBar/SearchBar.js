@@ -1,5 +1,6 @@
 import React from "react";
 import "./SearchBar.css";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import SearchBarLogoSVG from "./SearchBarLogoSVG";
 
 const google = window.google;
@@ -37,6 +38,7 @@ class SearchBar extends React.Component {
             placeholder="Enter your destination here"
             onChange={this.props.handleChange}
           />
+          <Link to="/travelerhome/search" />
           <button
             type="submit"
             className="searchButton"

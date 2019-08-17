@@ -1,5 +1,6 @@
 import React from "react";
 import SearchBar from "./SearchBar";
+import DateContainer from "./DateContainer/DateContainer";
 import { travellerArray } from "../../General/images";
 import BackgroundSlideshow from "react-background-slideshow";
 import "./TravelerHome.css";
@@ -15,6 +16,7 @@ class TravelerHome extends React.Component {
     this.setState({ place });
     console.log(this.state.place);
     console.log(this.state.place.formatted_address);
+    this.props.handleAddress(this.state.place);
   }
 
   handleChange = event => {
@@ -23,13 +25,8 @@ class TravelerHome extends React.Component {
   };
 
   render() {
-    const AddressDetails = props => {
-      return (
-        <div>
-          <pre>{JSON.stringify(props.place, null, 2)}</pre>
-        </div>
-      );
-    };
+    console.log(this.props);
+    console.log(this.state);
     let pictures = <BackgroundSlideshow images={travellerArray} />;
     return (
       <div className="background">
@@ -39,7 +36,6 @@ class TravelerHome extends React.Component {
           onPlaceChanged={this.showPlaceDetails.bind(this)}
           value={this.state.value}
         />
-        <AddressDetails place={this.state.place} />
         <DateContainer />
       </div>
     );

@@ -1,6 +1,6 @@
 import React from "react";
-import SearchBar from "../SearchBar/SearchBar";
-import Accordion from "../Accordion/Accordion";
+import SearchBar from "./SearchBar/SearchBar";
+import Accordion from "./Accordion/Accordion";
 import { Map, InfoWindow, GoogleApiWrapper, Marker } from "google-maps-react";
 import "./MapContainer.css";
 
@@ -55,6 +55,8 @@ class MapContainer extends React.Component {
   };
 
   render() {
+    console.log(this.state.place);
+    console.log(this.props.address);
     const markers = (
       <Marker
         name={this.state.place.formatted_address}

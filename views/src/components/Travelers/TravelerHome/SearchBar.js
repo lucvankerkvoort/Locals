@@ -1,5 +1,6 @@
 import React from "react";
 import "./SearchBar.css";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import SearchBarLogoSVG from "../../../components/General/SearchBar/SearchBarLogoSVG/SearchBarLogoSVG";
 
 const google = window.google;
@@ -40,10 +41,12 @@ class SearchBar extends React.Component {
             placeholder="Enter your destination here"
             onChange={this.props.handleChange}
           />
-          <button type="submit" className="searchButton">
-            <i className="fa fa-search" />
-            <SearchBarLogoSVG />
-          </button>
+          <Link to="/travelerhome/search">
+            <button type="submit" className="searchButton">
+              <i className="fa fa-search" />
+              <SearchBarLogoSVG />
+            </button>
+          </Link>
         </div>
       </div>
     );
