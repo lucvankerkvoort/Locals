@@ -7,6 +7,8 @@ import "./TravelerHome.css";
 class TravelerHome extends React.Component {
   state = {
     place: ""
+    // startDate: "",
+    // endDate: ""
   };
 
   showPlaceDetails(place) {

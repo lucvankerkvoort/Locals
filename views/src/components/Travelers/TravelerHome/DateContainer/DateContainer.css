@@ -1,5 +1,7 @@
 .dates-container {
   background: peachpuff;
+  display: grid;
+  grid-template-columns: auto auto;
   z-index: 15;
-  width: 30%;
+  width: 24.5vw;
 }

@@ -17,18 +17,16 @@ class EndDateInput extends React.Component {
   render() {
     console.log(this.state.endDate);
     return (
-      <div className="container">
-        <div className="search">
-          <form onSubmit={this.handleSubmit}>
-            <div className="form-group">
-              <DatePicker
-                className="searchTerm"
-                selected={this.state.endDate}
-                onChange={this.handleChange}
-                name="startDate"
-                dateFormat="mm/dd/yyyy"
-              />
-            </div>
+      <div className="end-date-container">
+        <div className="end-date-search">
+          <form>
+            <DatePicker
+              className="end-date-searchTerm"
+              selected={this.state.endDate}
+              onChange={this.handleChange}
+              name="endDate"
+              dateFormat="mm/dd/yyyy"
+            />
           </form>
         </div>
       </div>
