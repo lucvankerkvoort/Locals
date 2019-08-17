@@ -33,7 +33,8 @@ export default {
     return axios.post("/api/locals/dates/" + id, { date: data });
   },
   updateLocal: function(id, data) {
-    return axios.post("/api/locals/" + id, data);
+    console.log(id, data);
+    return axios.put("/api/locals/" + id, data);
   },
   updateTraveler: function(id, data) {
     return axios;
