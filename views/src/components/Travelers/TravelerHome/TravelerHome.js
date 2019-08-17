@@ -40,6 +40,7 @@ class TravelerHome extends React.Component {
           value={this.state.value}
         />
         <AddressDetails place={this.state.place} />
+        <DateContainer />
       </div>
     );
   }
