@@ -30,10 +30,10 @@ export default {
   },
   pushDates: function(id, data) {
     console.log("ID", id, "Data", data);
-    return axios.put("api/locals/dates/" + id, data);
+    return axios.post("api/locals/dates/" + id, { date: data });
   },
   updateLocal: function(id, data) {
-    return axios.put("/api/locals/" + id, data);
+    return axios.post("/api/locals/" + id, data);
   },
   updateTraveler: function(id, data) {
     return axios;

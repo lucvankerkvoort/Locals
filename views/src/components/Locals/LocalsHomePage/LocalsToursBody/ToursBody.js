@@ -2,7 +2,7 @@ import React from "react";
 import "./ToursBody.css";
 import Accordion from "./Accordion/Accordion";
 
-class Tours extends React.Component {
+class ToursBody extends React.Component {
   state = {
     tours: ""
   };

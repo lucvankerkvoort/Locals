@@ -1,5 +1,5 @@
 import React from "react";
-import { local, traveller } from "./elements";
+import { local, traveler } from "./elements";
 import Question from "./questions/questions";
 
 class InputForm extends React.Component {
@@ -58,7 +58,7 @@ class InputForm extends React.Component {
             close
           </p>
           <h1>Traveler Registration</h1>
-          {traveller.map((question, i) => (
+          {traveler.map((question, i) => (
             <Question
               storeData={this.handleChange}
               key={i}
