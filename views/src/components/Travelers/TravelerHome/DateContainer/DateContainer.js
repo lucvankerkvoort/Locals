@@ -7,7 +7,7 @@ const DateContainer = () => {
   return (
     <div className="dates-container">
       <StartDateInput />
-      {/* <EndDateInput /> */}
+      <EndDateInput />
     </div>
   );
 };

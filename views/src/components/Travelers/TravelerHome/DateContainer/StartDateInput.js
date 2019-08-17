@@ -15,20 +15,18 @@ class StartDateInput extends React.Component {
   };
 
   render() {
+    console.log(this.state.startDate);
     return (
-      <div className="container">
-        <div className="search">
-          <form onSubmit={this.handleSubmit}>
-            <div className="form-group">
-              <DatePicker
-                className="searchTerm"
-                selected={this.state.startDate}
-                onChange={this.handleChange}
-                name="startDate"
-                dateFormat="mm/dd/yyyy"
-                placeholder="Start Date"
-              />
-            </div>
+      <div className="start-date-container">
+        <div className="start-date-search">
+          <form>
+            <DatePicker
+              className="start-date-searchTerm"
+              selected={this.state.startDate}
+              onChange={this.handleChange}
+              name="startDate"
+              dateFormat="mm/dd/yyyy"
+            />
           </form>
         </div>
       </div>

@@ -26,7 +26,7 @@ const Accordion = props => {
           <div className="photo-big-container">
             <div className="photo" />
           </div>
-          <div className="matches-info-container">
+          <div className="traveler-matches-info-container">
             <div className="grid-item-top-left">Name</div>
             <div className="grid-item-top-right">Rate</div>
             <div className="grid-item-bottom-left">Start Date</div>
