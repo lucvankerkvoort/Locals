@@ -1,29 +1,42 @@
 .localbody {
   display: inline-flex;
   background: linear-gradient(360deg, #304352, #d7d2cc);
-  width: 100%;
-  height: 93.9vh;
+  width: 76.2vw;
+  height: 100vh;
+  position: relative;
+  left: 20vw;
   flex-direction: column;
   padding: 1.5em;
 }
 
 .profile {
   display: inline-flex;
-  width: 96%;
-  height: 30%;
+  width: 73vw;
+  height: 30vh;
   margin: 1em;
   justify-content: center;
 }
 
 .profile-picture {
   display: flex;
-  background: rgba(255, 255, 255, 0.7);
+  background: url("../Images/match-photo1.jpg");
+  background-position: center;
+  background-size: cover;
   box-shadow: 6px 6px 10px gray;
   border-radius: 5px;
   height: 100%;
-  width: 20%;
-  margin-right: 1em;
+  width: 14.7vw;
+  position: relative;
+  right: 5vw;
 }
+
+.profile-bio {
+  font-size: 0.85em;
+  padding: 1vw;
+  position: relative;
+  bottom: 2vh;
+}
+
 .profile-info {
   display: flex;
   background: rgba(255, 255, 255, 0.7);
@@ -31,8 +44,11 @@
   align-items: center;
   border-radius: 5px;
   box-shadow: 6px 6px 10px gray;
-  height: 100%;
-  width: 60%;
+  max-height: 100%;
+  width: 43.7vw;
+  white-space: normal;
+  overflow: hidden;
+  overflow-y: auto;
 }
 .profile-body {
   height: 70%;
@@ -46,16 +62,17 @@
   background: rgba(255, 255, 255, 0.7);
   box-shadow: 6px 6px 10px gray;
   height: 60%;
-  width: 100%;
+  width: 37vw;
   margin-bottom: 1em;
   text-align: center;
+  overflow-y: auto;
 }
 
 .rating {
   box-shadow: 6px 6px 10px gray;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.7);
-  width: 20%;
+  width: 20vw;
   height: 100%;
   text-align: center;
   margin-left: 1em;
@@ -64,19 +81,19 @@
   box-shadow: 6px 6px 10px gray;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.7);
-  width: 100%;
+  width: 37vw;
   height: 40%;
   text-align: center;
 }
 .center-body {
   display: flex;
-  width: 50%;
+  width: 40vw;
   height: 100%;
   flex-direction: column;
 }
 
 .FAQ {
-  width: 30%;
+  width: 20vw;
   border-radius: 5px;
   height: 100%;
   background: rgba(255, 255, 255, 0.7);
