@@ -12,6 +12,7 @@ class StartDateInput extends React.Component {
     this.setState({
       startDate: date
     });
+    this.props.startDate(date);
   };
 
   render() {

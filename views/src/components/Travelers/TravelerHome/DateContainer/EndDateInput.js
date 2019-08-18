@@ -12,6 +12,7 @@ class EndDateInput extends React.Component {
     this.setState({
       endDate: date
     });
+    this.props.endDate(date);
   };
 
   render() {

@@ -21,9 +21,12 @@ class TravelerHome extends React.Component {
 
   handleChange = event => {
     this.setState({ place: event.target.value });
-    console.log(this.state.place);
   };
 
+  handleDates = input => {
+    console.log(input);
+    this.props.dates(input);
+  };
   render() {
     console.log(this.props);
     console.log(this.state);
@@ -36,7 +39,7 @@ class TravelerHome extends React.Component {
           onPlaceChanged={this.showPlaceDetails.bind(this)}
           value={this.state.value}
         />
-        <DateContainer />
+        <DateContainer handleDates={this.handleDates} />
       </div>
     );
   }

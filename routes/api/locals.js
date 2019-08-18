@@ -25,4 +25,7 @@ router
   .route("/login")
   .post(controller.localController.findByUsernameAndPassword);
 
+router
+  .route("/search")
+  .post(controller.localController.findByAvailabilityAndPlace);
 module.exports = router;

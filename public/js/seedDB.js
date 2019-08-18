@@ -10,7 +10,7 @@ mongoose.connect(
 const localSeed = [
     {name:"Alika Waylett",username:"awaylett0",password:"ztPHRGjHljq",address:"08319 Kenwood Alley"},
     {name:"Letitia Tansly",username:"ltansly1",password:"pKtPSWNfO",address:"137 Pepper Wood Circle"},
-    {name:"Frankie Orleton",username:"forleton3",password:"feQcBWpGSZ0",address:"2892 Sycamore Park"},
+    {name:"Frankie Orleton",username:"forleton3",password:"feQcBWpGSZ0",address:"Madrid, Spain"},
     {name:"Tann Matten",username:"tmatten2",password:"I1Zr630qmN",address:"24289 Menomonie Trail"},
 {name:"Garnette Harragin",username:"gharragin4",password:"YC6gzHcPcM3",address:"81 Monument Center"},
 {name:"Lynn Nana",username:"lnana5",password:"YHLVcYVQ",address:"7 Bartelt Park"},

@@ -28,15 +28,18 @@ export default {
   getTravelerById: function(id) {
     return axios.get("/api/traveller/" + id);
   },
-  pushDates: function(id, data) {
-    console.log("ID", id, "Data", data);
-    return axios.post("/api/locals/dates/" + id, { date: data });
-  },
   updateLocal: function(id, data) {
     console.log(id, data);
     return axios.put("/api/locals/" + id, data);
   },
   updateTraveler: function(id, data) {
     return axios.put("/api/traveller/" + id, data);
+  },
+  pushDates: function(id, data) {
+    console.log("ID", id, "Data", data);
+    return axios.post("/api/locals/dates/" + id, { date: data });
+  },
+  searchLocals: function(info) {
+    return axios.post("/api/locals/search", info);
   }
 };

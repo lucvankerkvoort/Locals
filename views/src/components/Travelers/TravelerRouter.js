@@ -8,15 +8,19 @@ class TravelerRouter extends React.Component {
   state = {
     user: "traveller",
     currentUser: this.props.currentUser,
-    address: ""
+    address: "",
+    dates: ""
   };
 
   handleAddress = input => {
     this.setState({ address: input });
   };
 
+  dateHandler = input => {
+    this.setState({ dates: input });
+  };
   render() {
-    console.log(this.state.currentUser);
+    console.log(this.state);
 
     const { match } = this.props;
     return (
@@ -33,6 +37,7 @@ class TravelerRouter extends React.Component {
             return (
               <MapContainer
                 {...props}
+                dates={this.state.dates}
                 address={this.state.address}
                 user={this.state.currentUser}
               />
@@ -44,6 +49,7 @@ class TravelerRouter extends React.Component {
           path={`${match.path}`}
           render={props => (
             <TravelHome
+              dates={this.dateHandler}
               handleAddress={this.handleAddress}
               {...props}
               user={this.state.currentUser}

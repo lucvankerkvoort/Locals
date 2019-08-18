@@ -34,6 +34,11 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => json(err));
   },
+  findByAvailabilityAndPlace: function(req, res) {
+    db.Local.find({ city: req.body.city })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.json(err));
+  },
   // we create the update method to update certain documents in the collection
   update: function(req, res) {
     db.Local.findOneAndUpdate({ _id: req.params.id }, req.body)
