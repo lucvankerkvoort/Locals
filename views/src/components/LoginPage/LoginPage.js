@@ -56,8 +56,9 @@ class Login extends React.Component {
         }
       });
     } else if (this.state.user === "traveler") {
+      console.log(user);
       API.loginSearchTraveler(user).then(result => {
-        console.log(result.data.length);
+        console.log(result.data);
         if (result.data.length <= 0) {
           this.setState({ showMessage: true });
         } else if (user.password !== result.data[0].password) {
@@ -68,7 +69,7 @@ class Login extends React.Component {
             API.getTravelerById(result.data[i]._id).then(result => {
               console.log(result);
               this.props.currentUser(result.data[0]);
-              this.props.history.push("/localhome");
+              this.props.history.push("/travelerhome");
             });
           }
         }

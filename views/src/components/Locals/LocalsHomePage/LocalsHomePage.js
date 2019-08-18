@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Navbar from "../../General/NavBar/NavBar";
 import Homebody from "./HomeBody/HomeBody";
 import Settings from "./SettingsBody/SettingsBody";
-import Tours from "./ToursBody/ToursBody";
 import Availability from "./Calendar/calendar";
 import ToursBody from "./LocalsToursBody/ToursBody";
 import "./style.css";

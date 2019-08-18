@@ -17,7 +17,7 @@ router
 
 router
   .route("/login")
-  .get(controller.travellerController.findByUsernameAndPassword);
+  .post(controller.travellerController.findByUsernameAndPassword);
 
 // We export the entire document
 module.exports = router;

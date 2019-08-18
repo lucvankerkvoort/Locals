@@ -37,6 +37,6 @@ export default {
     return axios.put("/api/locals/" + id, data);
   },
   updateTraveler: function(id, data) {
-    return axios;
+    return axios.put("/api/traveller/" + id, data);
   }
 };
