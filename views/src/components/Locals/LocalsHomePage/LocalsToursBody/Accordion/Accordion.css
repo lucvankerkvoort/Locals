@@ -5,16 +5,18 @@
   /* border: 3px;
   border-bottom-style: solid;
   border-color: black; */
-  border: 3px;
-  border-bottom-style: solid;
+  position: relative;
+  bottom: 5vh;
+  height: 16vh;
 }
 
 .small-match-container {
-  width: 65vw;
+  width: 33vw;
+  height: 13vh;
   border: 0 solid rgba(255, 255, 255, 0.7);
   margin-bottom: 5vh;
   margin-top: 5vh;
-  background: rgba(255, 255, 255, 0.7);
+  background: #d94f70;
   border-radius: 10px;
   box-shadow: 6px 6px 25px dimgray;
 }
@@ -30,25 +32,26 @@
   display: flex;
   align-items: center;
   position: relative;
-  left: 7vw;
+  left: 2vw;
+  bottom: 7vh;
   /* background: greenyellow; */
 }
 
 .photo {
   /* background: url("https://via.placeholder.com/80"); */
-  background: url("../../Images/match-photo1.jpg");
-  width: 14vw;
-  height: 18vh;
+  background: url("../Accordion/match-photo1.jpg");
+  width: 6vw;
+  height: 8vh;
   left: 1vh;
   position: relative;
-  top: 2vh;
+  top: 1.5vh;
   background-position: center;
   background-size: cover;
   border-radius: 10px;
   box-shadow: 3px 3px 20px dimgray;
 }
 
-.matches-info-container {
+.locals-matches-info-container {
   width: 60vw;
   height: 25vh;
   display: grid;
@@ -68,40 +71,41 @@
 .grid-item-left {
   padding: 20px;
   font-weight: normal;
-  font-size: 1em;
+  font-size: 0.8em;
   text-align: center;
   position: relative;
-  top: 9vh;
-  left: 5vw;
+  top: 2.5vh;
+  left: 1.75vw;
 }
 
 .grid-item-center {
   padding: 20px;
   font-weight: normal;
-  font-size: 1em;
+  font-size: 0.8em;
   text-align: center;
   position: relative;
-  top: 9vh;
-  left: 2vw;
+  top: 2.5vh;
+  left: 1vw;
 }
 
 .grid-item-right {
   padding: 20px;
   font-weight: normal;
-  font-size: 1em;
+  font-size: 0.8em;
   text-align: center;
   position: relative;
-  top: 9vh;
-  right: 2vw;
+  top: 2.5vh;
 }
 
 .accordion-section {
   text-align: center;
   position: relative;
+  bottom: 17.2vh;
+  transition: background-color 0.6s ease;
 }
 
 .accordion {
-  background: rgba(252, 199, 199, 0.7);
+  background: #d94f70;
   border: none;
   cursor: pointer;
   transition: background-color 0.6s ease;
@@ -122,9 +126,15 @@
 }
 
 .accordion__content {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #d94f70;
   overflow: hidden;
-  transition: max-height 0.6s ease;
+  transition: background-color 0.6s ease;
+  margin-bottom: 3vh;
+  border: 0 solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  box-shadow: 3px 20px 20px dimgray;
 }
 
 .accordion__text {
@@ -136,4 +146,6 @@
 
 .book-me-button {
   text-align: center;
+  position: relative;
+  bottom: 1vh;
 }

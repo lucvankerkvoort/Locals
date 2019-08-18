@@ -1,5 +1,6 @@
 import React from "react";
-import "./style.css";
+import Accordion from "./LocalsToursBody/Accordion/Accordion";
+import "./Homebody.css";
 
 class Homebody extends React.Component {
   render() {
@@ -10,8 +11,19 @@ class Homebody extends React.Component {
         <div className="profile">
           <div className="profile-picture" />
           <div className="profile-info">
-            <h2> {user.name}</h2>
-            <h4> {user.username}</h4>
+            {/* <h2> {user.name}</h2> */} <h2>Gregory Tang</h2>
+            <div className="profile-bio">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+            </div>
           </div>
         </div>
         <div className="profile-body">
@@ -20,7 +32,9 @@ class Homebody extends React.Component {
           </div>
           <div className="center-body">
             <div className="upcoming">
-              <h3>Your Upcoming Tour</h3>
+              <h3>Your Upcoming Tours</h3>
+              <Accordion content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
+              <Accordion content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
             </div>
             <div className="completed">
               <h3>You Have Completed X Tours</h3>

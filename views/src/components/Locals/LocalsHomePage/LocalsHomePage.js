@@ -5,7 +5,7 @@ import Homebody from "./HomeBody/HomeBody";
 import Settings from "./SettingsBody/SettingsBody";
 import Availability from "./Calendar/calendar";
 import ToursBody from "./LocalsToursBody/ToursBody";
-import "./style.css";
+import "./LocalsHomePage.css";
 
 class Localhome extends React.Component {
   state = {
