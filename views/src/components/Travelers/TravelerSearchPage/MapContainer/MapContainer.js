@@ -43,9 +43,9 @@ class MapContainer extends React.Component {
 
   zoomInOnMapSearch = () => {
     const lat =
-      this.state.place.geometry && this.state.place.geometry.location.lat();
+      this.props.address.geometry && this.props.address.geometry.location.lat();
     const lng =
-      this.state.place.geometry && this.state.place.geometry.location.lng();
+      this.props.address.geometry && this.props.address.geometry.location.lng();
     if (lat && lng) {
       this.setState({
         lat,
@@ -57,6 +57,10 @@ class MapContainer extends React.Component {
   render() {
     console.log(this.state.place);
     console.log(this.props.address);
+
+    // We get the this.state.place from the localshomepage and it renders all the info into this.props.address.
+    // Since this.props.address.geometry.location.lat && lng are functions they don't render anything on the page.
+
     const markers = (
       <Marker
         name={this.state.place.formatted_address}
