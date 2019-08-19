@@ -1,6 +1,6 @@
 import React from "react";
 import "./ToursBody.css";
-import Accordion from "./Accordion/Accordion";
+import Accordion from "../Accordion/Accordion";
 
 class ToursBody extends React.Component {
   state = {
