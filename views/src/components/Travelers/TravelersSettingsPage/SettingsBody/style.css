@@ -1,4 +1,4 @@
-.settings {
+.traveler-settings {
   background: linear-gradient(360deg, #304352, #d7d2cc);
   display: flex;
   align-items: center;
@@ -9,7 +9,7 @@
   margin-left: 20vw;
 }
 
-.setting-body {
+.traveler-setting-body {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   box-shadow: 6px 6px 25px dimgray;

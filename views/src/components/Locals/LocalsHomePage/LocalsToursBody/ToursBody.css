@@ -1,8 +1,7 @@
-.body-container {
+.local-body-container {
   position: relative;
   height: 100vh;
   width: 80vw;
-  left: 20%;
   z-index: 1;
 }
 
