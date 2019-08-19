@@ -1,7 +1,7 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import DateContainer from "./DateContainer/DateContainer";
-import { travellerArray } from "../../General/images";
+import { travelerArray } from "./images/backgroundImages/index";
 import BackgroundSlideshow from "react-background-slideshow";
 import "./TravelerHome.css";
 
@@ -30,7 +30,7 @@ class TravelerHome extends React.Component {
   render() {
     console.log(this.props);
     console.log(this.state);
-    let pictures = <BackgroundSlideshow images={travellerArray} />;
+    let pictures = <BackgroundSlideshow images={travelerArray} />;
     return (
       <div className="background">
         {pictures}

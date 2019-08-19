@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import TravelHome from "./TravelerHome/TravelerHome";
+import TravelerHome from "./TravelerHome/TravelerHome";
 import Settings from "./TravelersSettingsPage/SettingsBody/SettingsBody";
 import MapContainer from "./TravelerSearchPage/MapContainer/MapContainer";
 
 class TravelerRouter extends React.Component {
   state = {
-    user: "traveller",
+    user: "traveler",
     currentUser: this.props.currentUser,
     address: "",
     dates: ""
@@ -48,7 +48,7 @@ class TravelerRouter extends React.Component {
           exact
           path={`${match.path}`}
           render={props => (
-            <TravelHome
+            <TravelerHome
               dates={this.dateHandler}
               handleAddress={this.handleAddress}
               {...props}
