@@ -27,7 +27,10 @@ class Availability extends React.Component {
     return (
       <div className="calendar-body">
         <div className="calendar">
-          <DateContainer onChange={this.handleChange} value={this.state.date} />
+          <DateContainer
+            handleDates={this.handleChange}
+            value={this.state.date}
+          />
           <button onClick={this.handleSubmit} className="btn calendar-button">
             Submit
           </button>

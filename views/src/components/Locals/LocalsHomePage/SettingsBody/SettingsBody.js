@@ -27,8 +27,8 @@ class Settings extends React.Component {
       user = traveler;
     }
     return (
-      <div className="settings">
-        <div className="setting-body">
+      <div className="local-settings">
+        <div className="local-setting-body">
           <form>
             <p> Here you can change your existing settings.</p>
             {user.map((question, i) => {

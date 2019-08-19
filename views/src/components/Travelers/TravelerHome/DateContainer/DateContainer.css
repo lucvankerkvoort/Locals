@@ -4,8 +4,5 @@
   z-index: 15;
   width: 23vw;
   /* background: peachpuff; */
-  position: absolute;
-  top: 58%;
-  left: 50%;
   transform: translate(-50%, -50%);
 }
