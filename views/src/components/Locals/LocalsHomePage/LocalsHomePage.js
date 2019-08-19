@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Navbar from "../LocalsHomePage/NavBar/NavBar";
-import Homebody from "./HomeBody/HomeBody";
+import HomeBody from "./HomeBody/HomeBody";
 import Settings from "./SettingsBody/SettingsBody";
 import Availability from "./Calendar/calendar";
 import ToursBody from "./LocalsToursBody/ToursBody";
@@ -42,7 +42,7 @@ class Localhome extends React.Component {
           exact
           path={`${match.path}`}
           render={props => (
-            <Homebody {...props} user={this.state.currentUser} />
+            <HomeBody {...props} user={this.state.currentUser} />
           )}
         />
       </div>

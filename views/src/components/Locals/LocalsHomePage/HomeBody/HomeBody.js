@@ -2,7 +2,7 @@ import React from "react";
 import Accordion from "../Accordion/Accordion";
 import "./HomeBody.css";
 
-class Homebody extends React.Component {
+class HomeBody extends React.Component {
   render() {
     const { user } = this.props;
 
@@ -50,4 +50,4 @@ class Homebody extends React.Component {
   }
 }
 
-export default Homebody;
+export default HomeBody;
