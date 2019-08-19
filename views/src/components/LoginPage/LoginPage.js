@@ -98,7 +98,7 @@ class Login extends React.Component {
             <h1>{title}</h1>
           </div>
           <div className="logincontainer">
-            <h2>Login</h2>
+            <h2 className="login-text">Login</h2>
             <p>
               {this.state.showMessage
                 ? this.state.incorrect
@@ -123,15 +123,23 @@ class Login extends React.Component {
               />
               <br />
               <br />
-              <button className="btn" type="submit" onClick={this.handleSubmit}>
+              <button
+                className="login-btn"
+                type="submit"
+                onClick={this.handleSubmit}
+              >
                 Submit
               </button>
               <br />
               <div className="registration-text">
-                If this is your first time visiting <br />
-                <p className="registration-tag" onClick={this.handleClick}>
+                If this is your first time visiting: <br />
+                <button
+                  className="registration-btn"
+                  type="submit"
+                  onClick={this.handleClick}
+                >
                   Register Here
-                </p>
+                </button>
               </div>
             </form>
           </div>
