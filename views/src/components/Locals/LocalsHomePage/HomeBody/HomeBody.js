@@ -1,5 +1,5 @@
 import React from "react";
-import Accordion from "../LocalsToursBody/Accordion/Accordion";
+import Accordion from "../Accordion/Accordion";
 import "./HomeBody.css";
 
 class Homebody extends React.Component {
