@@ -10,6 +10,10 @@
   z-index: 15;
 }
 
+.login-text {
+  margin-top: -1vh;
+}
+
 .body {
   display: flex;
   height: 100vh;
@@ -42,7 +46,7 @@ label {
   align-items: center;
 }
 
-.btn {
+.login-btn {
   background: linear-gradient(60deg, #122169, #2d758c);
   border: 0px;
   border-radius: 24px;
@@ -55,7 +59,7 @@ label {
   margin-top: -3vh;
 }
 
-.btn:hover {
+.login-btn:hover {
   box-shadow: 0 0 0;
   transform: scale(1.1);
 }
@@ -85,7 +89,11 @@ label {
 
 .registration-text {
   font-size: 0.75em;
-  margin-top: -2vh;
+  margin-top: -1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bolder;
 }
 
 .registration-tag {
@@ -103,4 +111,22 @@ label {
 
 .password {
   margin-top: -2vh;
+}
+
+.registration-btn {
+  background: linear-gradient(60deg, #122169, #2d758c);
+  border: 0px;
+  border-radius: 24px;
+  padding: 0.5em 1em;
+  color: white;
+  box-shadow: 0px 0px 5px #122169;
+  font-family: "champagne__limousinesregular", sans-serif;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 2vh;
+}
+
+.registration-btn:hover {
+  box-shadow: 0 0 0;
+  transform: scale(1.1);
 }
