@@ -134,9 +134,9 @@ class Login extends React.Component {
               <div className="registration-text">
                 If this is your first time visiting: <br />
                 <button
-                  className="registration-btn"
-                  type="submit"
+                  type="button"
                   onClick={this.handleClick}
+                  className="registration-btn"
                 >
                   Register Here
                 </button>
