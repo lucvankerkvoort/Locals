@@ -106,6 +106,7 @@ class Login extends React.Component {
             </p>
             <form className="form">
               <input
+                className="username"
                 name="username"
                 type="text"
                 onChange={this.handleChange}
@@ -114,6 +115,7 @@ class Login extends React.Component {
               <br />
               <br />
               <input
+                className="password"
                 name="password"
                 onChange={this.handleChange}
                 type="password"
@@ -125,8 +127,8 @@ class Login extends React.Component {
                 Submit
               </button>
               <br />
-              <div>
-                if this is your first time visiting <br />
+              <div className="registration-text">
+                If this is your first time visiting <br />
                 <p className="registration-tag" onClick={this.handleClick}>
                   Register Here
                 </p>

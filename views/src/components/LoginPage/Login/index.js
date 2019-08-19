@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 import API from "../../../controller";
 
 class Login extends React.Component {
@@ -28,11 +29,17 @@ class Login extends React.Component {
           <div className="logincontainer">
             <h2>Login</h2>
             <form className="form">
-              <input type="text" placeholder="Username" />
+              <input className="username" type="text" placeholder="Username" />
               <br />
               <br />
-              <input type="password" placeholder="Password" />
-              <button onClick={this.handleLogin}>Login</button>
+              <input
+                className="password"
+                type="password"
+                placeholder="Password"
+              />
+              <button className="login-button" onClick={this.handleLogin}>
+                Login
+              </button>
             </form>
             <p className="registration">
               if this is your first time visiting

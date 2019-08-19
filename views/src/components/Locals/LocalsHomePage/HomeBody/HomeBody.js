@@ -1,6 +1,6 @@
 import React from "react";
-import Accordion from "./LocalsToursBody/Accordion/Accordion";
-import "./Homebody.css";
+import Accordion from "../LocalsToursBody/Accordion/Accordion";
+import "./HomeBody.css";
 
 class Homebody extends React.Component {
   render() {
