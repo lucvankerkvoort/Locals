@@ -5,9 +5,7 @@
   background-size: cover;
   align-items: center;
   width: 20%;
-  height: 110vh;
-  border-bottom-right-radius: 24px;
-  border-top-right-radius: 24px;
+  height: 100vh;
   z-index: 2;
   position: absolute;
 }
