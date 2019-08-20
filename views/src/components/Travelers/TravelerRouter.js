@@ -29,7 +29,22 @@ class TravelerRouter extends React.Component {
         <Route
           path={`${match.path}/settings`}
           render={props => {
-            return <Settings {...props} user={this.state.currentUser} />;
+            return (
+              <div>
+                <NavBar {...props} user={this.state.currentUser} />
+                <Settings {...props} user={this.state.currentUser} />
+              </div>
+            );
+          }}
+        />
+        <Route
+          path={`${match.path}/tours`}
+          render={props => {
+            return (
+              <div>
+                <NavBar {...props} user={this.state.currentUser} />
+              </div>
+            );
           }}
         />
         <Route
