@@ -6,9 +6,9 @@ import NavCategories from "./NavCategories/NavCategories";
 class Navbar extends React.Component {
   render() {
     return (
-      <div className="wrapper-login">
-        <div className="navbar">
-          <h3 className="title">Travelers</h3>
+      <div className="traveler-search-wrapper-login">
+        <div className="traveler-search-navbar">
+          <h3 className="traveler-search-title">Travelers</h3>
           <Content />
           <br />
           <NavCategories />

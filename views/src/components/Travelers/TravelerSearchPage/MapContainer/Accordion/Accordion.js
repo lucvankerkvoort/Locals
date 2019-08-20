@@ -21,34 +21,38 @@ const Accordion = props => {
   };
 
   return (
-    <div className="huge-match-container">
-      <div className="small-match-container">
-        <div className="match-1">
-          <div className="photo-big-container">
-            <div className="photo" />
+    <div className="traveler-search-huge-match-container">
+      <div className="traveler-search-small-match-container">
+        <div className="traveler-search-match-1">
+          <div className="traveler-search-photo-big-container">
+            <div className="traveler-search-photo" />
           </div>
-          <div className="traveler-matches-info-container">
-            <div className="grid-item-top-left">Name</div>
-            <div className="grid-item-top-right">Rate</div>
-            <div className="grid-item-bottom-left">Start Date</div>
-            <div className="grid-item-bottom-right">End Date</div>
+          <div className="traveler-search-matches-info-container">
+            <div className="traveler-search-grid-item-top-left">Name</div>
+            <div className="traveler-search-grid-item-top-right">Rate</div>
+            <div className="traveler-search-grid-item-bottom-left">
+              Start Date
+            </div>
+            <div className="traveler-search-grid-item-bottom-right">
+              End Date
+            </div>
           </div>
         </div>
-        <div className="accordion-section">
+        <div className="traveler-search-accordion-section">
           <button
-            className={`accordion ${setActive}`}
+            className={`traveler-search-accordion ${setActive}`}
             onClick={toggleAccordion}
           >
-            <p className="accordion__title">{props.title}</p>
+            <p className="traveler-search-accordion__title">{props.title}</p>
             <Chevron className={`${setRotate}`} width={12} fill={"#000"} />
           </button>
           <div
             ref={content}
             style={{ maxHeight: `${setHeight}` }}
-            className="accordion__content"
+            className="traveler-search-accordion__content"
           >
             <div
-              className="accordion__text"
+              className="traveler-search-accordion__text"
               dangerouslySetInnerHTML={{ __html: props.content }}
             />
             <BookButton />

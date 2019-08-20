@@ -25,7 +25,7 @@ function Element(props) {
 
 class NavCategories extends React.Component {
   state = {
-    user: "local"
+    user: "traveler"
   };
   render() {
     if (this.state.user === "local") {
