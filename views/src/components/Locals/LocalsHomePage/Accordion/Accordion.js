@@ -25,33 +25,33 @@ const Accordion = props => {
   };
 
   return (
-    <div className="huge-match-container">
-      <div className="small-match-container">
-        <div className="match-1">
-          <div className="photo-big-container">
-            <div className="photo" />
+    <div className="local-huge-match-container">
+      <div className="local-small-match-container">
+        <div className="local-match-1">
+          <div className="local-photo-big-container">
+            <div className="local-photo" />
           </div>
           <div className="locals-matches-info-container">
-            <div className="grid-item-left">Name</div>
-            <div className="grid-item-center">Start Date</div>
-            <div className="grid-item-right">End Date</div>
+            <div className="local-grid-item-left">Name</div>
+            <div className="local-grid-item-center">Start Date</div>
+            <div className="local-grid-item-right">End Date</div>
           </div>
         </div>
-        <div className="accordion-section">
+        <div className="local-accordion-section">
           <button
-            className={`accordion ${setActive}`}
+            className={`local-accordion ${setActive}`}
             onClick={toggleAccordion}
           >
-            <p className="accordion__title">{props.title}</p>
+            <p className="local-accordion__title">{props.title}</p>
             <Chevron className={`${setRotate}`} width={12} fill={"#000"} />
           </button>
           <div
             ref={content}
             style={{ maxHeight: `${setHeight}` }}
-            className="accordion__content"
+            className="local-accordion__content"
           >
             <div
-              className="accordion__text"
+              className="local-accordion__text"
               dangerouslySetInnerHTML={{ __html: props.content }}
             />
             <BookButton />
