@@ -6,7 +6,8 @@
   padding: 1em;
   border: none;
   box-shadow: 6px 6px 25px dimgray;
-  background: dimgray;
+  background: linear-gradient(360deg, #304352, #d7d2cc);
+
   overflow: scroll;
   max-height: 60vh;
   text-align: center;
