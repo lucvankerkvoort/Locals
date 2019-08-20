@@ -1,4 +1,5 @@
 import React from "react";
+import "./questions.css";
 import "../style.css";
 
 class Question extends React.Component {
@@ -8,8 +9,8 @@ class Question extends React.Component {
   };
   render() {
     return (
-      <div>
-        <label>{this.props.label}</label>
+      <div className="registration-questions">
+        <label className="register-label">{this.props.label}</label>
         <br />
         <input
           type={this.props.type}
