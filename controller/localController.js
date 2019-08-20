@@ -45,10 +45,24 @@ module.exports = {
     // here we will use mongo's queries to find a specific document and update it with users input on the front-end
   },
   addAvailability: function(req, res) {
-    console.log("id", req.params.id, "reqbody", req.body);
+    console.log(
+      "id",
+      req.params.id,
+      "reqbody1",
+      req.body.startdate,
+      "reqbody2",
+      req.body.enddate
+    );
     db.Local.findByIdAndUpdate(
       { _id: req.params.id },
-      { $push: { availability: req.body } }
+      {
+        $push: {
+          availability: {
+            dateStart: req.body.startdate,
+            dateEnd: req.body.enddate
+          }
+        }
+      }
     )
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));

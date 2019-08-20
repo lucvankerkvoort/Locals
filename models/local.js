@@ -37,7 +37,12 @@ var LocalSchema = new Schema({
     required: true
   },
   booking: { type: Array },
-  availability: { type: Array },
+  availability: [
+    {
+      dateStart: Date,
+      dateEnd: Date
+    }
+  ],
   type: { type: String, default: "Local" }
 });
 

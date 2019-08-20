@@ -40,13 +40,15 @@ class Availability extends React.Component {
           <h3>Availability</h3>
         </div>
         <div className="availability">
-          {this.state.availability.map(dates => {
+          {this.state.availability.map((dates, i) => {
             return (
-              <div className="available-dates">
-                {dates.date.map(result => {
-                  const dateFormat = result;
-                  return <Moment format="MM/DD/YYYY">{dateFormat}</Moment>;
-                })}
+              <div className="available-dates" key={i}>
+                <p>
+                  Available from <span> </span>
+                  <Moment format="MM/DD/YYYY">{dates.dateStart}</Moment>
+                  <span> </span> to{" "}
+                  <Moment format="MM/DD/YYYY">{dates.dateEnd}</Moment>
+                </p>
               </div>
             );
           })}
