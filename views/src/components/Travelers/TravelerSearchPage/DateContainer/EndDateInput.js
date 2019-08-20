@@ -25,7 +25,7 @@ class EndDateInput extends React.Component {
               selected={this.state.endDate}
               onChange={this.handleChange}
               name="endDate"
-              dateFormat="mm/dd/yyyy"
+              dateFormat="MM/dd/yyyy"
             />
           </form>
         </div>

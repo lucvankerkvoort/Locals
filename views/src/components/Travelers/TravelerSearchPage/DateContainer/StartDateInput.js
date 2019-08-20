@@ -25,7 +25,7 @@ class StartDateInput extends React.Component {
               selected={this.state.startDate}
               onChange={this.handleChange}
               name="startDate"
-              dateFormat="mm/dd/yyyy"
+              dateFormat="MM/dd/yyyy"
             />
           </form>
         </div>
