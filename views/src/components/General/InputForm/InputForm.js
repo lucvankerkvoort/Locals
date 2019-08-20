@@ -16,6 +16,7 @@ class InputForm extends React.Component {
   };
   handleSubmit = event => {
     event.preventDefault();
+    console.log(this.state);
     this.props.handleRegistration(this.state);
   };
 
@@ -46,6 +47,7 @@ class InputForm extends React.Component {
             />
           ))}
           <br />
+
           <button
             className="local-registration-btn"
             onClick={this.handleSubmit}

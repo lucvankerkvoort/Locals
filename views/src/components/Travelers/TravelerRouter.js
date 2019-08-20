@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import TravelerHome from "./TravelerHome/TravelerHome";
 import Settings from "./TravelersSettingsPage/SettingsBody/SettingsBody";
 import MapContainer from "./TravelerSearchPage/MapContainer/MapContainer";
+import NavBar from "./TravelerSearchPage/NavBar/NavBar";
 
 class TravelerRouter extends React.Component {
   state = {
@@ -35,12 +36,15 @@ class TravelerRouter extends React.Component {
           path={`${match.path}/search`}
           render={props => {
             return (
-              <MapContainer
-                {...props}
-                dates={this.state.dates}
-                address={this.state.address}
-                user={this.state.currentUser}
-              />
+              <div className="traveler-search-page">
+                <NavBar user={this.state.currentUser} />
+                <MapContainer
+                  {...props}
+                  dates={this.state.dates}
+                  address={this.state.address}
+                  user={this.state.currentUser}
+                />
+              </div>
             );
           }}
         />
