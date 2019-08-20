@@ -16,7 +16,7 @@ class BookButton extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleClick} className="book-me-button">
+        <button onClick={this.handleClick} className="traveler-search-button">
           {this.state.button}
         </button>
       </div>

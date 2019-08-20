@@ -9,18 +9,40 @@
   margin-left: 20vw;
 }
 
-.traveler-setting-body {
+.traveler-settings-body {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   box-shadow: 6px 6px 25px dimgray;
   padding: 2em;
   height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.settings-form {
+.traveler-settings-form {
   padding: 0.6em;
 }
 
-.submit-btn {
+.traveler-settings-submit-btn {
   margin-left: 0.7vw;
+  background: linear-gradient(60deg, #122169, #2d758c);
+  border: 0px;
+  border-radius: 24px;
+  padding: 0.5em 1em;
+  color: white;
+  box-shadow: 0px 0px 5px #122169;
+  font-family: "champagne__limousinesregular", sans-serif;
+  cursor: pointer;
+}
+
+.traveler-settings-submit-btn:hover {
+  box-shadow: 0 0 0;
+  transform: scale(1.1);
+}
+
+.traveler-settings-label {
+  position: relative;
+  bottom: 0.5vh;
 }
