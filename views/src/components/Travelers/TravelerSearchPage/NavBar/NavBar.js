@@ -10,9 +10,9 @@ class Navbar extends React.Component {
   render() {
     console.log(this.props);
     return (
-      <div className="wrapper-login">
-        <div className="navbar">
-          <h3 className="title">Travelers</h3>
+      <div className="traveler-search-wrapper-login">
+        <div className="traveler-search-navbar">
+          <h3 className="traveler-search-title">Travelers</h3>
           <Content user={this.props.user} />
           <br />
           <NavCategories handleNav={this.handleNavbar} />
