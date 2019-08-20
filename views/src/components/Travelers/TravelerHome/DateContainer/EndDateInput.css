@@ -1,19 +1,17 @@
-.end-date-container {
-  width: 10vw;
+.traveler-home-end-date-container {
+  width: 8vw;
   /* position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
   z-index: 15;
-  position: relative;
-  left: 1.5vw;
 }
 
-.end-date-search {
+.traveler-home-end-date-search {
   width: 100%;
 }
 
-.end-date-searchTerm {
+.traveler-home-end-date-searchTerm {
   /* width: 100%; */
   border: 3px solid #d94f70;
   padding: 5px;

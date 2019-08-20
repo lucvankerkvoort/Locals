@@ -1,8 +1,9 @@
-.dates-container {
+.traveler-home-dates-container {
   display: grid;
   grid-template-columns: auto auto;
   z-index: 15;
   width: 23vw;
   /* background: peachpuff; */
-  transform: translate(-50%, -50%);
+  position: relative;
+  top: 7.5vh;
 }
