@@ -16,7 +16,8 @@ class Registration extends React.Component {
       API.pushTravelers(traveler).then(res => console.log(res));
       this.props.close(false);
     } else {
-      console.log("pushin into travelers");
+      console.log(form);
+      console.log("pushin into locals");
       API.pushLocals(form).then(res => console.log(res));
       this.props.close(false);
     }
