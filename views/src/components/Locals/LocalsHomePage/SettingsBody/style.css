@@ -4,7 +4,9 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
+  position: relative;
+  left: 20%;
 }
 
 .local-setting-body {

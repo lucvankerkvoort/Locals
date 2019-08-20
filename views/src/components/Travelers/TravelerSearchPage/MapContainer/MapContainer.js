@@ -16,8 +16,8 @@ class MapContainer extends React.Component {
     activeMarker: {},
     selectedPlace: {},
     showingInfoWindow: false,
-    lat: 37.7749295,
-    lng: -122.41941550000001,
+    lat: this.props.address.geometry && this.props.address.geometry.location.lat(),
+    lng: this.props.address.geometry && this.props.address.geometry.location.lng(),
     bio: ""
   };
 
@@ -69,7 +69,7 @@ class MapContainer extends React.Component {
 
   render() {
     console.log(this.state.place);
-    console.log(this.props);
+    console.log(this.state.lng, this.state.lat);
 
     // We get the this.state.place from the localshomepage and it renders all the info into this.props.address.
     // Since this.props.address.geometry.location.lat && lng are functions they don't render anything on the page.
