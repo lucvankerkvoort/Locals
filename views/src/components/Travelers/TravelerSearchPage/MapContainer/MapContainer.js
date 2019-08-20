@@ -70,8 +70,8 @@ class MapContainer extends React.Component {
   };
 
   render() {
-    console.log(this.state.place);
-    console.log(this.state.lng, this.state.lat);
+    console.log(this.props);
+    console.log(this.state);
 
     // We get the this.state.place from the localshomepage and it renders all the info into this.props.address.
     // Since this.props.address.geometry.location.lat && lng are functions they don't render anything on the page.
