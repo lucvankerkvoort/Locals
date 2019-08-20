@@ -37,7 +37,7 @@ class TravelerRouter extends React.Component {
           render={props => {
             return (
               <div className="traveler-search-page">
-                <NavBar user={this.state.currentUser} />
+                <NavBar {...props} user={this.state.currentUser} />
                 <MapContainer
                   {...props}
                   dates={this.state.dates}

@@ -16,8 +16,10 @@ class MapContainer extends React.Component {
     activeMarker: {},
     selectedPlace: {},
     showingInfoWindow: false,
-    lat: this.props.address.geometry && this.props.address.geometry.location.lat(),
-    lng: this.props.address.geometry && this.props.address.geometry.location.lng(),
+    lat:
+      this.props.address.geometry && this.props.address.geometry.location.lat(),
+    lng:
+      this.props.address.geometry && this.props.address.geometry.location.lng(),
     bio: ""
   };
 

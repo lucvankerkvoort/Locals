@@ -4,14 +4,18 @@ import Content from "./NavCategories/Content";
 import NavCategories from "./NavCategories/NavCategories";
 
 class Navbar extends React.Component {
+  handleNavbar = input => {
+    this.props.history.push(input);
+  };
   render() {
+    console.log(this.props);
     return (
       <div className="wrapper-login">
         <div className="navbar">
           <h3 className="title">Travelers</h3>
-          <Content />
+          <Content user={this.props.user} />
           <br />
-          <NavCategories />
+          <NavCategories handleNav={this.handleNavbar} />
         </div>
       </div>
     );
