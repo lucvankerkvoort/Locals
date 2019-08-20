@@ -1,4 +1,4 @@
-.huge-match-container {
+.local-huge-match-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +10,7 @@
   height: 16vh;
 }
 
-.small-match-container {
+.local-small-match-container {
   width: 33vw;
   height: 13vh;
   border: 0 solid rgba(255, 255, 255, 0.7);
@@ -21,12 +21,12 @@
   box-shadow: 6px 6px 25px dimgray;
 }
 
-.match-1 {
+.local-match-1 {
   display: flex;
   /* flex-direction: row; */
 }
 
-.photo-big-container {
+.local-photo-big-container {
   width: 20vw;
   height: 24vh;
   display: flex;
@@ -37,7 +37,7 @@
   /* background: greenyellow; */
 }
 
-.photo {
+.local-photo {
   /* background: url("https://via.placeholder.com/80"); */
   background: url("../Images/match-photo1.jpg");
   width: 6vw;
@@ -68,7 +68,7 @@
   text-align: center;
 } */
 
-.grid-item-left {
+.local-grid-item-left {
   padding: 20px;
   font-weight: normal;
   font-size: 0.8em;
@@ -78,7 +78,7 @@
   left: 1.75vw;
 }
 
-.grid-item-center {
+.local-grid-item-center {
   padding: 20px;
   font-weight: normal;
   font-size: 0.8em;
@@ -88,7 +88,7 @@
   left: 1vw;
 }
 
-.grid-item-right {
+.local-grid-item-right {
   padding: 20px;
   font-weight: normal;
   font-size: 0.8em;
@@ -97,35 +97,35 @@
   top: 2.5vh;
 }
 
-.accordion-section {
+.local-accordion-section {
   text-align: center;
   position: relative;
   bottom: 17.4vh;
   transition: background-color 0.6s ease;
 }
 
-.accordion {
+.local-accordion {
   background: #d94f70;
   border: none;
   cursor: pointer;
   transition: background-color 0.6s ease;
 }
 
-.accordion:hover,
+.local-accordion:hover,
 .active {
   background-color: #f8bbbb;
 }
 
-.accordion__icon {
+.local-accordion__icon {
   margin-left: auto;
   transition: transform 0.6s ease;
 }
 
-.rotate {
+.local-rotate {
   transform: rotate(180deg);
 }
 
-.accordion__content {
+.local-accordion__content {
   background-color: #d94f70;
   overflow: hidden;
   transition: background-color 0.6s ease;
@@ -137,14 +137,14 @@
   box-shadow: 3px 20px 20px dimgray;
 }
 
-.accordion__text {
+.local-accordion__text {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 14px;
   padding: 18px;
 }
 
-.book-me-button {
+.local-book-me-button {
   text-align: center;
   position: relative;
   bottom: 1vh;
