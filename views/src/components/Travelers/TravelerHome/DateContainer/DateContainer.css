@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: auto auto;
   z-index: 15;
-  width: 23vw;
+  width: 23%;
   /* background: peachpuff; */
   position: relative;
   top: 7.5vh;

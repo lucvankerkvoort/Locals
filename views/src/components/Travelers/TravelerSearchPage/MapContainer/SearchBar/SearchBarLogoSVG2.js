@@ -1,5 +1,5 @@
 import React from "react";
-import "./SearchBarLogoSVG.css";
+import "./SearchBarLogoSVG2.css";
 
 const SearchBarLogoSVG = () => (
   <svg
