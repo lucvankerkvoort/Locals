@@ -18,11 +18,11 @@ class EndDateInput extends React.Component {
   render() {
     console.log(this.state.endDate);
     return (
-      <div className="end-date-container">
-        <div className="end-date-search">
+      <div className="traveler-home-end-date-container">
+        <div className="traveler-home-end-date-search">
           <form>
             <DatePicker
-              className="end-date-searchTerm"
+              className="traveler-home-end-date-searchTerm"
               selected={this.state.endDate}
               onChange={this.handleChange}
               name="endDate"

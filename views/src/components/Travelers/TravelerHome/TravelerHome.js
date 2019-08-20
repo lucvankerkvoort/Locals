@@ -34,12 +34,14 @@ class TravelerHome extends React.Component {
     return (
       <div className="background">
         {pictures}
-        <SearchBar
-          handleChange={this.handleChange}
-          onPlaceChanged={this.showPlaceDetails.bind(this)}
-          value={this.state.value}
-        />
-        <DateContainer handleDates={this.handleDates} />
+        <div className="components-container">
+          <SearchBar
+            handleChange={this.handleChange}
+            onPlaceChanged={this.showPlaceDetails.bind(this)}
+            value={this.state.value}
+          />
+          <DateContainer handleDates={this.handleDates} />
+        </div>
       </div>
     );
   }

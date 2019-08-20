@@ -32,17 +32,17 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="wrap">
-        <div className="search">
+      <div className="traveler-wrap">
+        <div className="traveler-search">
           <input
             ref={this.autocompleteInput}
             type="text"
-            className="searchTerm"
+            className="traveler-searchTerm"
             placeholder="Enter your destination here"
             onChange={this.props.handleChange}
           />
           <Link to="/travelerhome/search">
-            <button type="submit" className="searchButton">
+            <button type="submit" className="traveler-searchButton">
               <i className="fa fa-search" />
               <SearchBarLogoSVG />
             </button>

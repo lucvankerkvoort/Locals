@@ -25,7 +25,7 @@ class DateContainer extends React.Component {
 
   render() {
     return (
-      <div className="dates-container">
+      <div className="traveler-home-dates-container">
         <StartDateInput startDate={this.handleStartDate} />
         <EndDateInput endDate={this.handleEndDate} />
       </div>
