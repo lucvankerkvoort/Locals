@@ -31,9 +31,9 @@ class InputForm extends React.Component {
     console.log(this.state);
     if (this.props.user === "local") {
       return (
-        <div className="inputform">
+        <div className="input-form">
           <p className="close" onClick={this.handleClose}>
-            close
+            Close
           </p>
           <h1>Local Registration</h1>
           {local.map((question, i) => (
@@ -47,16 +47,20 @@ class InputForm extends React.Component {
             />
           ))}
           <br />
-          <button className="registration-btn" onClick={this.handleSubmit}>
+
+          <button
+            className="local-registration-btn"
+            onClick={this.handleSubmit}
+          >
             Submit
           </button>
         </div>
       );
     } else {
       return (
-        <div className="inputform">
+        <div className="input-form">
           <p className="close" onClick={this.handleClose}>
-            close
+            Close
           </p>
           <h1>Traveler Registration</h1>
           {traveler.map((question, i) => (
@@ -70,7 +74,10 @@ class InputForm extends React.Component {
             />
           ))}
           <br />
-          <button className="btn" onClick={this.handleSubmit}>
+          <button
+            className="traveler-registration-btn"
+            onClick={this.handleSubmit}
+          >
             Submit
           </button>
         </div>
