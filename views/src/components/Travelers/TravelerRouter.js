@@ -4,6 +4,7 @@ import TravelerHome from "./TravelerHome/TravelerHome";
 import Settings from "./TravelersSettingsPage/SettingsBody/SettingsBody";
 import MapContainer from "./TravelerSearchPage/MapContainer/MapContainer";
 import NavBar from "./TravelerSearchPage/NavBar/NavBar";
+import ToursBody from "./TravelerToursPage/ToursBody/ToursBody";
 
 class TravelerRouter extends React.Component {
   state = {
@@ -43,6 +44,7 @@ class TravelerRouter extends React.Component {
             return (
               <div>
                 <NavBar {...props} user={this.state.currentUser} />
+                <ToursBody {...props} user={this.state.currentUser} />
               </div>
             );
           }}
