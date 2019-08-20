@@ -1,4 +1,4 @@
-.wrapper-login {
+.local-home-wrapper-login {
   display: inline-flex;
   flex-direction: column;
   background: url("./navbarimg.jpg");
@@ -10,7 +10,7 @@
   position: absolute;
 }
 
-.navbar {
+.local-home-navbar {
   background: linear-gradient(
     60deg,
     rgba(10, 35, 57, 0.5),
@@ -29,7 +29,7 @@ body {
 /* rgba(10, 35, 57, 0.5),
 rgba(5, 39, 189, 0.8) */
 
-.title {
+.local-home-title {
   display: flex;
   justify-content: center;
 }
