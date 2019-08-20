@@ -11,13 +11,15 @@ class Settings extends React.Component {
       user = traveler;
     }
     return (
-      <div className="settings">
-        <div className="setting-body">
+      <div className="traveler-settings">
+        <div className="traveler-settings-body">
           <p> Here you can change your existing settings.</p>
           {user.map((question, i) => {
             return (
-              <div className="settings-form" key={i}>
-                <label>{question.label}</label>
+              <div className="traveler-settings-form" key={i}>
+                <label className="traveler-settings-label">
+                  {question.label}
+                </label>
                 <br />
                 <input
                   type={question.type}
@@ -29,7 +31,7 @@ class Settings extends React.Component {
             );
           })}
           <br />
-          <button className="submit-btn">Submit</button>
+          <button className="traveler-settings-submit-btn">Submit</button>
         </div>
       </div>
     );
