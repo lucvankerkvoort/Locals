@@ -1,62 +1,60 @@
-.local-homepage-huge-match-container {
+.traveler-tours-huge-match-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   /* border: 3px;
   border-bottom-style: solid;
   border-color: black; */
-  height: 18vh;
-  margin-top: -1vh;
+  border: 3px;
+  border-bottom-style: solid;
+  border-color: black;
 }
 
-.local-homepage-small-match-container {
-  width: 33vw;
-  height: 13vh;
+.traveler-tours-small-match-container {
+  width: 55vw;
   border: 0 solid rgba(255, 255, 255, 0.7);
-  margin-top: 3vh;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   box-shadow: 6px 6px 25px dimgray;
-  background: rgba(252, 199, 199, 0.7);
 }
 
-.local-homepage-match-1 {
+.traveler-tours-match-1 {
   display: flex;
   /* flex-direction: row; */
 }
 
-.local-homepage-photo-big-container {
+.traveler-tours-photo-big-container {
   width: 10vw;
   height: 12vh;
   display: flex;
   align-items: center;
   position: relative;
-  left: 1vw;
+  left: 3.5vw;
   /* background: greenyellow; */
 }
 
-.local-homepage-photo {
+.traveler-tours-photo {
   /* background: url("https://via.placeholder.com/80"); */
-  background: url("../Images/match-photo1.jpg");
-  width: 7vw;
-  height: 10vh;
+  background: url("../../TravelerSearchPage/Images/match-photo1.jpg");
+  width: 10vw;
+  height: 13vh;
+  left: 0.5vh;
   position: relative;
-  top: 0.5vh;
-  left: 1vw;
+  top: 2.4vh;
   background-position: center;
   background-size: cover;
   border-radius: 5px;
   box-shadow: 3px 3px 20px dimgray;
 }
 
-.local-homepage-matches-info-container {
+.traveler-tours-matches-info-container {
   width: 30vw;
   height: 12.5vh;
   display: grid;
-  grid-template-columns: auto auto auto;
-  position: relative;
-  left: 1vw;
-  align-items: center;
+  grid-template-columns: auto auto;
+  /* background-color: #2196f3; */
 }
 
 /* .grid-item {
@@ -68,65 +66,79 @@
   text-align: center;
 } */
 
-.local-homepage-grid-item-left {
+.traveler-tours-grid-item-top-left {
   padding: 10px;
   font-weight: bold;
   font-size: 0.8em;
-  /* position: relative; */
-  /* top: 2.5vh;
-  left: 15vh; */
-}
-
-.local-homepage-grid-item-center {
-  padding: 10px;
-  font-weight: bold;
-  font-size: 0.8em;
-  position: relative;
-  right: 0.5vw;
-}
-
-.local-homepage-grid-item-right {
-  padding: 10px;
-  font-weight: bold;
-  font-size: 0.8em;
-  position: relative;
-  right: 1vw;
-}
-
-.local-homepage-accordion-section {
   text-align: center;
   position: relative;
-  bottom: 4.2vh;
+  top: 2.5vh;
+  left: 15vh;
 }
 
-.local-homepage-accordion {
+.traveler-tours-grid-item-top-right {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 0.8em;
+  text-align: center;
+  position: relative;
+  top: 2.5vh;
+  left: 13vh;
+}
+
+.traveler-tours-grid-item-bottom-left {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 0.8em;
+  text-align: center;
+  position: relative;
+  top: 2vh;
+  left: 15vh;
+}
+
+.traveler-tours-grid-item-bottom-right {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 0.8em;
+  text-align: center;
+  position: relative;
+  top: 2vh;
+  left: 13vh;
+}
+
+.traveler-tours-accordion-section {
+  text-align: center;
+  position: relative;
+}
+
+.traveler-tours-accordion {
   background: rgba(252, 199, 199, 0.7);
   border: none;
   cursor: pointer;
   transition: background-color 0.6s ease;
 }
 
-.local-homepage-accordion:hover,
+.traveler-tours-accordion:hover,
 .active {
   background-color: #f8bbbb;
 }
 
-.local-homepage-accordion__icon {
+.traveler-tours-accordion__icon {
   margin-left: auto;
   transition: transform 0.6s ease;
 }
 
-.local-homepage-rotate {
+.traveler-tours-rotate {
   transform: rotate(180deg);
 }
 
-.local-homepage-accordion__content {
+.traveler-tours-accordion__content {
   background-color: rgba(255, 255, 255, 0.7);
   overflow: hidden;
   transition: max-height 0.6s ease;
 }
 
-.local-homepage-accordion__text {
+.traveler-tours-accordion__text {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 0.8em;

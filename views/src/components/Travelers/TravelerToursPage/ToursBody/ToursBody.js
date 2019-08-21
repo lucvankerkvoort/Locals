@@ -1,6 +1,6 @@
 import React from "react";
 import "./ToursBody.css";
-import Accordion from "../../TravelerSearchPage/MapContainer/Accordion/Accordion";
+import Accordion from "../Accordion/Accordion";
 
 const ToursBody = () => {
   return (
