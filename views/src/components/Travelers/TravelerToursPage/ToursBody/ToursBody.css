@@ -1,4 +1,4 @@
-.body-container {
+.traveler-body-container {
   position: relative;
   height: 100vh;
   width: 80vw;
@@ -6,7 +6,7 @@
   z-index: 1;
 }
 
-.next-tour {
+.traveler-next-tour {
   text-align: center;
   font-size: 2em;
   padding: 3vh;
@@ -15,11 +15,11 @@
   border-color: black;
 }
 
-.next-tour-accordion {
+.traveler-next-tour-accordion {
   background: #d94f70;
 }
 
-.upcoming-tours {
+.traveler-upcoming-tours {
   text-align: center;
   font-size: 2em;
   padding: 3vh;
@@ -28,7 +28,7 @@
   border-color: black;
 }
 
-.upcoming-tours-accordions {
+.traveler-upcoming-tours-accordions {
   background: #d94f70;
   overflow-y: auto;
   height: 46.88vh;
