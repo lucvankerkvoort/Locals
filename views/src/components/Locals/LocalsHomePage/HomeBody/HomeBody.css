@@ -17,19 +17,6 @@
   justify-content: center;
 }
 
-.profile-picture {
-  display: flex;
-  background: url("../Images/match-photo1.jpg");
-  background-position: center;
-  background-size: cover;
-  box-shadow: 6px 6px 10px gray;
-  border-radius: 5px;
-  height: 100%;
-  width: 14.7vw;
-  position: relative;
-  right: 5vw;
-}
-
 .profile-bio {
   font-size: 0.85em;
   padding: 1vw;
