@@ -7,6 +7,7 @@
   width: 80%;
   position: relative;
   left: 20%;
+  height: 100vh;
 }
 
 .local-setting-body {
@@ -14,4 +15,39 @@
   border-radius: 5px;
   box-shadow: 6px 6px 25px dimgray;
   padding: 2em;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.local-settings-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.locals-settings-btn {
+  background: linear-gradient(60deg, #122169, #2d758c);
+  border: 0px;
+  border-radius: 24px;
+  padding: 0.5em 1em;
+  color: white;
+  box-shadow: 0px 0px 5px #122169;
+  font-family: "champagne__limousinesregular", sans-serif;
+  cursor: pointer;
+  position: relative;
+  left: 19.4vh;
+}
+
+.locals-settings-btn:hover {
+  box-shadow: 0 0 0;
+  transform: scale(1.1);
+}
+
+.local-settings-label {
+  position: relative;
+  top: 2.5vh;
 }

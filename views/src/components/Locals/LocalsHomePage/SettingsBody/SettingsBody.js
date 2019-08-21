@@ -33,8 +33,10 @@ class Settings extends React.Component {
             <p> Here you can change your existing settings.</p>
             {user.map((question, i) => {
               return (
-                <div className="settings-form" key={i}>
-                  <label>{question.label}</label>
+                <div className="local-settings-form" key={i}>
+                  <label className="local-settings-label">
+                    {question.label}
+                  </label>
                   <br />
                   <input
                     type={question.type}
@@ -46,7 +48,11 @@ class Settings extends React.Component {
               );
             })}
             <br />
-            <button type="submit" onClick={this.handleClick} className="btn">
+            <button
+              type="submit"
+              onClick={this.handleClick}
+              className="locals-settings-btn"
+            >
               Submit
             </button>
           </form>
