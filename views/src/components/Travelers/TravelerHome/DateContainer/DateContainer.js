@@ -6,12 +6,10 @@ import EndDateInput from "./EndDateInput";
 let dates = [];
 class DateContainer extends React.Component {
   handleStartDate = input => {
-    console.log(input);
     dates.push(input);
     this.handleDates();
   };
   handleEndDate = input => {
-    console.log(input);
     dates.push(input);
     this.handleDates();
   };
