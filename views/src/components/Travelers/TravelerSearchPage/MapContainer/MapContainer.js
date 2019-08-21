@@ -28,11 +28,32 @@ class MapContainer extends React.Component {
   }
 
   loadLocals = () => {
+    let userStart = new Date(this.props.dates[0]);
+    let userEnd = new Date(this.props.dates[1]);
     const info = {
-      availability: this.props.dates,
       city: this.props.address.name
     };
-    API.searchLocals(info).then(result => console.log(result));
+    API.searchLocals(info).then(result => {
+      console.log(result);
+      result.data.forEach(function(response) {
+        console.log("right there", response);
+        console.log(response.availability);
+        const dateId = [];
+        const dates = response.availability;
+        for (let i = 0; i < dates.length; i++) {
+          let localStart = new Date(dates[i].dateStart);
+          let localEnd = new Date(dates[i].dateEnd);
+          if (localStart <= userStart && localEnd >= userEnd) {
+            console.log(dates[i]._id);
+            dateId.push(dates[i]._id);
+          }
+        }
+        console.log("right here", response);
+        // if (response.availability._id.indexOf(dateId) !== -1) {
+        //   console.log(response);
+        // }
+      });
+    });
   };
 
   showPlaceDetails(place) {
@@ -72,6 +93,7 @@ class MapContainer extends React.Component {
   render() {
     console.log(this.props);
     console.log(this.state);
+    console.log(typeof this.props.dates[1]);
 
     // We get the this.state.place from the localshomepage and it renders all the info into this.props.address
     // Since this.props.address.geometry.location.lat && lng are functions they don't render anything on the page.
