@@ -21,6 +21,9 @@ var LocalSchema = new Schema({
     trim: true,
     required: true
   },
+  avatar: {
+    type: String
+  },
   password: {
     type: String,
     required: true,
@@ -43,7 +46,11 @@ var LocalSchema = new Schema({
       dateEnd: Date
     }
   ],
-  type: { type: String, default: "Local" }
+  bio: { type: String },
+  tourInfo: { type: String },
+  type: { type: String, default: "Local" },
+  rating: { type: Number, default: 5.0 },
+  completedtours: { type: Number, default: 0 }
 });
 
 // We use MongoDB's build in module to create a container so we can export the schema

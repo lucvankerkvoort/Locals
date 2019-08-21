@@ -18,12 +18,15 @@ var TravellerSchema = new Schema({
     type: String,
     required: true
   },
+  avatar: {
+    type: String
+  },
   password: {
     type: String,
     required: true,
     validate: [
       function(input) {
-        return input.length >= 8;
+        return input.length >= 8 && input.length <= 20;
       },
       "Password is not long enough"
     ]
