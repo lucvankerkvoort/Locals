@@ -18,7 +18,7 @@ class BookButton extends React.Component {
       <div>
         <button
           onClick={this.handleClick}
-          className="local-home-book-me-button"
+          className="local-tours-book-me-button"
         >
           {this.state.button}
         </button>
