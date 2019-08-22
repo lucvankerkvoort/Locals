@@ -13,7 +13,7 @@ const mapStyles = {
 
 class MapContainer extends React.Component {
   state = {
-    place: "",
+    place: this.props.address,
     activeMarker: {},
     selectedPlace: {},
     showingInfoWindow: false,
@@ -22,23 +22,20 @@ class MapContainer extends React.Component {
     lng:
       this.props.address.geometry && this.props.address.geometry.location.lng(),
     bio: "",
-    address: JSON.parse(localStorage.getItem("address"))
+    address: JSON.parse(localStorage.getItem("address")),
+    dates: JSON.parse(localStorage.getItem("dates"))
   };
 
   componentDidMount() {
     this.loadLocals();
-    const address = JSON.parse(localStorage.getItem("address"));
-    const dates = localStorage.getItem("dates");
-    const place = address.name;
-    console.log(place);
-    this.setState({ address, dates });
   }
 
   loadLocals = () => {
-    let userStart = new Date(this.props.dates[0]);
-    let userEnd = new Date(this.props.dates[1]);
+    let userStart = new Date(this.state.dates.date[0]);
+    let userEnd = new Date(this.state.dates.date[1]);
+    console.log(this.state.place.name);
     const info = {
-      city: this.state.place
+      city: this.state.place.name
     };
     API.searchLocals(info).then(result => {
       var usersThatMatchDate = [];
@@ -50,6 +47,7 @@ class MapContainer extends React.Component {
           if (localStart <= userStart && localEnd >= userEnd) {
             // it will only reach here if dates are valid
             usersThatMatchDate.push(response);
+            console.log(usersThatMatchDate);
             break;
           }
         }
@@ -59,26 +57,32 @@ class MapContainer extends React.Component {
 
   showPlaceDetails(place) {
     this.setState({ place });
+    console.log("I Run Showplace");
   }
 
   handleChange = event => {
     this.setState({ place: event.target.value });
   };
 
-  onMarkerClick = (props, marker) =>
+  onMarkerClick = (props, marker) => {
+    console.log("I Run OnMarkerClick");
     this.setState({
       activeMarker: marker,
       selectedPlace: props,
       showingInfoWindow: true
     });
+  };
 
-  onInfoWindowClose = () =>
+  onInfoWindowClose = () => {
+    console.log("I Run OnInfoWindowClose");
     this.setState({
       activeMarker: null,
       showingInfoWindow: false
     });
+  };
 
   zoomInOnMapSearch = () => {
+    console.log("I Run ZoomInOnMapSearch");
     const lat =
       this.state.place.geometry && this.state.place.geometry.location.lat();
     const lng =
@@ -134,6 +138,7 @@ class MapContainer extends React.Component {
           <Accordion content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
           <Accordion content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
         </div>
+        {this.loadLocals()}
       </div>
     );
   }
