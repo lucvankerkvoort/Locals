@@ -9,15 +9,17 @@ import { withCookies } from "react-cookie";
 class App extends React.Component {
   state = {
     user: "",
-    currentUser: "patrick"
+    currentUser: ""
   };
 
   handleChange = input => {
     this.setState({ user: input });
+    localStorage.setItem("type", input);
   };
 
   handleUser = input => {
     this.setState({ currentUser: input });
+    localStorage.setItem("currentUser", JSON.stringify(input));
   };
 
   render() {
@@ -37,7 +39,6 @@ class App extends React.Component {
                   {...props}
                   user={this.state.user}
                   currentUser={this.handleUser}
-                  cookies={this.props.cookies}
                 />
               )}
             />
@@ -48,7 +49,6 @@ class App extends React.Component {
                 return (
                   <LocalsHomePage
                     {...props}
-                    cookies={this.props.cookies}
                     currentUser={this.state.currentUser}
                     user={this.state.user}
                   />
@@ -62,7 +62,6 @@ class App extends React.Component {
                 <TravelerRouter
                   {...props}
                   user={this.state.user}
-                  cookies={this.props.cookies}
                   currentUser={this.state.currentUser}
                 />
               )}
@@ -74,4 +73,4 @@ class App extends React.Component {
   }
 }
 
-export default withCookies(App);
+export default App;
