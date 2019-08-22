@@ -6,6 +6,7 @@ import Settings from "./SettingsBody/SettingsBody";
 import Availability from "./Calendar/calendar";
 import ToursBody from "./LocalsToursBody/ToursBody";
 import "./LocalsHomePage.css";
+import { withCookies } from "react-cookie";
 
 class Localhome extends React.Component {
   state = {
@@ -22,27 +23,49 @@ class Localhome extends React.Component {
         <Route
           path={`${match.path}/settings`}
           render={props => {
-            return <Settings {...props} user={this.state.currentUser} />;
+            return (
+              <Settings
+                {...props}
+                cookies={this.props.cookies}
+                user={this.state.currentUser}
+              />
+            );
           }}
         />
 
         <Route
           path={`${match.path}/tours`}
           render={props => {
-            return <ToursBody {...props} user={this.state.currentUser} />;
+            return (
+              <ToursBody
+                {...props}
+                cookies={this.props.cookies}
+                user={this.state.currentUser}
+              />
+            );
           }}
         />
         <Route
           path={`${match.path}/calendar`}
           render={props => {
-            return <Availability {...props} user={this.state.currentUser} />;
+            return (
+              <Availability
+                {...props}
+                cookies={this.props.cookies}
+                user={this.state.currentUser}
+              />
+            );
           }}
         />
         <Route
           exact
           path={`${match.path}`}
           render={props => (
-            <HomeBody {...props} user={this.state.currentUser} />
+            <HomeBody
+              cookies={this.props.cookies}
+              {...props}
+              user={this.state.currentUser}
+            />
           )}
         />
       </div>
@@ -50,4 +73,4 @@ class Localhome extends React.Component {
   }
 }
 
-export default Localhome;
+export default withCookies(Localhome);

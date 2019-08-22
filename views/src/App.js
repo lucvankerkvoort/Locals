@@ -4,6 +4,7 @@ import LandingPage from "./components/LandingPage/LandingPage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import LocalsHomePage from "./components/Locals/LocalsHomePage/LocalsHomePage";
 import TravelerRouter from "./components/Travelers/TravelerRouter";
+import { withCookies } from "react-cookie";
 
 class App extends React.Component {
   state = {
@@ -36,6 +37,7 @@ class App extends React.Component {
                   {...props}
                   user={this.state.user}
                   currentUser={this.handleUser}
+                  cookies={this.props.cookies}
                 />
               )}
             />
@@ -46,6 +48,7 @@ class App extends React.Component {
                 return (
                   <LocalsHomePage
                     {...props}
+                    cookies={this.props.cookies}
                     currentUser={this.state.currentUser}
                     user={this.state.user}
                   />
@@ -59,6 +62,7 @@ class App extends React.Component {
                 <TravelerRouter
                   {...props}
                   user={this.state.user}
+                  cookies={this.props.cookies}
                   currentUser={this.state.currentUser}
                 />
               )}
@@ -70,4 +74,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withCookies(App);
