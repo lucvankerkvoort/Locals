@@ -62,7 +62,8 @@ module.exports = {
             dateEnd: req.body.enddate
           }
         }
-      }
+      },
+      { upsert: true }
     )
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));

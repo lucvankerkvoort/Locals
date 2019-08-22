@@ -1,6 +1,5 @@
 import React from "react";
-import DateContainer from "../../../Travelers/TravelerHome/DateContainer/DateContainer";
-// import DateRangePicker from "@wojtekmaj/react-daterange-picker";
+import DateContainer from "./DateContainer/DateContainer";
 import "./style.css";
 import API from "../../../../controller";
 import Moment from "react-moment";
@@ -8,8 +7,14 @@ import Moment from "react-moment";
 class Availability extends React.Component {
   state = {
     date: [new Date(), new Date()],
-    availability: this.props.user.availability
+    availability: JSON.parse(localStorage.getItem("userDates"))
   };
+
+  // componentDidMount() {
+  //   const user = JSON.parse(localStorage.getItem("currentUser"));
+  //   console.log(user.availability);
+  //   this.setState({ availability: user.availability });
+  // }
 
   handleSubmit = () => {
     console.log(this.props.user._id);
@@ -23,7 +28,7 @@ class Availability extends React.Component {
     this.setState({ date });
   };
   render() {
-    console.log(this.state.date[0].getDay());
+    console.log(this.state);
     return (
       <div className="calendar-body">
         <div className="calendar">
