@@ -52,8 +52,9 @@ var LocalSchema = new Schema({
   rating: { type: Number, default: 5.0 },
   completedtours: { type: Number, default: 0 }
 });
-
+console.log("LocalSchema passed");
 // We use MongoDB's build in module to create a container so we can export the schema
 var Local = mongoose.model("Local", LocalSchema);
+console.log("Local");
 
 module.exports = Local;
