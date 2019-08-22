@@ -91,6 +91,11 @@ class MapContainer extends React.Component {
     }
   };
 
+  handleDates = input => {
+    console.log(input);
+    this.props.dates(input);
+  };
+
   render() {
     console.log(this.state);
     console.log(this.props);
@@ -121,7 +126,7 @@ class MapContainer extends React.Component {
               value={this.state.place.formatted_address}
               searchPlace={this.zoomInOnMapSearch}
             />
-            <DateContainer />
+            <DateContainer handleDates={this.handleDates} />
             {markers}
           </Map>
         </div>

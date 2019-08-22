@@ -59,7 +59,7 @@ class TravelerRouter extends React.Component {
                 <NavBar {...props} user={this.state.currentUser} />
                 <MapContainer
                   {...props}
-                  dates={this.state.dates}
+                  dates={this.dateHandler}
                   address={this.state.address}
                   user={this.state.currentUser}
                 />
