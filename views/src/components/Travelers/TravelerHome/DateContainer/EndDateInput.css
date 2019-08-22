@@ -7,11 +7,11 @@
 }
 
 .traveler-home-end-date-search {
-  width: 100%;
+  width: 70%;
 }
 
 .traveler-home-end-date-searchTerm {
-  /* width: 100%; */
+  width: 100%;
   border: 3px solid #d94f70;
   padding: 5px;
   height: 20px;

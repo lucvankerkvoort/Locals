@@ -40,8 +40,8 @@ class TravelerHome extends React.Component {
             onPlaceChanged={this.showPlaceDetails.bind(this)}
             value={this.state.value}
           />
-          <DateContainer handleDates={this.handleDates} />
         </div>
+        <DateContainer handleDates={this.handleDates} />
       </div>
     );
   }

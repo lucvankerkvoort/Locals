@@ -2,8 +2,10 @@
   display: grid;
   grid-template-columns: auto auto;
   z-index: 15;
-  width: 23%;
+  width: 21%;
   /* background: peachpuff; */
-  position: relative;
-  top: 7.5vh;
+  position: absolute;
+  top: 57%;
+  left: 50.5%;
+  transform: translate(-50%, -50%);
 }
