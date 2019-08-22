@@ -15,7 +15,6 @@ class EndDateInput extends React.Component {
   };
 
   render() {
-    console.log(this.state.endDate);
     return (
       <div className="end-date-container">
         <div className="end-date-search">

@@ -9,17 +9,22 @@ import ToursBody from "./TravelerToursPage/ToursBody/ToursBody";
 class TravelerRouter extends React.Component {
   state = {
     user: "traveler",
-    currentUser: this.props.currentUser,
+    currentUser: JSON.parse(localStorage.getItem("currentUser")),
     address: "",
     dates: ""
   };
 
   handleAddress = input => {
     this.setState({ address: input });
+    localStorage.setItem("address", JSON.stringify(input));
   };
 
   dateHandler = input => {
     this.setState({ dates: input });
+    const dates = {
+      date: input
+    };
+    localStorage.setItem("dates", JSON.stringify(dates));
   };
   render() {
     console.log(this.state);
