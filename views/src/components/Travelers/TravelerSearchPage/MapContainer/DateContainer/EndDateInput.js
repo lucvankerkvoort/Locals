@@ -16,7 +16,6 @@ class EndDateInput extends React.Component {
   };
 
   render() {
-    console.log(this.state.endDate);
     return (
       <div className="traveler-home-end-date-container">
         <div className="traveler-home-end-date-search">

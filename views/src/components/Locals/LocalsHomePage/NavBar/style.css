@@ -33,3 +33,21 @@ rgba(5, 39, 189, 0.8) */
   display: flex;
   justify-content: center;
 }
+
+.logout-btn {
+  background: linear-gradient(60deg, #122169, #2d758c);
+  border: 0px;
+  border-radius: 24px;
+  padding: 0.5em 1em;
+  color: white;
+  box-shadow: 0px 0px 5px #122169;
+  font-family: "champagne__limousinesregular", sans-serif;
+  cursor: pointer;
+  text-align: center;
+  margin-top: -3vh;
+}
+
+.logout-btn:hover {
+  box-shadow: 0 0 0;
+  transform: scale(1.1);
+}

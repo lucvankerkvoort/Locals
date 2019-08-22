@@ -21,18 +21,24 @@ class MapContainer extends React.Component {
       this.props.address.geometry && this.props.address.geometry.location.lat(),
     lng:
       this.props.address.geometry && this.props.address.geometry.location.lng(),
-    bio: ""
+    bio: "",
+    address: JSON.parse(localStorage.getItem("address"))
   };
 
   componentDidMount() {
     this.loadLocals();
+    const address = JSON.parse(localStorage.getItem("address"));
+    const dates = localStorage.getItem("dates");
+    const place = address.name;
+    console.log(place);
+    this.setState({ address, dates });
   }
 
   loadLocals = () => {
     let userStart = new Date(this.props.dates[0]);
     let userEnd = new Date(this.props.dates[1]);
     const info = {
-      city: this.props.address.name
+      city: this.state.place
     };
     API.searchLocals(info).then(result => {
       var usersThatMatchDate = [];
@@ -48,8 +54,6 @@ class MapContainer extends React.Component {
           }
         }
       });
-
-      console.log(usersThatMatchDate);
     });
   };
 
@@ -88,9 +92,8 @@ class MapContainer extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     console.log(this.state);
-    console.log(typeof this.props.dates[1]);
+    console.log(this.props);
 
     // We get the this.state.place from the localshomepage and it renders all the info into this.props.address
     // Since this.props.address.geometry.location.lat && lng are functions they don't render anything on the page.
@@ -102,8 +105,6 @@ class MapContainer extends React.Component {
         key={this.state.place.formatted_address}
       />
     );
-    console.log(this.state.place);
-    console.log(this.state.lat, this.state.lng);
     return (
       <div>
         <div className="component-container">
