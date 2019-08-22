@@ -34,25 +34,21 @@ class MapContainer extends React.Component {
       city: this.props.address.name
     };
     API.searchLocals(info).then(result => {
-      console.log(result);
+      var usersThatMatchDate = [];
       result.data.forEach(function(response) {
-        console.log("right there", response);
-        console.log(response.availability);
-        const dateId = [];
         const dates = response.availability;
         for (let i = 0; i < dates.length; i++) {
           let localStart = new Date(dates[i].dateStart);
           let localEnd = new Date(dates[i].dateEnd);
           if (localStart <= userStart && localEnd >= userEnd) {
-            console.log(dates[i]._id);
-            dateId.push(dates[i]._id);
+            // it will only reach here if dates are valid
+            usersThatMatchDate.push(response);
+            break;
           }
         }
-        console.log("right here", response);
-        // if (response.availability._id.indexOf(dateId) !== -1) {
-        //   console.log(response);
-        // }
       });
+
+      console.log(usersThatMatchDate);
     });
   };
 
