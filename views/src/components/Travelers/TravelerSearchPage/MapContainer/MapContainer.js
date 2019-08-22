@@ -1,6 +1,7 @@
 import React from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import Accordion from "./Accordion/Accordion";
+import DateContainer from "./DateContainer/DateContainer";
 import { Map, InfoWindow, GoogleApiWrapper, Marker } from "google-maps-react";
 import "./MapContainer.css";
 import API from "../../../../controller";
@@ -123,6 +124,7 @@ class MapContainer extends React.Component {
               value={this.state.place.formatted_address}
               searchPlace={this.zoomInOnMapSearch}
             />
+            <DateContainer />
             {markers}
           </Map>
         </div>

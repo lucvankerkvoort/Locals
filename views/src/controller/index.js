@@ -20,6 +20,7 @@ export default {
     return axios.post("/api/locals/login/", data);
   },
   loginSearchTraveler: function(data) {
+    console.log(data);
     return axios.post("/api/traveller/login/", data);
   },
   getLocalById: function(id) {
