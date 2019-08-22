@@ -17,6 +17,11 @@ class Login extends React.Component {
     showMessage: false
   };
 
+  componentDidMount() {
+    const user = localStorage.getItem("type");
+    this.setState({ user });
+  }
+
   closeRegistration = input => {
     console.log({ input });
     this.setState({ showComponent: input });
