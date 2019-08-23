@@ -12,7 +12,7 @@ class Navbar extends React.Component {
     return (
       <div className="traveler-search-wrapper-login">
         <div className="traveler-search-navbar">
-          <h3 className="traveler-search-title">Travelers</h3>
+          <h2 className="traveler-search-title">Travelers</h2>
           <Content user={this.props.user} />
           <br />
           <NavCategories handleNav={this.handleNavbar} />
