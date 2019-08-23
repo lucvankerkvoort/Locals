@@ -11,21 +11,22 @@
 }
 
 .local-setting-body {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 5px;
+  background: #d94f70;
+  border-radius: 10px;
   box-shadow: 6px 6px 25px dimgray;
   padding: 2em;
-  height: 50vh;
+  max-height: 55vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: scroll;
+  width: 30vw;
 }
 
 .local-settings-form {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 
@@ -38,8 +39,6 @@
   box-shadow: 0px 0px 5px #122169;
   font-family: "champagne__limousinesregular", sans-serif;
   cursor: pointer;
-  position: relative;
-  left: 19.4vh;
 }
 
 .locals-settings-btn:hover {
@@ -50,4 +49,12 @@
 .local-settings-label {
   position: relative;
   top: 2.5vh;
+}
+
+.big-form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  margin-top: -4vh;
 }

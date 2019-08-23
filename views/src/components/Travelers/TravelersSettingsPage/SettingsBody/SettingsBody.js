@@ -20,6 +20,7 @@ class Settings extends React.Component {
     const name = target.name;
     this.setState({ [name]: event.target.value });
   };
+
   render() {
     console.log(this.state);
     let user;
@@ -29,14 +30,14 @@ class Settings extends React.Component {
       user = traveler;
     }
     return (
-      <div className="local-settings">
-        <div className="local-setting-body">
-          <form>
+      <div className="traveler-settings">
+        <div className="traveler-setting-body">
+          <form className="form-big-container">
             <p> Here you can change your existing settings.</p>
             {user.map((question, i) => {
               return (
-                <div className="local-settings-form" key={i}>
-                  <label className="local-settings-label">
+                <div className="traveler-settings-form" key={i}>
+                  <label className="traveler-settings-label">
                     {question.label}
                   </label>
                   <br />
@@ -53,7 +54,7 @@ class Settings extends React.Component {
             <button
               type="submit"
               onClick={this.handleClick}
-              className="locals-settings-btn"
+              className="traveler-settings-btn"
             >
               Submit
             </button>

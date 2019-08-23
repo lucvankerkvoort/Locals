@@ -17,7 +17,9 @@ const Accordion = props => {
       setActive === "active" ? "0px" : `${content.current.scrollHeight}px`
     );
     setRotateState(
-      setActive === "active" ? "accordion__icon" : "accordion__icon rotate"
+      setActive === "active"
+        ? "accordion__icon"
+        : "accordion__icon local-homepage-rotate"
     );
     setBookMeButtonState(
       setBookMeButton === "Book me!" ? "Unbook me!" : "Book me!"

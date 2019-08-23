@@ -13,11 +13,11 @@ class Navbar extends React.Component {
     return (
       <div className="local-home-wrapper-login">
         <div className="local-home-navbar">
-          <h3 className="local-home-title">Locals</h3>
+          <h2 className="local-home-title">Locals</h2>
           <Content user={this.props.user} />
           <br />
           <NavCategories handleNav={this.handleNavbar} />
-          <Link to="/login">
+          <Link to="/">
             <button className="logout-btn">Log Out</button>
           </Link>
         </div>

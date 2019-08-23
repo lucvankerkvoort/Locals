@@ -1,0 +1,10 @@
+.available-dates {
+  width: 60%;
+  height: 20%;
+  background: #d94f70;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 3vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}

@@ -2,7 +2,8 @@ import React from "react";
 import DateContainer from "./DateContainer/DateContainer";
 import "./style.css";
 import API from "../../../../controller";
-import Moment from "react-moment";
+import AvailableDate from "./AvailableDate/AvailableDate";
+// import Moment from "react-moment";
 
 class Availability extends React.Component {
   state = {
@@ -36,27 +37,27 @@ class Availability extends React.Component {
             handleDates={this.handleChange}
             value={this.state.date}
           />
-          <button onClick={this.handleSubmit} className="btn calendar-button">
-            Submit
-          </button>
         </div>
-
-        <div className="available-title">
-          <h3>Availability</h3>
-        </div>
-        <div className="availability">
-          {this.state.availability.map((dates, i) => {
-            return (
-              <div className="available-dates" key={i}>
-                <p>
-                  Available from <span> </span>
-                  <Moment format="MM/DD/YYYY">{dates.dateStart}</Moment>
-                  <span> </span> to{" "}
-                  <Moment format="MM/DD/YYYY">{dates.dateEnd}</Moment>
-                </p>
-              </div>
-            );
-          })}
+        <button onClick={this.handleSubmit} className="calendar-button">
+          Submit
+        </button>
+        <div className="container-below-datecontainer">
+          <div className="available-title">
+            <h2>Availability</h2>
+          </div>
+          <div className="availability-container">
+            <div className="availability">
+              {this.state.availability.map((dates, i) => {
+                return (
+                  <AvailableDate
+                    startDate={dates.dateEnd}
+                    endDate={dates.dateStart}
+                    key={i}
+                  />
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     );
