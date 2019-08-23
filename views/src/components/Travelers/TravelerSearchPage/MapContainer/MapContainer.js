@@ -21,9 +21,9 @@ class MapContainer extends React.Component {
       this.props.address.geometry && this.props.address.geometry.location.lat(),
     lng:
       this.props.address.geometry && this.props.address.geometry.location.lng(),
-    bio: "",
     address: JSON.parse(localStorage.getItem("address")),
-    dates: JSON.parse(localStorage.getItem("dates"))
+    dates: JSON.parse(localStorage.getItem("dates")),
+    usersThatMatchDate: []
   };
 
   componentDidMount() {
@@ -48,6 +48,9 @@ class MapContainer extends React.Component {
             // it will only reach here if dates are valid
             usersThatMatchDate.push(response);
             console.log("usersThatMatchDate", usersThatMatchDate);
+            this.setState({
+              usersThatMatchDate: usersThatMatchDate
+            });
             break;
           }
         }
@@ -118,6 +121,20 @@ class MapContainer extends React.Component {
         key={this.state.place.formatted_address}
       />
     );
+
+    const matchedUsers = this.state.usersThatMatchDate.map((user, i) => (
+      <Accordion
+        content={user.bio}
+        name={`${user.firstname} ${user.lastname}`}
+        rate={user.rate}
+        key={i}
+        profileImg={user.avatar}
+        rating={user.rating}
+        tourInfo={user.tourInfo}
+        startDate={user.availability[0].dateStart}
+        endDate={user.availability[0].dateEnd}
+      />
+    ));
     return (
       <div>
         <div className="component-container">
@@ -138,10 +155,7 @@ class MapContainer extends React.Component {
             {markers}
           </Map>
         </div>
-        <div className="accordion-container">
-          <Accordion content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
-          <Accordion content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
-        </div>
+        <div className="accordion-container">{matchedUsers}</div>
       </div>
     );
   }
