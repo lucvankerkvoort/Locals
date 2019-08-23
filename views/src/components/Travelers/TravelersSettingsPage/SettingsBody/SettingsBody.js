@@ -20,6 +20,7 @@ class Settings extends React.Component {
     const name = target.name;
     this.setState({ [name]: event.target.value });
   };
+
   render() {
     console.log(this.state);
     let user;
