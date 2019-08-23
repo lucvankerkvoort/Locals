@@ -8,6 +8,8 @@ class Settings extends React.Component {
 
   handleClick = event => {
     event.preventDefault();
+    console.log(this.state);
+    console.log(this.props);
     API.updateLocal(this.props.user._id, this.state).then(result => {
       console.log(result);
     });
