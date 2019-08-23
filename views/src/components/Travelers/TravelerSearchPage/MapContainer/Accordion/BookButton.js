@@ -7,20 +7,18 @@ class BookButton extends React.Component {
     button: "Book me!"
   };
 
-  componentDidMount() {
-    const user = JSON.parse(localStorage.getItem("currentUser"));
-    this.setState({ user });
-  }
-
   handleClick = () => {
-    let newState = this.state.button === "Book me!" ? "Unbook me!" : "Book me!";
+    let newState =
+      this.state.button === "Book me!"
+        ? `Unbook me!${this.book()} `
+        : "Book me!";
     this.setState({
       button: newState
     });
   };
 
   book = () => {
-    API.bookingLocal(this.state.user._id).then(result => console.log(result));
+    API.bookingLocal(this.props.local._id).then(result => console.log(result));
   };
   render() {
     return (
