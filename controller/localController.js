@@ -39,7 +39,9 @@ module.exports = {
   },
   // we create the update method to update certain documents in the collection
   update: function(req, res) {
-    db.Local.findOneAndUpdate({ _id: req.params.id }, req.body)
+    db.Local.findOneAndUpdate({ _id: req.params.id }, req.body, {
+      new: true
+    })
       .sort({ name: -1 })
       .then(dbModel => res.json(dbModel));
     // here we will use mongo's queries to find a specific document and update it with users input on the front-end
