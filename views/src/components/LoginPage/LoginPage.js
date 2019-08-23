@@ -92,7 +92,7 @@ class Login extends React.Component {
       title = "Welcome Local";
       pictures = <BackgroundSlideshow images={localArray} />;
     } else {
-      title = "Welcome Traveller";
+      title = "Welcome Traveler";
       pictures = <BackgroundSlideshow images={travellerArray} />;
     }
 
@@ -105,7 +105,7 @@ class Login extends React.Component {
           </div>
           <div className="logincontainer">
             <h2 className="login-text">Login</h2>
-            <p>
+            <p className="incorrect-info-text">
               {this.state.showMessage
                 ? this.state.incorrect
                 : console.log("your good")}

@@ -17,7 +17,7 @@ class Navbar extends React.Component {
           <Content user={this.props.user} />
           <br />
           <NavCategories handleNav={this.handleNavbar} />
-          <Link to="/login">
+          <Link to="/">
             <button className="logout-btn">Log Out</button>
           </Link>
         </div>
