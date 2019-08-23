@@ -38,6 +38,17 @@ module.exports = {
       .then(dbModel => res.json(dbModel));
     // here we will use mongo's queries to find a specific document and update it with users input on the front-end
   },
+  addBooking: function(req, res) {
+    console.log("Add Booking", req.body);
+    db.Traveller.findOneAndUpdate(
+      {
+        _id: req.params.id
+      },
+      { $push: { booking: req.body } }
+    )
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.json(err));
+  },
   // we create a delete method, to remove data we will not need anymore
   delete: function(req, res) {
     db.Traveller.findByIdAndDelete({ _id: req.params.id })

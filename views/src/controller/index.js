@@ -45,5 +45,8 @@ export default {
   },
   searchLocals: function(info) {
     return axios.post("/api/locals/search", info);
+  },
+  bookingLocal: function(info) {
+    return axios.post("/api/traveller/booking", info);
   }
 };
