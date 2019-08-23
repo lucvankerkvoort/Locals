@@ -37,10 +37,10 @@ class Availability extends React.Component {
             handleDates={this.handleChange}
             value={this.state.date}
           />
-          <button onClick={this.handleSubmit} className="calendar-button">
-            Submit
-          </button>
         </div>
+        <button onClick={this.handleSubmit} className="calendar-button">
+          Submit
+        </button>
         <div className="container-below-datecontainer">
           <div className="available-title">
             <h2>Availability</h2>

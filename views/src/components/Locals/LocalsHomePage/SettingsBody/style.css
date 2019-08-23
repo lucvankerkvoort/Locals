@@ -11,8 +11,8 @@
 }
 
 .local-setting-body {
-  background: rgba(252, 199, 199, 0.7);
-  border-radius: 5px;
+  background: #d94f70;
+  border-radius: 10px;
   box-shadow: 6px 6px 25px dimgray;
   padding: 2em;
   max-height: 55vh;
