@@ -20,6 +20,9 @@
   height: 110vh;
   width: 100%;
   color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 body {
   margin: 0;
@@ -43,8 +46,7 @@ rgba(5, 39, 189, 0.8) */
   box-shadow: 0px 0px 5px #122169;
   font-family: "champagne__limousinesregular", sans-serif;
   cursor: pointer;
-  text-align: center;
-  margin-top: -3vh;
+  margin-top: 5vh;
 }
 
 .logout-btn:hover {

@@ -3,9 +3,8 @@
   grid-template-columns: auto auto;
   z-index: 15;
   width: 21%;
-  /* background: peachpuff; */
   position: absolute;
   top: 12.5%;
-  left: 61.5%;
+  left: 61.8%;
   transform: translate(-50%, -50%);
 }

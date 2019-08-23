@@ -30,9 +30,9 @@ class Settings extends React.Component {
     }
     return (
       <div className="local-settings">
+        <h2> Here you can change your existing settings.</h2>
         <div className="local-setting-body">
-          <form>
-            <p> Here you can change your existing settings.</p>
+          <form className="big-form-container">
             {user.map((question, i) => {
               return (
                 <div className="local-settings-form" key={i}>

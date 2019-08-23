@@ -4,28 +4,33 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 80vw;
+  width: 80%;
+  position: relative;
+  left: 20%;
   height: 100vh;
-  margin-left: 20vw;
 }
 
-.traveler-settings-body {
-  background: rgba(255, 255, 255, 0.7);
+.traveler-setting-body {
+  background: rgba(252, 199, 199, 0.7);
   border-radius: 5px;
   box-shadow: 6px 6px 25px dimgray;
   padding: 2em;
-  height: 50vh;
+  max-height: 55vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: scroll;
+  width: 30vw;
 }
 
 .traveler-settings-form {
-  padding: 0.6em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.traveler-settings-submit-btn {
+.traveler-settings-btn {
   margin-left: 0.7vw;
   background: linear-gradient(60deg, #122169, #2d758c);
   border: 0px;
@@ -37,12 +42,18 @@
   cursor: pointer;
 }
 
-.traveler-settings-submit-btn:hover {
+.traveler-settings-btn:hover {
   box-shadow: 0 0 0;
   transform: scale(1.1);
 }
 
 .traveler-settings-label {
   position: relative;
-  bottom: 0.5vh;
+  top: 2.5vh;
+}
+
+.form-big-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
