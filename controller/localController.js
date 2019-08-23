@@ -5,12 +5,13 @@ const db = require("../models");
 module.exports = {
   // we create the create method to store data into the database
   create: function(req, res) {
+    console.log("Create");
     db.Local.create(req.body).then(dbModel => res.json(dbModel));
     // Here we will use mongo's queries and the schema's we setup to add data to the database
   },
   // we create the read method, possibly split into different options (findAll, findById, findByAddress)
   findAll: function(req, res) {
-    console.log("im running");
+    console.log("Find All");
     db.Local.find({})
       .sort({ name: -1 })
       .then(dbModel => res.json(dbModel))
@@ -25,6 +26,7 @@ module.exports = {
     // here  we will use mongo's queries to itterate through the database to retrieve data based of off the documents id
   },
   findByUsernameAndPassword: function(req, res) {
+    console.log("Find By Username And Password");
     db.Local.find(
       { username: req.body.username },
       { password: req.body.password }
@@ -33,13 +35,17 @@ module.exports = {
       .catch(err => json(err));
   },
   findByAvailabilityAndPlace: function(req, res) {
+    console.log("Find By Availability And Place");
     db.Local.find({ city: req.body.city })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },
   // we create the update method to update certain documents in the collection
   update: function(req, res) {
-    db.Local.findOneAndUpdate({ _id: req.params.id }, req.body)
+    console.log("hello");
+    db.Local.findOneAndUpdate({ _id: req.params.id }, req.body, {
+      new: true
+    })
       .sort({ name: -1 })
       .then(dbModel => res.json(dbModel));
     // here we will use mongo's queries to find a specific document and update it with users input on the front-end
@@ -70,6 +76,7 @@ module.exports = {
   },
   // we create a delete method, to remove data we will not need anymore
   delete: function(req, res) {
+    console.log("Delete");
     db.Local.findByIdAndDelete({ _id: req.params.id }).then(dbModel =>
       res.json(dbModel)
     );
