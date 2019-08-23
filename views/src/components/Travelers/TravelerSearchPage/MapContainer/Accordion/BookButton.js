@@ -17,9 +17,11 @@ class BookButton extends React.Component {
     this.setState({
       button: newState
     });
-    API.bookingLocal(this.state.user._id).then(result => console.log(result));
   };
 
+  book = () => {
+    API.bookingLocal(this.state.user._id).then(result => console.log(result));
+  };
   render() {
     return (
       <div>
