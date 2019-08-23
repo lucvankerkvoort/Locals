@@ -19,10 +19,10 @@ class Content extends React.Component {
       <div className="content">
         <div className="image" style={style} />
         <div className="names">
-          <p>Username: {user.username}</p>
-          <p>
-            Name: {user.firstname} {user.lastname}
-          </p>
+          <h3>{user.username}</h3>
+          <h3>
+            {user.firstname} {user.lastname}
+          </h3>
         </div>
       </div>
     );
