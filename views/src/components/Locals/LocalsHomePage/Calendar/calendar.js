@@ -40,23 +40,26 @@ class Availability extends React.Component {
             Submit
           </button>
         </div>
-
-        <div className="available-title">
-          <h3>Availability</h3>
-        </div>
-        <div className="availability">
-          {this.state.availability.map((dates, i) => {
-            return (
-              <div className="available-dates" key={i}>
-                <p>
-                  Available from <span> </span>
-                  <Moment format="MM/DD/YYYY">{dates.dateStart}</Moment>
-                  <span> </span> to{" "}
-                  <Moment format="MM/DD/YYYY">{dates.dateEnd}</Moment>
-                </p>
-              </div>
-            );
-          })}
+        <div className="container-below-datecontainer">
+          <div className="available-title">
+            <h3>Availability</h3>
+          </div>
+          <div className="availability-container">
+            <div className="availability">
+              {this.state.availability.map((dates, i) => {
+                return (
+                  <div className="available-dates" key={i}>
+                    <p>
+                      Available from <span> </span>
+                      <Moment format="MM/DD/YYYY">{dates.dateStart}</Moment>
+                      <span> </span> to{" "}
+                      <Moment format="MM/DD/YYYY">{dates.dateEnd}</Moment>
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     );
