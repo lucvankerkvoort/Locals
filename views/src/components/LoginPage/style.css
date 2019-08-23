@@ -130,3 +130,8 @@ label {
   box-shadow: 0 0 0;
   transform: scale(1.1);
 }
+
+.incorrect-info-text {
+  position: relative;
+  bottom: 3vh;
+}

@@ -50,8 +50,8 @@ class Availability extends React.Component {
               {this.state.availability.map((dates, i) => {
                 return (
                   <AvailableDate
-                    startDate={dates.dateStart}
-                    endDate={dates.dateEnd}
+                    startDate={dates.dateEnd}
+                    endDate={dates.dateStart}
                     key={i}
                   />
                 );
