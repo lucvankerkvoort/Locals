@@ -22,6 +22,7 @@ class Settings extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     let user;
     if (this.props.user.type === "Local") {
       user = local;

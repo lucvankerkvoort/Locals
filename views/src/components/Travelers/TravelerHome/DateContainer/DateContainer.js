@@ -15,7 +15,6 @@ class DateContainer extends React.Component {
   };
 
   handleDates = () => {
-    console.log(dates);
     if (dates.length <= 2) {
       this.props.handleDates(dates);
     }

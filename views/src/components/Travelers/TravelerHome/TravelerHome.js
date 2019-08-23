@@ -12,6 +12,10 @@ class TravelerHome extends React.Component {
     // endDate: ""
   };
 
+  componentDidMount() {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    this.setState({ user });
+  }
   showPlaceDetails(place) {
     this.setState({ place });
     console.log(this.state.place);

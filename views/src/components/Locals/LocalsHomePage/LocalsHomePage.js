@@ -13,6 +13,14 @@ class Localhome extends React.Component {
     user: "local",
     currentUser: this.props.currentUser
   };
+
+  componentDidMount() {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const userDates = JSON.stringify(currentUser.availability);
+    localStorage.setItem("userDates", userDates);
+    this.setState({ currentUser });
+  }
+
   render() {
     console.log(this.state.currentUser);
 

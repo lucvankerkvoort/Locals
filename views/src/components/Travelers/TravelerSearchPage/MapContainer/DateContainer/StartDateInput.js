@@ -16,7 +16,6 @@ class StartDateInput extends React.Component {
   };
 
   render() {
-    console.log(this.state.startDate);
     return (
       <div className="traveler-home-start-date-container">
         <div className="traveler-home-start-date-search">
