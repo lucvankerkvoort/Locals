@@ -15,7 +15,7 @@
   border: 0 solid rgba(255, 255, 255, 0.7);
   margin-bottom: 5vh;
   margin-top: 5vh;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(252, 199, 199);
   border-radius: 10px;
   box-shadow: 6px 6px 25px dimgray;
 }
@@ -54,56 +54,41 @@
   height: 12.5vh;
   display: grid;
   grid-template-columns: auto auto;
-  /* background-color: #2196f3; */
+  position: relative;
+  left: 9vw;
+  top: 2vh;
 }
 
-/* .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-weight: normal;
-  font-size: 1.2em;
-  text-align: center;
-} */
-
 .traveler-search-grid-item-top-left {
-  padding: 10px;
   font-weight: bold;
   font-size: 0.8em;
   text-align: center;
   position: relative;
-  top: 2.5vh;
-  left: 15vh;
+  top: 25%;
 }
 
 .traveler-search-grid-item-top-right {
-  padding: 10px;
   font-weight: bold;
   font-size: 0.8em;
   text-align: center;
   position: relative;
-  top: 2.5vh;
-  left: 13vh;
+  top: 25%;
 }
 
 .traveler-search-grid-item-bottom-left {
-  padding: 10px;
   font-weight: bold;
   font-size: 0.8em;
   text-align: center;
   position: relative;
-  top: 2vh;
-  left: 15vh;
+  top: 25%;
 }
 
 .traveler-search-grid-item-bottom-right {
-  padding: 10px;
   font-weight: bold;
   font-size: 0.8em;
   text-align: center;
   position: relative;
-  top: 2vh;
-  left: 13vh;
+  top: 25%;
 }
 
 .traveler-search-accordion-section {

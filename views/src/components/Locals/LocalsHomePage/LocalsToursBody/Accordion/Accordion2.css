@@ -15,7 +15,7 @@
   border: 0 solid rgba(255, 255, 255, 0.7);
   margin-bottom: 5vh;
   margin-top: 5vh;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(252, 199, 199);
   border-radius: 10px;
   box-shadow: 6px 6px 25px dimgray;
 }
@@ -49,53 +49,39 @@
 }
 
 .local-tours-matches-info-container {
-  width: 30vw;
+  width: 40vw;
   height: 12.5vh;
   display: grid;
   grid-template-columns: auto auto auto;
   position: relative;
-  left: 8vw;
-  top: 5vh;
+  left: 5vw;
+  top: 4vh;
   /* background-color: #2196f3; */
 }
 
-/* .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-weight: normal;
-  font-size: 1.2em;
-  text-align: center;
-} */
-
 .local-tours-grid-item-left {
-  padding: 10px;
   font-weight: bold;
   font-size: 0.8em;
   text-align: center;
   position: relative;
-  /* top: 2.5vh;
-  left: 15vh; */
+  top: 25%;
 }
 
 .local-tours-grid-item-center {
-  padding: 10px;
   font-weight: bold;
   font-size: 0.8em;
   text-align: center;
   position: relative;
-  /* top: 2.5vh;
-  left: 13vh; */
+  position: relative;
+  top: 25%;
 }
 
 .local-tours-grid-item-right {
-  padding: 10px;
   font-weight: bold;
   font-size: 0.8em;
   text-align: center;
   position: relative;
-  /* top: 2vh;
-  left: 13vh; */
+  top: 25%;
 }
 
 .local-tours-accordion-section {
