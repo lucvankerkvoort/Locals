@@ -69,7 +69,7 @@ module.exports = {
           }
         }
       },
-      { upsert: true }
+      { new: true }
     )
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
@@ -96,7 +96,7 @@ module.exports = {
     db.Local.update(
       { _id: req.params.id },
       {
-        $pull: { availability: { id: { $in: [req.body.id] } } }
+        $pull: { availability: { _id: { $in: [req.body.id] } } }
       }
     )
       .then(dbModel => res.json(dbModel))

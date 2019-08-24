@@ -10,6 +10,8 @@ class AvailableDate extends React.Component {
     const dateID = {
       id: this.props.id
     };
+    console.log("Date ID", dateID);
+    console.log("UserID", userID);
     API.deleteLocalsDates(userID, dateID).then(result => {
       console.log(result);
       API.getLocalById(userID).then(result => {
