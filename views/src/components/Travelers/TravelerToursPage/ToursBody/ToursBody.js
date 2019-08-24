@@ -15,11 +15,14 @@ class ToursBody extends React.Component {
   handleUser() {
     const user = JSON.parse(localStorage.getItem("currentUser"));
     const userId = user._id;
-    API.getLocalById(userId).then(user =>
-      this.setState({ booking: user.booking })
-    );
+    API.getLocalById(userId).then(user => {
+      this.setState({ booking: user.booking });
+      const booking = JSON.stringify(user.booking);
+      localStorage.setItem("bookings", booking);
+    });
   }
   render() {
+    console.log(this.state);
     return (
       <div className="traveler-body-container">
         <div className="traveler-next-tour">Next Tour</div>
