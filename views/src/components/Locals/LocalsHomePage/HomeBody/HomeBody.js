@@ -36,10 +36,10 @@ class HomeBody extends React.Component {
     //     key={i}
     //     bio={traveler.bio}
     //     startDate={
-    //       <Moment format="MM/DD/YYYY">{user.availability[0].dateStart}</Moment>
+    //       <Moment format="MM/DD/YYYY">{traveler.availability[0].dateStart}</Moment>
     //     }
     //     endDate={
-    //       <Moment format="MM/DD/YYYY">{user.availability[0].dateEnd}</Moment>
+    //       <Moment format="MM/DD/YYYY">{traveler.availability[0].dateEnd}</Moment>
     //     }
     //     userId={user._id}
     //   />
