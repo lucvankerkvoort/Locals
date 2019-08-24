@@ -10,7 +10,7 @@
   width: 33vw;
   /* height: 13vh; */
   border: 0 solid rgba(255, 255, 255, 0.7);
-  margin-top: 3vh;
+  margin-bottom: 3vh;
   background: rgba(252, 199, 199);
   border-radius: 10px;
   box-shadow: 6px 6px 25px dimgray;
@@ -26,17 +26,17 @@
   display: flex;
   align-items: center;
   position: relative;
-  left: 1vw;
+  /* left: 1vw; */
   /* background: greenyellow; */
 }
 
 .local-homepage-photo {
   /* background: url("https://via.placeholder.com/80"); */
   background: url("../Images/match-photo1.jpg");
-  width: 7vw;
-  height: 10vh;
+  width: 10vw;
+  height: 12vh;
   position: relative;
-  top: 0.5vh;
+  top: 2.5vh;
   left: 1vw;
   background-position: center;
   background-size: cover;
@@ -46,12 +46,12 @@
 
 .local-homepage-matches-info-container {
   width: 30vw;
-  height: 5vh;
+  height: 3vh;
   display: grid;
   grid-template-columns: auto auto auto;
   position: relative;
   left: 0.5vw;
-  top: 5vh;
+  top: 7vh;
 }
 
 .local-homepage-grid-item-left {
