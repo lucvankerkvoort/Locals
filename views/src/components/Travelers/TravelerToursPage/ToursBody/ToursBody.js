@@ -1,7 +1,6 @@
 import React from "react";
 import "./ToursBody.css";
 import Accordion from "../Accordion/Accordion";
-import API from "../../../../controller";
 
 class ToursBody extends React.Component {
   state = {
@@ -14,12 +13,10 @@ class ToursBody extends React.Component {
 
   handleUser() {
     const user = JSON.parse(localStorage.getItem("currentUser"));
-    const userId = user._id;
-    API.getLocalById(userId).then(user => {
-      this.setState({ booking: user.booking });
-      const booking = JSON.stringify(user.booking);
-      localStorage.setItem("bookings", booking);
-    });
+    console.log(user);
+    const booking = user.booking;
+    this.setState({ booking });
+    localStorage.setItem("bookings", booking);
   }
   render() {
     console.log(this.state);
