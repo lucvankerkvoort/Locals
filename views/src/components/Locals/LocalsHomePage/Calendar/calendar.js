@@ -19,6 +19,7 @@ class Availability extends React.Component {
   };
 
   handleChange = date => {
+    console.log(date);
     this.setState({ date });
   };
   render() {
@@ -43,6 +44,7 @@ class Availability extends React.Component {
               {this.state.availability.map((dates, i) => {
                 return (
                   <AvailableDate
+                    changeDates={this.changeDates}
                     startDate={dates.dateEnd}
                     endDate={dates.dateStart}
                     key={i}

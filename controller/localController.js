@@ -91,12 +91,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },
-  deleteFieldValue: function(req, res) {
+  deleteDate: function(req, res) {
     console.log("Delete Field Value", req.params.id, req.body);
     db.Local.update(
       { _id: req.params.id },
       {
-        $pull: { availability: req.body }
+        $pull: { availability: { id: { $in: [req.body.id] } } }
       }
     )
       .then(dbModel => res.json(dbModel))

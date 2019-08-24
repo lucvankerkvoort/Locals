@@ -4,20 +4,29 @@ import "./AvailableDate.css";
 import API from "../../../../../controller";
 
 class AvailableDate extends React.Component {
-  state = {
-    deleted: false
-  };
   handleClick = () => {
     const localstorage = JSON.parse(localStorage.getItem("currentUser"));
     const userID = localstorage._id;
-    API.deleteLocals(userID, this.props.id).then(result => {
-      this.setState({ deleted: true });
+    const dateID = {
+      id: this.props.id
+    };
+    API.deleteLocalsDates(userID, dateID).then(result => {
       console.log(result);
+      API.getLocalById(userID).then(result => {
+        console.log(result);
+        console.log(result.availability);
+        const dates = JSON.stringify(result.availability);
+        localStorage.setItem("userDates", dates);
+      });
     });
   };
+
+  handleDates = () => {
+    API.getLocalById();
+  };
+
   render() {
     console.log(this.props);
-    console.log(this.state);
     return (
       <div className="available-dates" key={this.props.key}>
         <p>
@@ -26,9 +35,9 @@ class AvailableDate extends React.Component {
           <span> </span> to
           <Moment format="MM/DD/YYYY">{this.props.endDate}</Moment>
         </p>
-        {/* <p className="available-date-remover" onClick={this.handleClick}>
+        <p className="available-date-remover" onClick={this.handleClick}>
           X
-        </p> */}
+        </p>
       </div>
     );
   }
