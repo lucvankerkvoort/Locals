@@ -14,15 +14,12 @@ class AvailableDate extends React.Component {
       console.log(result);
       API.getLocalById(userID).then(result => {
         console.log(result);
-        console.log(result.availability);
-        const dates = JSON.stringify(result.availability);
-        localStorage.setItem("userDates", dates);
+        for (let i = 0; i < result.data.length; i++) {
+          console.log("availability", result.data[i].availability);
+          this.props.changeAvailability(result.data[i].availability);
+        }
       });
     });
-  };
-
-  handleDates = () => {
-    API.getLocalById();
   };
 
   render() {

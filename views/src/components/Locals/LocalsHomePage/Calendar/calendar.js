@@ -12,14 +12,18 @@ class Availability extends React.Component {
 
   handleSubmit = () => {
     console.log(this.props.user._id);
+    console.log(this.state.date);
     API.pushDates(this.props.user._id, this.state.date).then(result => {
-      console.log(result);
+      console.log("hello", result.data.availability);
       this.setState({ availability: result.data.availability });
     });
   };
 
+  changeAvailability = availability => {
+    this.setState({ availability });
+  };
+
   handleChange = date => {
-    console.log(date);
     this.setState({ date });
   };
   render() {
@@ -44,7 +48,7 @@ class Availability extends React.Component {
               {this.state.availability.map((dates, i) => {
                 return (
                   <AvailableDate
-                    changeDates={this.changeDates}
+                    changeAvailability={this.changeAvailability}
                     startDate={dates.dateEnd}
                     endDate={dates.dateStart}
                     key={i}
