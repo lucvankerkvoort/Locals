@@ -34,9 +34,15 @@ const Accordion = props => {
             <div className="local-homepage-photo" />
           </div>
           <div className="local-homepage-matches-info-container">
-            <div className="local-homepage-grid-item-left">Name</div>
-            <div className="local-homepage-grid-item-center">Start Date</div>
-            <div className="local-homepage-grid-item-right">End Date</div>
+            <div className="local-homepage-grid-item-left">
+              Name{/*props.name*/}
+            </div>
+            <div className="local-homepage-grid-item-center">
+              Start Date{/*props.startDate*/}
+            </div>
+            <div className="local-homepage-grid-item-right">
+              End Date{/*props.endDate*/}
+            </div>
           </div>
         </div>
         <div className="local-homepage-accordion-section">
