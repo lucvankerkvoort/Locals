@@ -46,11 +46,11 @@ export default {
   searchLocals: function(data) {
     return axios.post("/api/locals/search", data);
   },
-  bookingLocal: function(data) {
-    return axios.post("/api/traveller/booking", data);
+  bookingLocal: function(id, data) {
+    return axios.post("/api/traveller/booking/" + id, data);
   },
-  bookingTraveler: function(data) {
-    return axios.post("/api/locals/booking", data);
+  bookingTraveler: function(id, data) {
+    return axios.post("/api/locals/booking/" + id, data);
   },
   deleteLocals: function(id, data) {
     console.log(id, data);

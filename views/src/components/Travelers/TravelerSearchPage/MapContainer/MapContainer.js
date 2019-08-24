@@ -140,6 +140,7 @@ class MapContainer extends React.Component {
         endDate={
           <Moment format="MM/DD/YYYY">{user.availability[0].dateEnd}</Moment>
         }
+        userId={user._id}
       />
     ));
     return (

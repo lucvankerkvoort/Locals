@@ -19,6 +19,6 @@ router
   .route("/login")
   .post(controller.travellerController.findByUsernameAndPassword);
 
-router.route("/booking").post(controller.travellerController.addBooking);
+router.route("/booking/:id").post(controller.travellerController.addBooking);
 // We export the entire document
 module.exports = router;

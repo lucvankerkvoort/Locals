@@ -59,7 +59,7 @@ const Accordion = props => {
               className="traveler-search-accordion__text"
               dangerouslySetInnerHTML={{ __html: props.content }}
             />
-            <BookButton />
+            <BookButton localId={props.userId} />
           </div>
         </div>
       </div>

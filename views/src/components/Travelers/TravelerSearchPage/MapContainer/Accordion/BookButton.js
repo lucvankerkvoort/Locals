@@ -18,9 +18,14 @@ class BookButton extends React.Component {
   };
 
   book = () => {
-    API.bookingLocal(this.props.local._id).then(result => console.log(result));
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    const userId = user._id;
+    API.bookingLocal(userId, this.props.localId).then(result =>
+      console.log(result)
+    );
   };
   render() {
+    console.log(this.props);
     return (
       <div>
         <button onClick={this.handleClick} className="traveler-search-button">
