@@ -8,10 +8,14 @@ class BookButton extends React.Component {
   };
 
   handleClick = () => {
-    let newState =
-      this.state.button === "Book me!"
-        ? `Unbook me! ${this.book()} `
-        : "Book me!";
+    let newState;
+
+    if (this.state.button === "Book me!") {
+      newState = "Unbook me!";
+      this.book();
+    } else {
+      newState = "Book me!";
+    }
     this.setState({
       button: newState
     });

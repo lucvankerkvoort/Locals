@@ -31,7 +31,11 @@ var TravellerSchema = new Schema({
       "Password is not long enough"
     ]
   },
-  booking: { type: Array },
+  booking: [
+    {
+      id: { type: String, unique: true }
+    }
+  ],
   type: { type: String, default: "traveller" }
 });
 
