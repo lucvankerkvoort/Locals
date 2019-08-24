@@ -87,7 +87,7 @@ module.exports = {
     db.Local.update(
       { _id: req.params.id },
       {
-        availability: { $pullAll: { _id: req.body } }
+        $pullAll: { availability: req.body }
       }
     )
       .then(dbModel => res.json(dbModel))

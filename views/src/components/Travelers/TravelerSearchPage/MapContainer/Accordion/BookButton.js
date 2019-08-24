@@ -15,6 +15,7 @@ class BookButton extends React.Component {
       this.book();
     } else {
       newState = "Book me!";
+      this.unbook();
     }
     this.setState({
       button: newState
@@ -28,6 +29,15 @@ class BookButton extends React.Component {
       id: this.props.localId
     };
     API.bookingLocal(userId, localID).then(result => console.log(result));
+  };
+
+  unbook = () => {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    const userId = user._id;
+    const localID = {
+      id: this.props.localId
+    };
+    API.deleteTraveler(userId, localID).then(result => console.log(result));
   };
   render() {
     console.log(this.props.localId);

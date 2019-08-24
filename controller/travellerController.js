@@ -56,5 +56,14 @@ module.exports = {
       .sort({ name: -1 })
       .then(dbModel => res.json(dbModel));
     // here we will use mongo's queries to find a specific document and delete it from the database
+  },
+  deleteBooking: function(req, res) {
+    console.log("Delete Field Value", req.params.id, req.body);
+    db.Traveller.update(
+      { _id: req.params.id },
+      { $pull: { booking: { id: { $in: [req.body.id] } } } }
+    )
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.json(err));
   }
 };

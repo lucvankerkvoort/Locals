@@ -56,5 +56,9 @@ export default {
   deleteLocals: function(id, data) {
     console.log(id, data);
     return axios.post("/api/locals/remove/" + id, data);
+  },
+  deleteTraveler: function(id, data) {
+    console.log(id, data);
+    return axios.post("/api/traveller/remove/" + id, data);
   }
 };
