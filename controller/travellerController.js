@@ -44,7 +44,7 @@ module.exports = {
       {
         _id: req.params.id
       },
-      { $push: { booking: req.body } }
+      { $push: { booking: { id: req.body } } }
     )
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
