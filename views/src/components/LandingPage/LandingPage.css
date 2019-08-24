@@ -24,7 +24,7 @@
 
 .card {
   background: white;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   border-radius: 8px;
   width: 40%;
   display: inline-block;
@@ -44,6 +44,8 @@
   outline: none;
   cursor: pointer;
   text-align: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .traveler-btn {
