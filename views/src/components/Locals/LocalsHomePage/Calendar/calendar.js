@@ -3,19 +3,12 @@ import DateContainer from "./DateContainer/DateContainer";
 import "./style.css";
 import API from "../../../../controller";
 import AvailableDate from "./AvailableDate/AvailableDate";
-// import Moment from "react-moment";
 
 class Availability extends React.Component {
   state = {
     date: [new Date(), new Date()],
     availability: JSON.parse(localStorage.getItem("userDates"))
   };
-
-  // componentDidMount() {
-  //   const user = JSON.parse(localStorage.getItem("currentUser"));
-  //   console.log(user.availability);
-  //   this.setState({ availability: user.availability });
-  // }
 
   handleSubmit = () => {
     console.log(this.props.user._id);
@@ -53,6 +46,7 @@ class Availability extends React.Component {
                     startDate={dates.dateEnd}
                     endDate={dates.dateStart}
                     key={i}
+                    id={dates._id}
                   />
                 );
               })}

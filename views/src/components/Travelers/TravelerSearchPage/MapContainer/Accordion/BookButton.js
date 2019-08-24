@@ -8,19 +8,39 @@ class BookButton extends React.Component {
   };
 
   handleClick = () => {
-    let newState =
-      this.state.button === "Book me!"
-        ? `Unbook me!${this.book()} `
-        : "Book me!";
+    let newState;
+
+    if (this.state.button === "Book me!") {
+      newState = "Unbook me!";
+      this.book();
+    } else {
+      newState = "Book me!";
+      this.unbook();
+    }
     this.setState({
       button: newState
     });
   };
 
   book = () => {
-    API.bookingLocal(this.props.local._id).then(result => console.log(result));
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    const userId = user._id;
+    const localID = {
+      id: this.props.localId
+    };
+    API.bookingLocal(userId, localID).then(result => console.log(result));
+  };
+
+  unbook = () => {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    const userId = user._id;
+    const localID = {
+      id: this.props.localId
+    };
+    API.deleteTraveler(userId, localID).then(result => console.log(result));
   };
   render() {
+    console.log(this.props.localId);
     return (
       <div>
         <button onClick={this.handleClick} className="traveler-search-button">

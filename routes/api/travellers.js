@@ -15,10 +15,12 @@ router
   .put(controller.travellerController.update)
   .delete(controller.travellerController.delete);
 
+router.route("/remove/:id").post(controller.travellerController.deleteBooking);
 router
   .route("/login")
   .post(controller.travellerController.findByUsernameAndPassword);
 
-router.route("/booking").post(controller.travellerController.addBooking);
+router.route("/booking/:id").post(controller.travellerController.addBooking);
+
 // We export the entire document
 module.exports = router;
