@@ -40,11 +40,12 @@ module.exports = {
   },
   addBooking: function(req, res) {
     console.log("Add Booking", req.body);
-    db.Traveller.findOneAndUpdate(
+    db.Traveller.findByIdAndUpdate(
       {
         _id: req.params.id
       },
-      { $push: { booking: { id: req.body } } }
+      { $push: { booking: req.body } },
+      { upsert: true }
     )
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));

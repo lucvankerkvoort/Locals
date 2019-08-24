@@ -47,10 +47,11 @@ export default {
     return axios.post("/api/locals/search", data);
   },
   bookingLocal: function(id, data) {
+    console.log(id, data);
     return axios.post("/api/traveller/booking/" + id, data);
   },
   bookingTraveler: function(id, data) {
-    return axios.post("/api/locals/booking/" + id, data);
+    // return axios.post("/api/locals/booking/" + id, data);
   },
   deleteLocals: function(id, data) {
     console.log(id, data);

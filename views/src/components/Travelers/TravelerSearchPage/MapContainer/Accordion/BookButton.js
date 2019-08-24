@@ -10,7 +10,7 @@ class BookButton extends React.Component {
   handleClick = () => {
     let newState =
       this.state.button === "Book me!"
-        ? `Unbook me!${this.book()} `
+        ? `Unbook me! ${this.book()} `
         : "Book me!";
     this.setState({
       button: newState
@@ -20,12 +20,13 @@ class BookButton extends React.Component {
   book = () => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
     const userId = user._id;
-    API.bookingLocal(userId, this.props.localId).then(result =>
-      console.log(result)
-    );
+    const localID = {
+      id: this.props.localId
+    };
+    API.bookingLocal(userId, localID).then(result => console.log(result));
   };
   render() {
-    console.log(this.props);
+    console.log(this.props.localId);
     return (
       <div>
         <button onClick={this.handleClick} className="traveler-search-button">
