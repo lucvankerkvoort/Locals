@@ -47,7 +47,7 @@ const Accordion = props => {
         </div>
         <div className="local-homepage-accordion-section">
           <button
-            className={`local-homepage-accordion ${setActive}`}
+            className={`local-homepage-accordion-button ${setActive}`}
             onClick={toggleAccordion}
           >
             <p className="local-homepage-accordion__title">{props.title}</p>

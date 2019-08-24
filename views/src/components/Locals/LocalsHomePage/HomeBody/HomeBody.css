@@ -52,7 +52,7 @@
   width: 37vw;
   margin-bottom: 1em;
   text-align: center;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .rating {
