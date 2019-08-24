@@ -28,4 +28,6 @@ router
 router
   .route("/search")
   .post(controller.localController.findByAvailabilityAndPlace);
+
+router.route("/remove/:id").post(controller.localController.deleteFieldValue);
 module.exports = router;

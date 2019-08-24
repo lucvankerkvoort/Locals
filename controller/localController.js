@@ -81,5 +81,16 @@ module.exports = {
       res.json(dbModel)
     );
     // here we will use mongo's queries to find a specific document and delete it from the database
+  },
+  deleteFieldValue: function(req, res) {
+    console.log("Delete Field Value", req.params.id, req.body);
+    db.Local.update(
+      { _id: req.params.id },
+      {
+        availability: { $pullAll: { _id: req.body } }
+      }
+    )
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.json(err));
   }
 };

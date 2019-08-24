@@ -7,13 +7,13 @@ export default {
   getTravelers: function() {
     return axios.get("/api/traveller");
   },
-  pushLocals: function(dataLocal) {
-    console.log(dataLocal);
-    return axios.post("/api/locals", dataLocal);
+  pushLocals: function(data) {
+    console.log(data);
+    return axios.post("/api/locals", data);
   },
-  pushTravelers: function(dataTraveler) {
-    console.log(dataTraveler);
-    return axios.post("/api/traveller", dataTraveler);
+  pushTravelers: function(data) {
+    console.log(data);
+    return axios.post("/api/traveller", data);
   },
   loginSearchLocal: function(data) {
     console.log(data);
@@ -43,10 +43,17 @@ export default {
       enddate: data[1]
     });
   },
-  searchLocals: function(info) {
-    return axios.post("/api/locals/search", info);
+  searchLocals: function(data) {
+    return axios.post("/api/locals/search", data);
   },
-  bookingLocal: function(info) {
-    return axios.post("/api/traveller/booking", info);
+  bookingLocal: function(data) {
+    return axios.post("/api/traveller/booking", data);
+  },
+  bookingTraveler: function(data) {
+    return axios.post("/api/locals/booking", data);
+  },
+  deleteLocals: function(id, data) {
+    console.log(id, data);
+    return axios.post("/api/locals/remove/" + id, data);
   }
 };
