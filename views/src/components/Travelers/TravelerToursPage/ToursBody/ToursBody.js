@@ -16,7 +16,7 @@ class ToursBody extends React.Component {
     console.log(user);
     const booking = user.booking;
     this.setState({ booking });
-    localStorage.setItem("bookings", booking);
+    localStorage.setItem("bookings", JSON.stringify(booking));
   }
   render() {
     console.log(this.state);
