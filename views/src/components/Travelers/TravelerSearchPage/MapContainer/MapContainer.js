@@ -22,7 +22,6 @@ class MapContainer extends React.Component {
       this.props.address.geometry && this.props.address.geometry.location.lat(),
     lng:
       this.props.address.geometry && this.props.address.geometry.location.lng(),
-    bio: "",
     address: JSON.parse(localStorage.getItem("address")),
     dates: JSON.parse(localStorage.getItem("dates")),
     usersThatMatchDate: []
