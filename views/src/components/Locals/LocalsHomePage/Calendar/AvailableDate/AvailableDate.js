@@ -32,12 +32,12 @@ class AvailableDate extends React.Component {
         <p>
           Available from <span> </span>
           <Moment format="MM/DD/YYYY">{this.props.startDate}</Moment>
-          <span> </span> to
+          <span> </span> to <span> </span>
           <Moment format="MM/DD/YYYY">{this.props.endDate}</Moment>
         </p>
-        <p className="available-date-remover" onClick={this.handleClick}>
-          X
-        </p>
+        <button className="available-date-button" onClick={this.handleClick}>
+          x
+        </button>
       </div>
     );
   }

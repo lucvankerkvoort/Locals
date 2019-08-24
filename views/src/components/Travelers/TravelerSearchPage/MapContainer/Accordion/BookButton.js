@@ -24,6 +24,7 @@ class BookButton extends React.Component {
 
   book = () => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
+    console.log(user);
     const userId = user._id;
     const localID = {
       id: this.props.localId
@@ -31,6 +32,7 @@ class BookButton extends React.Component {
     API.bookingLocal(userId, localID).then(result => {
       localStorage.setItem("userBooking", result.booking);
       console.log(result);
+      console.log(result.booking);
     });
   };
 
