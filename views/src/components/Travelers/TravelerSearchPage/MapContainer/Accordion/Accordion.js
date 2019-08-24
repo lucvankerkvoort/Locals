@@ -33,14 +33,12 @@ const Accordion = props => {
             <div className="traveler-search-grid-item-top-left">
               {props.name}
             </div>
-            <div className="traveler-search-grid-item-top-right">
-              {props.rate}
-            </div>
+            <div className="traveler-search-grid-item-top-right">Rate</div>
             <div className="traveler-search-grid-item-bottom-left">
-              {props.endDate}
+              Start Date: {props.startDate}
             </div>
             <div className="traveler-search-grid-item-bottom-right">
-              {props.startDate}
+              End Date: {props.endDate}
             </div>
           </div>
         </div>

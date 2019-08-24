@@ -4,6 +4,7 @@ import Accordion from "./Accordion/Accordion";
 import DateContainer from "./DateContainer/DateContainer";
 import { Map, InfoWindow, GoogleApiWrapper, Marker } from "google-maps-react";
 import "./MapContainer.css";
+import Moment from "react-moment";
 import API from "../../../../controller";
 
 const mapStyles = {
@@ -21,6 +22,7 @@ class MapContainer extends React.Component {
       this.props.address.geometry && this.props.address.geometry.location.lat(),
     lng:
       this.props.address.geometry && this.props.address.geometry.location.lng(),
+    bio: "",
     address: JSON.parse(localStorage.getItem("address")),
     dates: JSON.parse(localStorage.getItem("dates")),
     usersThatMatchDate: []
@@ -48,12 +50,12 @@ class MapContainer extends React.Component {
             // it will only reach here if dates are valid
             usersThatMatchDate.push(response);
             console.log("usersThatMatchDate", usersThatMatchDate);
-            this.setState({
-              usersThatMatchDate: usersThatMatchDate
-            });
             break;
           }
         }
+      });
+      this.setState({
+        usersThatMatchDate: usersThatMatchDate
       });
     });
   };
@@ -108,6 +110,7 @@ class MapContainer extends React.Component {
   };
 
   render() {
+    console.log(this.state.usersThatMatchDate);
     console.log(this.state);
     console.log(this.props);
 
@@ -131,8 +134,12 @@ class MapContainer extends React.Component {
         profileImg={user.avatar}
         rating={user.rating}
         tourInfo={user.tourInfo}
-        startDate={user.availability[0].dateStart}
-        endDate={user.availability[0].dateEnd}
+        startDate={
+          <Moment format="MM/DD/YYYY">{user.availability[0].dateStart}</Moment>
+        }
+        endDate={
+          <Moment format="MM/DD/YYYY">{user.availability[0].dateEnd}</Moment>
+        }
       />
     ));
     return (
