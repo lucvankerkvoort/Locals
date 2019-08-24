@@ -14,7 +14,7 @@
   height: 13vh;
   border: 0 solid rgba(255, 255, 255, 0.7);
   margin-top: 3vh;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(252, 199, 199);
   border-radius: 10px;
   box-shadow: 6px 6px 25px dimgray;
   background: rgba(252, 199, 199, 0.7);
@@ -55,42 +55,29 @@
   display: grid;
   grid-template-columns: auto auto auto;
   position: relative;
-  left: 1vw;
-  align-items: center;
+  left: 0.5vw;
+  top: 2vh;
 }
 
-/* .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-weight: normal;
-  font-size: 1.2em;
-  text-align: center;
-} */
-
 .local-homepage-grid-item-left {
-  padding: 10px;
   font-weight: bold;
   font-size: 0.8em;
-  /* position: relative; */
-  /* top: 2.5vh;
-  left: 15vh; */
+  position: relative;
+  top: 25%;
 }
 
 .local-homepage-grid-item-center {
-  padding: 10px;
   font-weight: bold;
   font-size: 0.8em;
   position: relative;
-  right: 0.5vw;
+  top: 25%;
 }
 
 .local-homepage-grid-item-right {
-  padding: 10px;
   font-weight: bold;
   font-size: 0.8em;
   position: relative;
-  right: 1vw;
+  top: 25%;
 }
 
 .local-homepage-accordion-section {
