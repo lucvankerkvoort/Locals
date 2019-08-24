@@ -15,7 +15,10 @@ router
   .put(controller.travellerController.update)
   .delete(controller.travellerController.delete);
 
-router.route("/remove/:id").post(controller.travellerController.deleteBooking);
+router
+  .route("/removeBooking/:id")
+  .post(controller.travellerController.deleteBooking);
+
 router
   .route("/login")
   .post(controller.travellerController.findByUsernameAndPassword);

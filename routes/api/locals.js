@@ -29,5 +29,9 @@ router
   .route("/search")
   .post(controller.localController.findByAvailabilityAndPlace);
 
-router.route("/remove/:id").post(controller.localController.deleteFieldValue);
+router.route("/removeDate/:id").post(controller.localController.deleteDate);
+
+router
+  .route("/removeBooking/:id")
+  .post(controller.localController.deleteBooking);
 module.exports = router;
