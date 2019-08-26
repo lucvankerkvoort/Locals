@@ -7,9 +7,10 @@ import "./TravelerHome.css";
 
 class TravelerHome extends React.Component {
   state = {
-    place: ""
-    // startDate: "",
-    // endDate: ""
+    place: "",
+    startDate: new Date(),
+    endDate: new Date(),
+    check: false
   };
 
   componentDidMount() {
@@ -18,8 +19,6 @@ class TravelerHome extends React.Component {
   }
   showPlaceDetails(place) {
     this.setState({ place });
-    console.log(this.state.place);
-    console.log(this.state.place.formatted_address);
     this.props.handleAddress(this.state.place);
   }
 
@@ -27,13 +26,10 @@ class TravelerHome extends React.Component {
     this.setState({ place: event.target.value });
   };
 
-  handleDates = input => {
-    console.log(input);
-    this.props.dates(input);
-  };
   render() {
-    console.log(this.props);
-    console.log(this.state);
+    if (this.state.check) {
+      this.handleDates();
+    }
     let pictures = <BackgroundSlideshow images={travelerArray} />;
     return (
       <div className="background">
@@ -45,7 +41,10 @@ class TravelerHome extends React.Component {
             value={this.state.value}
           />
         </div>
-        <DateContainer handleDates={this.handleDates} />
+        <DateContainer
+          handleStartDate={this.handleStartDate}
+          handleEndDate={this.handleEndDate}
+        />
       </div>
     );
   }
