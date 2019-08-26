@@ -38,10 +38,7 @@ export default {
   },
   pushDates: function(id, data) {
     console.log("ID", id, "Data", data);
-    return axios.post("/api/locals/dates/" + id, {
-      startdate: data[0],
-      enddate: data[1]
-    });
+    return axios.post("/api/locals/dates/" + id, data);
   },
   searchLocals: function(data) {
     return axios.post("/api/locals/search", data);
