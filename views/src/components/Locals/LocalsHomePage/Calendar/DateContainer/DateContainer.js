@@ -3,23 +3,14 @@ import "./DateContainer.css";
 import StartDateInput from "./StartDateInput";
 import EndDateInput from "./EndDateInput";
 
-let dates = [];
 class DateContainer extends React.Component {
-  handleStartDate = input => {
-    dates.push(input);
-    this.handleDates();
+  handleStartDate = startDate => {
+    this.props.handleStartDate(startDate)
   };
-  handleEndDate = input => {
-    dates.push(input);
-    this.handleDates();
+  handleEndDate = endDate => {
+    this.props.handleEndDate(endDate)
   };
 
-  handleDates = () => {
-    console.log(dates);
-    if (dates.length <= 2) {
-      this.props.handleDates(dates);
-    }
-  };
   render() {
     return (
       <div className="local-dates-container">
