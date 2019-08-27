@@ -6,31 +6,28 @@ import API from "../../../../controller";
 
 class ToursBody extends React.Component {
   state = {
-    booking: [],
-    check: false,
-    bookedLocals: []
+    booking: JSON.parse(localStorage.getItem("userBooking")),
+    check: false
   };
 
   componentDidMount() {
-    this.handleUser();
+    this.setBooking();
   }
 
   setCheck = () => {
     this.setState({ check: true });
     console.log(this.state.booking);
   };
-  handleUser() {
-    const booking = JSON.parse(localStorage.getItem("userBooking"));
-    this.setState({ booking });
-    this.setCheck();
-  }
-  render() {
+
+  setBooking = () => {
+    console.log("I Run");
+    const duplicate = [];
+    const bookedLocals = [];
     for (let i = 0; i < this.state.booking.length; i++) {
       API.getLocalById(this.state.booking[i].id).then(result => {
-        let duplicate = [];
         for (let i = 0; i < result.data.length; i++) {
           if (duplicate.indexOf(result.data[i]) !== 0) {
-            this.state.bookedLocals.push(result.data[i]);
+            bookedLocals.push(result.data[i]);
             duplicate.push(result.data[i]);
             console.log(result.data[i]);
           } else {
@@ -40,27 +37,38 @@ class ToursBody extends React.Component {
         }
       });
     }
-    if (this.state.check) {
-      console.log("I runt");
-      const localsBooked = this.state.bookedLocals.map((local, i) => (
-        <Accordion
-          bio={local.bio}
-          name={`${local.firstname} ${local.lastname}`}
-          rate={local.rate}
-          key={i}
-          rating={local.rating}
-          tourInfo={local.tourInfo}
-          startDate={
-            <Moment format="MM/DD/YYYY">
-              {local.availability[0].dateStart}
-            </Moment>
-          }
-          endDate={
-            <Moment format="MM/DD/YYYY">{local.availability[0].dateEnd}</Moment>
-          }
-        />
-      ));
-    }
+    this.setState({ bookedLocals, check: true });
+    this.handleBooking();
+  };
+
+  handleBooking = () => {};
+  render() {
+    let localsBooked;
+    this.state.check
+      ? (localsBooked = this.state.bookedLocals.map((local, i) => {
+          return (
+            <Accordion
+              bio={local.bio}
+              name={`${local.firstname} ${local.lastname}`}
+              rate={local.rate}
+              key={i}
+              rating={local.rating}
+              tourInfo={local.tourInfo}
+              startDate={
+                <Moment format="MM/DD/YYYY">
+                  {local.availability[0].dateStart}
+                </Moment>
+              }
+              endDate={
+                <Moment format="MM/DD/YYYY">
+                  {local.availability[0].dateEnd}
+                </Moment>
+              }
+            />
+          );
+        }))
+      : console.log(this.state.bookedLocals);
+
     console.log(this.state);
 
     return (
