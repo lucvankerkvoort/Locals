@@ -27,4 +27,3 @@ class Navbar extends React.Component {
 }
 
 export default Navbar;
-// Navbar: (avatarslot, calendar, tours, settings)
