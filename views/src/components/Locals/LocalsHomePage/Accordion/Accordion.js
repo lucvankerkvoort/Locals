@@ -35,13 +35,7 @@ const Accordion = props => {
           </div>
           <div className="local-homepage-matches-info-container">
             <div className="local-homepage-grid-item-left">
-              Name{/*props.name*/}
-            </div>
-            <div className="local-homepage-grid-item-center">
-              Start Date{/*props.startDate*/}
-            </div>
-            <div className="local-homepage-grid-item-right">
-              End Date{/*props.endDate*/}
+              Name {props.name}
             </div>
           </div>
         </div>

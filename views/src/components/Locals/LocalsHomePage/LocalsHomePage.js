@@ -28,15 +28,19 @@ class Localhome extends React.Component {
     const booking = user.booking;
     console.log(booking);
     const uniqueBookingsArray = [...new Set(booking)];
+    console.log("Unique booking", uniqueBookingsArray);
     const bookedTravelers = [];
     for (let i = 0; i < uniqueBookingsArray.length; i++) {
       API.getTravelerById(uniqueBookingsArray[i].id).then(result => {
-        console.log(result.data);
-        // bookedTravelers.push(result.data);
+        if (bookedTravelers.indexOf(result.data[0]) === -1) {
+          console.log(result.data[0]);
+          bookedTravelers.push(result.data[0]);
+          console.log(bookedTravelers);
+          localStorage.setItem("localBooking", JSON.stringify(bookedTravelers));
+        }
       });
     }
-    // console.log(bookedTravelers)
-    // localStorage.setItem(JSON.stringify(bookedTravelers))
+    console.log(bookedTravelers);
   };
   render() {
     console.log(this.state);
