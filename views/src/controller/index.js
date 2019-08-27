@@ -48,7 +48,8 @@ export default {
     return axios.post("/api/traveller/booking/" + id, data);
   },
   bookingTraveler: function(id, data) {
-    // return axios.post("/api/locals/booking/" + id, data);
+    console.log(id, data);
+    return axios.post("/api/locals/booking/" + id, data);
   },
   deleteLocalsDates: function(id, data) {
     console.log(id, data);

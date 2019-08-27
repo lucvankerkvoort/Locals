@@ -7,6 +7,7 @@ import Availability from "./Calendar/calendar";
 import ToursBody from "./LocalsToursBody/ToursBody";
 import "./LocalsHomePage.css";
 import { withCookies } from "react-cookie";
+import API from "../../../controller";
 
 class Localhome extends React.Component {
   state = {
@@ -18,11 +19,27 @@ class Localhome extends React.Component {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     const userDates = JSON.stringify(currentUser.availability);
     localStorage.setItem("userDates", userDates);
-    this.setState({ currentUser });
+    this.getTraveler();
+    this.setState({ currentUser, check: true });
   }
 
+  getTraveler = () => {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    const booking = user.booking;
+    console.log(booking);
+    const uniqueBookingsArray = [...new Set(booking)];
+    const bookedTravelers = [];
+    for (let i = 0; i < uniqueBookingsArray.length; i++) {
+      API.getTravelerById(uniqueBookingsArray[i].id).then(result => {
+        console.log(result.data);
+        // bookedTravelers.push(result.data);
+      });
+    }
+    // console.log(bookedTravelers)
+    // localStorage.setItem(JSON.stringify(bookedTravelers))
+  };
   render() {
-    console.log(this.state.currentUser);
+    console.log(this.state);
 
     const { match } = this.props;
     return (

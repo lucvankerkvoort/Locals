@@ -34,4 +34,6 @@ router.route("/removeDate/:id").post(controller.localController.deleteDate);
 router
   .route("/removeBooking/:id")
   .post(controller.localController.deleteBooking);
+
+router.route("/booking/:id").post(controller.localController.addBooking);
 module.exports = router;
