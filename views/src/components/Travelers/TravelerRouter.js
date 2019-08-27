@@ -19,11 +19,9 @@ class TravelerRouter extends React.Component {
     localStorage.setItem("address", JSON.stringify(input));
   };
 
-  dateHandler = input => {
-    this.setState({ dates: input });
-    const dates = {
-      date: input
-    };
+  dateHandler = dates => {
+    this.setState({ dates });
+    console.log("Hit me up", dates);
     localStorage.setItem("dates", JSON.stringify(dates));
   };
   render() {

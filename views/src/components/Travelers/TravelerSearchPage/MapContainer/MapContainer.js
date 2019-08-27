@@ -23,7 +23,8 @@ class MapContainer extends React.Component {
     lng:
       this.props.address.geometry && this.props.address.geometry.location.lng(),
     address: JSON.parse(localStorage.getItem("address")),
-    dates: JSON.parse(localStorage.getItem("dates")),
+    startDate: localStorage.getItem("startDate"),
+    endDate: localStorage.getItem("endDate"),
     usersThatMatchDate: []
   };
 
@@ -32,20 +33,23 @@ class MapContainer extends React.Component {
   }
 
   loadLocals = () => {
-    let userStart = new Date(this.state.dates.date[0]);
-    let userEnd = new Date(this.state.dates.date[1]);
-    console.log(this.state.place.name);
+    const startDate = new Date(localStorage.getItem("startDate"));
+    const endDate = new Date(localStorage.getItem("endDate"));
+    console.log("users startdates", startDate);
+    console.log("users endDate", endDate);
     const info = {
       city: this.state.place.name
     };
     API.searchLocals(info).then(result => {
-      var usersThatMatchDate = [];
+      const usersThatMatchDate = [];
       result.data.forEach(function(response) {
         const dates = response.availability;
         for (let i = 0; i < dates.length; i++) {
           let localStart = new Date(dates[i].dateStart);
           let localEnd = new Date(dates[i].dateEnd);
-          if (localStart <= userStart && localEnd >= userEnd) {
+          console.log(localStart);
+          console.log(localEnd);
+          if (localStart <= startDate && localEnd >= endDate) {
             // it will only reach here if dates are valid
             usersThatMatchDate.push(response);
             console.log("usersThatMatchDate", usersThatMatchDate);
@@ -61,7 +65,6 @@ class MapContainer extends React.Component {
 
   showPlaceDetails(place) {
     this.setState({ place });
-    console.log("I Run Showplace");
   }
 
   handleChange = event => {
@@ -69,7 +72,6 @@ class MapContainer extends React.Component {
   };
 
   onMarkerClick = (props, marker) => {
-    console.log("I Run OnMarkerClick");
     this.setState({
       activeMarker: marker,
       selectedPlace: props,
@@ -78,7 +80,6 @@ class MapContainer extends React.Component {
   };
 
   onInfoWindowClose = () => {
-    console.log("I Run OnInfoWindowClose");
     this.setState({
       activeMarker: null,
       showingInfoWindow: false
@@ -86,7 +87,6 @@ class MapContainer extends React.Component {
   };
 
   zoomInOnMapSearch = () => {
-    console.log("I Run ZoomInOnMapSearch");
     const lat =
       this.state.place.geometry && this.state.place.geometry.location.lat();
     const lng =
@@ -100,21 +100,15 @@ class MapContainer extends React.Component {
     this.loadLocals();
   };
 
-  handleDates = input => {
-    console.log(input);
-    const dates = {
-      date: input
-    };
-    this.setState({ dates });
+  handleStartDate = startDate => {
+    localStorage.setItem("startDate", startDate);
+  };
+
+  handleEndDate = endDate => {
+    localStorage.setItem("endDate", endDate);
   };
 
   render() {
-    console.log(this.state.usersThatMatchDate);
-    console.log(this.state);
-    console.log(this.props);
-
-    // We get the this.state.place from the localshomepage and it renders all the info into this.props.address
-    // Since this.props.address.geometry.location.lat && lng are functions they don't render anything on the page.
     const markers = (
       <Marker
         name={this.state.place.formatted_address}
@@ -158,7 +152,10 @@ class MapContainer extends React.Component {
               value={this.state.place.formatted_address}
               searchPlace={this.zoomInOnMapSearch}
             />
-            <DateContainer handleDates={this.handleDates} />
+            <DateContainer
+              handleStartDate={this.handleStartDate}
+              handleEndDate={this.handleEndDate}
+            />
             {markers}
           </Map>
         </div>
