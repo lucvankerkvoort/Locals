@@ -29,6 +29,7 @@ class MapContainer extends React.Component {
   };
 
   componentDidMount() {
+    this.getLocals();
     this.loadLocals();
   }
 
@@ -108,8 +109,30 @@ class MapContainer extends React.Component {
     localStorage.setItem("endDate", endDate);
   };
 
+  getLocals = () => {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    const userId = user._id;
+    console.log(userId);
+    const booking = [];
+    API.getTravelerById(userId).then(result => {
+      console.log(result);
+      for (let i = 0; i < result.data.length; i++) {
+        console.log("check if its working", result.data[i].booking);
+        booking.push(result.data[i].booking);
+      }
+      console.log(result);
+    });
+    const uniqueBookingsArray = [...new Set(booking)];
+    const totalBookings = [];
+    console.log(uniqueBookingsArray);
+    for (let i = 0; i < uniqueBookingsArray.length; i++) {
+      API.getLocalById(uniqueBookingsArray[i]).then(result => {
+        totalBookings.push(result.data[0]);
+        localStorage.setItem("userBooking", JSON.stringify(totalBookings));
+      });
+    }
+  };
   render() {
-    console.log(this.state.usersThatMatchDate);
     const markers = (
       <Marker
         name={this.state.place.formatted_address}
