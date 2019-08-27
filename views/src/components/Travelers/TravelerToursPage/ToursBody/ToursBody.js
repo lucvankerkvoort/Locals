@@ -14,7 +14,7 @@ class ToursBody extends React.Component {
     const localsBooked = this.state.booking.map((local, i) => {
       return (
         <Accordion
-          bio={local.bio}
+          content={local.bio}
           name={`${local.firstname} ${local.lastname}`}
           rate={local.rate}
           key={i}
