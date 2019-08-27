@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* height: 18vh;
-  margin-top: -1vh; */
 }
 
 .local-homepage-small-match-container {
@@ -57,22 +55,16 @@
 .local-homepage-grid-item-left {
   font-weight: bold;
   font-size: 0.8em;
-  /* position: relative;
-  top: 25%; */
 }
 
 .local-homepage-grid-item-center {
   font-weight: bold;
   font-size: 0.8em;
-  /* position: relative;
-  top: 25%; */
 }
 
 .local-homepage-grid-item-right {
   font-weight: bold;
   font-size: 0.8em;
-  /* position: relative;
-  top: 25%; */
 }
 
 .local-homepage-accordion-button {

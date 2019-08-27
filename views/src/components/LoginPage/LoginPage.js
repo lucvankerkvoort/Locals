@@ -23,7 +23,6 @@ class Login extends React.Component {
   }
 
   closeRegistration = input => {
-    console.log({ input });
     this.setState({ showComponent: input });
   };
   handleClick = () => {
@@ -44,7 +43,6 @@ class Login extends React.Component {
     };
     if (this.state.user === "local") {
       API.loginSearchLocal(user).then(result => {
-        console.log(result);
         if (result.data.length <= 0) {
           this.setState({ showMessage: true });
         } else if (user.password !== result.data[0].password) {
@@ -53,7 +51,6 @@ class Login extends React.Component {
           for (let i = 0; i < result.data.length; i++) {
             console.log(result.data[i]);
             API.getLocalById(result.data[i]._id).then(result => {
-              console.log(result);
               this.props.currentUser(result.data[0]);
               this.props.history.push("/localhome");
             });
@@ -61,7 +58,6 @@ class Login extends React.Component {
         }
       });
     } else if (this.state.user === "traveler") {
-      console.log(user);
       API.loginSearchTraveler(user).then(result => {
         console.log(result.data);
         if (result.data.length <= 0) {
@@ -72,7 +68,6 @@ class Login extends React.Component {
           for (let i = 0; i < result.data.length; i++) {
             console.log(result.data[i]);
             API.getTravelerById(result.data[i]._id).then(result => {
-              console.log(result);
               this.props.currentUser(result.data[0]);
               this.props.history.push("/travelerhome");
             });
@@ -82,9 +77,6 @@ class Login extends React.Component {
     }
   };
   render() {
-    console.log(this.state);
-    console.log(this.props);
-
     let pictures;
     let title;
 
