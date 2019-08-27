@@ -8,7 +8,7 @@ class HomeBody extends React.Component {
   state = {
     address: JSON.parse(localStorage.getItem("address")),
     dates: JSON.parse(localStorage.getItem("dates")),
-    localsInfo: []
+    booking: JSON.parse(localStorage.getItem("localBooking"))
   };
 
   componentDidMount() {
@@ -30,20 +30,13 @@ class HomeBody extends React.Component {
       right: "5vw"
     };
 
-    // const bookingInfo = this.state.localsInfo.booking.map((traveler, i) => (
-    //   <Accordion
-    //     name={`${traveler.firstname} ${traveler.lastname}`}
-    //     key={i}
-    //     bio={traveler.bio}
-    //     startDate={
-    //       <Moment format="MM/DD/YYYY">{traveler.availability[0].dateStart}</Moment>
-    //     }
-    //     endDate={
-    //       <Moment format="MM/DD/YYYY">{traveler.availability[0].dateEnd}</Moment>
-    //     }
-    //     userId={user._id}
-    //   />
-    // ));
+    const bookingInfo = this.state.booking.map((traveler, i) => (
+      <Accordion
+        name={`${traveler.firstname} ${traveler.lastname}`}
+        key={i}
+        userId={user._id}
+      />
+    ));
 
     return (
       <div className="localbody">
@@ -63,9 +56,7 @@ class HomeBody extends React.Component {
           <div className="center-body">
             <div className="upcoming">
               <h3>Your Upcoming Tours</h3>
-              {/* {bookingInfo} */}
-              <Accordion content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
-              <Accordion content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
+              {bookingInfo}
             </div>
             <div className="completed">
               <h3>You Have Completed {user.completedtours} Tours</h3>
