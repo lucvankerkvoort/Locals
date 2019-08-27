@@ -32,9 +32,31 @@ class BookButton extends React.Component {
     API.bookingLocal(userId, localID).then(result => {
       console.log(result.data);
       console.log(result.data.booking);
-      const booking = JSON.stringify(result.data.booking);
-      localStorage.setItem("userBooking", booking);
+      this.getLocals(result.data.booking);
     });
+  };
+
+  getLocals = booking => {
+    console.log("I'm being hit", booking);
+    const bookedLocals = [];
+    const duplicate = [];
+    for (let i = 0; i < booking.length; i++) {
+      console.log(booking[i]);
+      API.getLocalById(booking[i].id).then(result => {
+        console.log(result);
+        for (let j = 0; j < result.data.length; j++) {
+          if (duplicate.indexOf(result.data[0]) > 0) {
+            bookedLocals.push(result.data[0]);
+            duplicate.push(result.data[0]);
+            console.log(bookedLocals);
+          }
+        }
+
+        const userBooking = JSON.stringify(bookedLocals);
+        console.log("very Important", userBooking);
+        localStorage.setItem("userBooking", userBooking);
+      });
+    }
   };
 
   unbook = () => {
