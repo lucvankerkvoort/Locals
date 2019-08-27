@@ -58,7 +58,7 @@ class MapContainer extends React.Component {
         }
       });
       this.setState({
-        usersThatMatchDate: usersThatMatchDate
+        usersThatMatchDate
       });
     });
   };
@@ -109,6 +109,7 @@ class MapContainer extends React.Component {
   };
 
   render() {
+    console.log(this.state.usersThatMatchDate);
     const markers = (
       <Marker
         name={this.state.place.formatted_address}
