@@ -50,6 +50,23 @@ class BookButton extends React.Component {
       API.getLocalById(uniqueBookingsArray[i]).then(result => {
         totalBookings.push(result.data[0]);
         localStorage.setItem("userBooking", JSON.stringify(totalBookings));
+        this.storeTravelers(totalBookings);
+      });
+    }
+  };
+
+  storeTravelers = localIds => {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    console.log("User inside storeTravelers", user);
+    const userId = user._id;
+    console.log("UserId inside storeTravelers", userId);
+    const travelerId = {
+      id: userId
+    };
+    for (let i = 0; i < localIds.length; i++) {
+      // console.log("LocalIds inside storeTravelers", localIds[i]._id);
+      API.bookingTraveler(localIds[i]._id, travelerId).then(result => {
+        console.log(result);
       });
     }
   };

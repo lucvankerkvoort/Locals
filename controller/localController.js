@@ -50,6 +50,18 @@ module.exports = {
       .then(dbModel => res.json(dbModel));
     // here we will use mongo's queries to find a specific document and update it with users input on the front-end
   },
+  addBooking: function(req, res) {
+    console.log("Add Booking", req.body);
+    db.Local.findByIdAndUpdate(
+      {
+        _id: req.params.id
+      },
+      { $push: { booking: req.body } },
+      { new: true }
+    )
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.json(err));
+  },
   addAvailability: function(req, res) {
     console.log("id", req.params.id);
     console.log(req.body);
