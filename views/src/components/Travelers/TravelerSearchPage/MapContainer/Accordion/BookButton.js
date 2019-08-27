@@ -28,7 +28,9 @@ class BookButton extends React.Component {
     const localID = {
       id: this.props.localId
     };
+    console.log(localID);
     API.bookingLocal(userId, localID).then(result => {
+      console.log(result.data);
       console.log(result.data.booking);
       const booking = JSON.stringify(result.data.booking);
       localStorage.setItem("userBooking", booking);
