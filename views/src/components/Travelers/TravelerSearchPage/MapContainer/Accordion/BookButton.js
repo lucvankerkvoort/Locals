@@ -30,31 +30,26 @@ class BookButton extends React.Component {
     };
     console.log(localID);
     API.bookingLocal(userId, localID).then(result => {
+      let bookingsArray = [];
+      for (let i = 0; i < result.data.booking.length; i++) {
+        bookingsArray.push(result.data.booking[i].id);
+      }
       console.log(result.data);
       console.log(result.data.booking);
-      this.getLocals(result.data.booking);
+      console.log(bookingsArray);
+      this.getLocals(bookingsArray);
     });
   };
 
   getLocals = booking => {
-    console.log("I'm being hit", booking);
-    const bookedLocals = [];
-    const duplicate = [];
-    for (let i = 0; i < booking.length; i++) {
-      console.log(booking[i]);
-      API.getLocalById(booking[i].id).then(result => {
-        console.log(result);
-        for (let j = 0; j < result.data.length; j++) {
-          if (duplicate.indexOf(result.data[0]) > 0) {
-            bookedLocals.push(result.data[0]);
-            duplicate.push(result.data[0]);
-            console.log(bookedLocals);
-          }
-        }
-
-        const userBooking = JSON.stringify(bookedLocals);
-        console.log("very Important", userBooking);
-        localStorage.setItem("userBooking", userBooking);
+    console.log(booking);
+    const uniqueBookingsArray = [...new Set(booking)];
+    const totalBookings = [];
+    console.log(uniqueBookingsArray);
+    for (let i = 0; i < uniqueBookingsArray.length; i++) {
+      API.getLocalById(uniqueBookingsArray[i]).then(result => {
+        totalBookings.push(result.data[i]);
+        localStorage.setItem("userBooking", JSON.stringify(totalBookings));
       });
     }
   };
