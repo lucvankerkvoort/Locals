@@ -19,7 +19,7 @@ module.exports = {
     // here we will use mongo's queries to itterate through the database to retrieve data
   },
   findById: function(req, res) {
-    console.log("check me", req.params.id, "data", req.body);
+    console.log("check me", req.params.id);
     db.Local.find({ _id: req.params.id })
       .sort({ name: -1 })
       .then(dbModel => res.json(dbModel));
