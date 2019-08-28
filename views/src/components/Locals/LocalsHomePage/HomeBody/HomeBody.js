@@ -35,6 +35,7 @@ class HomeBody extends React.Component {
         name={`${traveler.firstname} ${traveler.lastname}`}
         key={i}
         userId={user._id}
+        bio={user.bio}
       />
     ));
 
