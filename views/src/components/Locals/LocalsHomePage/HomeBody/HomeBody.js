@@ -11,10 +11,6 @@ class HomeBody extends React.Component {
     booking: JSON.parse(localStorage.getItem("localBooking"))
   };
 
-  componentDidMount() {
-    this.setState({ localsInfo: this.props.user });
-  }
-
   render() {
     const { user } = this.props;
     const style = {
