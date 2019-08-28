@@ -34,9 +34,7 @@ const Accordion = props => {
             <div className="local-homepage-photo" />
           </div>
           <div className="local-homepage-matches-info-container">
-            <div className="local-homepage-grid-item-left">
-              Name {props.name}
-            </div>
+            <div className="local-homepage-grid-item-left">{props.name}</div>
           </div>
         </div>
         <div className="local-homepage-accordion-section">

@@ -12,6 +12,7 @@ class HomeBody extends React.Component {
   };
 
   render() {
+    console.log(this.state.booking);
     const { user } = this.props;
     const style = {
       display: "flex",
@@ -31,7 +32,6 @@ class HomeBody extends React.Component {
         name={`${traveler.firstname} ${traveler.lastname}`}
         key={i}
         userId={user._id}
-        bio={user.bio}
       />
     ));
 
