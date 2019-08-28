@@ -57,6 +57,7 @@ class BookButton extends React.Component {
 
   storeTravelers = localIds => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
+    const userBooking = JSON.parse(localStorage.getItem("userBooking"));
     console.log("User inside storeTravelers", user);
     const userId = user._id;
     console.log("UserId inside storeTravelers", userId);
@@ -68,18 +69,40 @@ class BookButton extends React.Component {
       API.bookingTraveler(localIds[i]._id, travelerId).then(result => {
         console.log(result);
       });
+      if (user.booking.length === 0) {
+        user.booking.push(localIds[i]);
+      } else if (user.booking[i]._id !== userBooking[i]._id) {
+        user.booking.push(localIds[i]);
+      }
     }
+    localStorage.setItem("currentUser", JSON.stringify(user));
   };
 
   unbook = () => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
+    const userBooking = JSON.parse(localStorage.getItem("userBooking"));
     const userId = user._id;
     const localID = {
       id: this.props.localId
     };
+    console.log(localID.id);
     API.deleteTravelerBooking(userId, localID).then(result =>
       console.log(result)
     );
+    for (let i = 0; i < user.booking.length; i++) {
+      if (user.booking[i]._id === localID.id) {
+        user.booking.splice(i, 1);
+        console.log("user spliced");
+      }
+      for (let i = 0; i < userBooking.length; i++) {
+        if (userBooking[i]._id === localID.id) {
+          userBooking.splice(i, 1);
+          console.log("userBooking spliced");
+        }
+      }
+    }
+    localStorage.setItem("currentUser", JSON.stringify(user));
+    localStorage.setItem("userBooking", JSON.stringify(userBooking));
   };
   render() {
     console.log(this.props.localId);
