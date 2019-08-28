@@ -16,6 +16,7 @@ class Localhome extends React.Component {
   };
 
   componentDidMount() {
+    console.log("Component Mounted");
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     const userDates = JSON.stringify(currentUser.availability);
     localStorage.setItem("userDates", userDates);
@@ -24,25 +25,24 @@ class Localhome extends React.Component {
   }
 
   getTraveler = () => {
+    console.log("Getting Traveler");
     const user = JSON.parse(localStorage.getItem("currentUser"));
     const booking = user.booking;
-    console.log(booking);
-    const bookingsArray = [...new Set(booking)];
-    let uniqueBookingsArray = [];
-    for (let i = 0; i < bookingsArray.length; i++) {
-      API.getTravelerById(bookingsArray[i].id).then(result => {
-        if (uniqueBookingsArray.indexOf(result.data[0])) {
-          uniqueBookingsArray.push(result.data[0]);
-          console.log(result.data[0]);
-
-          localStorage.setItem(
-            "localBooking",
-            JSON.stringify(uniqueBookingsArray)
-          );
+    let bookingsArray = [];
+    for (let j = 0; j < booking.length; j++) {
+      bookingsArray.push(booking[0].id);
+    }
+    let uniqueBookingsArray = [...new Set(bookingsArray)];
+    let uniqueBookings = [];
+    for (let i = 0; i < uniqueBookingsArray.length; i++) {
+      API.getTravelerById(uniqueBookingsArray[i]).then(result => {
+        if (uniqueBookings.indexOf(result.data[0])) {
+          uniqueBookings.push(result.data[0]);
+          localStorage.setItem("localBooking", JSON.stringify(uniqueBookings));
         }
       });
     }
-    console.log(uniqueBookingsArray);
+    console.log(uniqueBookings);
   };
   render() {
     console.log(this.state);

@@ -52,6 +52,7 @@ class Login extends React.Component {
             console.log(result.data[i]);
             API.getLocalById(result.data[i]._id).then(result => {
               this.props.currentUser(result.data[0]);
+              console.log(this.props.history);
               this.props.history.push("/localhome");
             });
           }
@@ -100,7 +101,7 @@ class Login extends React.Component {
             <p className="incorrect-info-text">
               {this.state.showMessage
                 ? this.state.incorrect
-                : console.log("your good")}
+                : console.log("you're good")}
             </p>
             <form className="form">
               <input

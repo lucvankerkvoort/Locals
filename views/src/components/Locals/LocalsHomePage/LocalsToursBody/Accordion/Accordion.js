@@ -34,7 +34,7 @@ const Accordion = props => {
             <div className="local-tours-photo" />
           </div>
           <div className="local-tours-matches-info-container">
-            <div className="local-tours-grid-item-left">Name {props.name}</div>
+            <div className="local-tours-grid-item-left">{props.name}</div>
           </div>
         </div>
         <div className="local-tours-accordion-section">
