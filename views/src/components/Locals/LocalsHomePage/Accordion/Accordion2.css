@@ -24,12 +24,9 @@
   display: flex;
   align-items: center;
   position: relative;
-  /* left: 1vw; */
-  /* background: greenyellow; */
 }
 
 .local-homepage-photo {
-  /* background: url("https://via.placeholder.com/80"); */
   background: url("../Images/match-photo1.jpg");
   width: 10vw;
   height: 12vh;
@@ -52,19 +49,11 @@
   top: 7vh;
 }
 
-.local-homepage-grid-item-left {
-  font-weight: bold;
-  font-size: 0.8em;
-}
-
 .local-homepage-grid-item-center {
   font-weight: bold;
   font-size: 0.8em;
-}
-
-.local-homepage-grid-item-right {
-  font-weight: bold;
-  font-size: 0.8em;
+  position: relative;
+  left: 4.5vw;
 }
 
 .local-homepage-accordion-button {
