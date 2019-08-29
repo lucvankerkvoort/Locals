@@ -36,7 +36,7 @@
 
 .local-upcoming-tours-accordions {
   background: #d94f70;
-  height: 42vh;
+  /* height: 42vh; */
   overflow-y: auto;
   display: flex;
   align-items: center;
