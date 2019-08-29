@@ -16,11 +16,12 @@
 
 .local-homepage-match-1 {
   display: flex;
+  height: 17vh;
 }
 
 .local-homepage-photo-big-container {
-  width: 10vw;
-  height: 12vh;
+  width: 26vw;
+  height: 17vh;
   display: flex;
   align-items: center;
   position: relative;
@@ -30,62 +31,20 @@
   background: url("../Images/match-photo1.jpg");
   width: 10vw;
   height: 12vh;
-  position: relative;
-  top: 2.5vh;
-  left: 1vw;
+  margin: 0 auto;
   background-position: center;
   background-size: cover;
   border-radius: 5px;
   box-shadow: 3px 3px 20px dimgray;
 }
 
-.local-homepage-matches-info-container {
+.local-homepage-traveler-name-container {
   width: 30vw;
-  height: 3vh;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  position: relative;
-  left: 0.5vw;
-  top: 7vh;
-}
-
-.local-homepage-grid-item-center {
+  height: 17vh;
+  margin: 0 auto;
   font-weight: bold;
   font-size: 0.8em;
-  position: relative;
-  left: 4.5vw;
-}
-
-.local-homepage-accordion-button {
-  background: rgba(252, 199, 199, 0.7);
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.6s ease;
-}
-
-.local-homepage-accordion-button:hover,
-.active {
-  background-color: #f8bbbb;
-}
-
-.local-homepage-accordion__icon {
-  margin-left: auto;
-  transition: transform 0.6s ease;
-}
-
-.local-homepage-rotate {
-  transform: rotate(180deg);
-}
-
-.local-homepage-accordion__content {
-  background-color: rgba(255, 255, 255, 0.7);
-  overflow: hidden;
-  transition: max-height 0.6s ease;
-}
-
-.local-homepage-accordion__text {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  font-size: 0.8em;
-  padding: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
