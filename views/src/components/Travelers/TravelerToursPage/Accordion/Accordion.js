@@ -4,6 +4,18 @@ import BookButton from "./BookButton";
 import Chevron from "./Chevron";
 
 const Accordion = props => {
+  const style = {
+    background: `url(${props.avatar})`,
+    width: "10vw",
+    height: "13vh",
+    left: "0.5vh",
+    position: "relative",
+    top: "2.4vh",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    borderRadius: "5px",
+    boxShadow: "3px 3px 20px dimgray"
+  };
   const [setActive, setActiveState] = useState("");
   const [setHeight, setHeightState] = useState("0px");
   const [setRotate, setRotateState] = useState("accordion__icon");

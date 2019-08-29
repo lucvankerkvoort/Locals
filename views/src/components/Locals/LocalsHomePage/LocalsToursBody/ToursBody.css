@@ -36,11 +36,11 @@
 
 .local-upcoming-tours-accordions {
   background: #d94f70;
-  height: 42vh;
   overflow-y: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .warning-message-local-tours {

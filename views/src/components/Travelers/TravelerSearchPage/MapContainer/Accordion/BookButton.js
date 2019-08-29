@@ -71,6 +71,7 @@ class BookButton extends React.Component {
       });
       if (user.booking.length === 0) {
         user.booking.push(localIds[i]);
+        console.log(user.booking[i]);
       } else if (user.booking[i]._id !== userBooking[i]._id) {
         user.booking.push(localIds[i]);
       }
