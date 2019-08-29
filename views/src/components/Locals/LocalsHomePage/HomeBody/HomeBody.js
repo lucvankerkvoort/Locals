@@ -1,6 +1,7 @@
 import React from "react";
 import Accordion from "../Accordion/Accordion";
 import "./HomeBody.css";
+import Stars from "./Stars";
 import Moment from "react-moment";
 import API from "../../../../controller";
 
@@ -61,7 +62,9 @@ class HomeBody extends React.Component {
           </div>
           <div className="rating">
             <h2>Rating</h2>
-            <h3>{user.rating}</h3>
+            <h3>
+              <Stars />
+            </h3>
           </div>
         </div>
       </div>
