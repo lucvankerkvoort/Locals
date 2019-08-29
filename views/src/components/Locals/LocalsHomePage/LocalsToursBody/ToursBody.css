@@ -33,3 +33,14 @@
   overflow-y: auto;
   height: 47.45vh;
 }
+
+.warning-message-local-tours {
+  display: inline-flex;
+  position: relative;
+  left: 40%;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 6px 6px 25px black;
+}
