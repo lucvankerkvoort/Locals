@@ -47,7 +47,7 @@
 
 .warning-message-traveler-tour {
   display: inline-flex;
-  background: white;
+  background: rgba(252, 199, 199);
   padding: 0.5em;
   border-radius: 10px;
   box-shadow: 6px 6px 25px black;

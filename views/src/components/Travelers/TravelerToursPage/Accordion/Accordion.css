@@ -26,11 +26,9 @@
   align-items: center;
   position: relative;
   left: 3.5vw;
-  /* background: greenyellow; */
 }
 
 .traveler-tours-photo {
-  /* background: url("https://via.placeholder.com/80"); */
   background: url("../../TravelerSearchPage/Images/match-photo1.jpg");
   width: 10vw;
   height: 13vh;
@@ -54,7 +52,6 @@
 }
 
 .traveler-tours-grid-item-top-left {
-  /* padding: 10px; */
   font-weight: bold;
   font-size: 0.8em;
   text-align: center;
@@ -63,7 +60,6 @@
 }
 
 .traveler-tours-grid-item-top-right {
-  /* padding: 10px; */
   font-weight: bold;
   font-size: 0.8em;
   text-align: center;
@@ -72,7 +68,6 @@
 }
 
 .traveler-tours-grid-item-bottom-left {
-  /* padding: 10px; */
   font-weight: bold;
   font-size: 0.8em;
   text-align: center;
@@ -81,7 +76,6 @@
 }
 
 .traveler-tours-grid-item-bottom-right {
-  /* padding: 10px; */
   font-weight: bold;
   font-size: 0.8em;
   text-align: center;

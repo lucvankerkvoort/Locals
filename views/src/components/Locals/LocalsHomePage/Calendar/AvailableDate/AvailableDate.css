@@ -6,7 +6,7 @@
   text-align: center;
   margin-bottom: 3vh;
   padding-top: 2vh;
-  padding-bottom: 2vh;
+  position: relative;
 }
 
 .available-date-button {
@@ -18,6 +18,11 @@
   box-shadow: 0px 0px 5px #122169;
   font-family: "champagne__limousinesregular", sans-serif;
   cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 0.5vw;
+  margin-top: 1vh;
 }
 
 .available-date-button:hover {

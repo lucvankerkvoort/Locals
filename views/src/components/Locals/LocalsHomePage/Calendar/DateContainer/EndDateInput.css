@@ -1,10 +1,13 @@
 .end-date-container {
-  width: 10vw;
-  z-index: 15;
-  position: relative;
-  left: 1.5vw;
+  width: 100%;
 }
+
+.end-date-search {
+  width: 80%;
+}
+
 .end-date-searchTerm {
+  width: 100%;
   border: 3px solid #d94f70;
   padding: 3px;
   height: 20px;

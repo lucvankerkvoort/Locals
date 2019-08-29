@@ -1,11 +1,13 @@
 .start-date-container {
-  width: 10vw;
-  z-index: 15;
-  text-align: center;
+  width: 100%;
+}
+
+.start-date-search {
+  width: 80%;
 }
 
 .start-date-searchTerm {
-  /* width: 100%; */
+  width: 100%;
   border: 3px solid #d94f70;
   padding: 3px;
   height: 20px;
