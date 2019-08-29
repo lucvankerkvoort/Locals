@@ -28,7 +28,7 @@ class AvailableDate extends React.Component {
     console.log(this.props);
     return (
       <div className="available-dates" key={this.props.key}>
-        <p>
+        <p className="availability-text">
           Available from <span> </span>
           <Moment format="MM/DD/YYYY">{this.props.startDate}</Moment>
           <span> </span> to <span> </span>
