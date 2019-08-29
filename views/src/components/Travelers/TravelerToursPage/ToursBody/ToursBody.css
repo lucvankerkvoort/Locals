@@ -33,3 +33,14 @@
   overflow-y: auto;
   height: 46.9vh;
 }
+
+.warning-message-traveler-tour {
+  display: inline-flex;
+  background: white;
+  padding: 10px;
+  position: relative;
+  left: 40%;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 6px 6px 25px black;
+}
