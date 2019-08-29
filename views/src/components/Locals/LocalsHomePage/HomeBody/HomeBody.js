@@ -2,8 +2,6 @@ import React from "react";
 import Accordion from "../Accordion/Accordion";
 import "./HomeBody.css";
 import Stars from "./Stars";
-import Moment from "react-moment";
-import API from "../../../../controller";
 
 class HomeBody extends React.Component {
   state = {
@@ -11,6 +9,7 @@ class HomeBody extends React.Component {
     dates: JSON.parse(localStorage.getItem("dates")),
     booking: JSON.parse(localStorage.getItem("localBooking"))
   };
+  bookingInfo;
 
   render() {
     console.log(this.state.booking);
@@ -28,13 +27,21 @@ class HomeBody extends React.Component {
       right: "5vw"
     };
 
-    const bookingInfo = this.state.booking.map((traveler, i) => (
-      <Accordion
-        name={`${traveler.firstname} ${traveler.lastname}`}
-        key={i}
-        userId={user._id}
-      />
-    ));
+    if (this.state.booking) {
+      this.bookingInfo = this.state.booking.map((traveler, i) => (
+        <Accordion
+          name={`${traveler.firstname} ${traveler.lastname}`}
+          key={i}
+          userId={user._id}
+        />
+      ));
+    } else {
+      this.bookingInfo = (
+        <p className="warning-message-local-home">
+          No Bookings Just Yet, Don't worry They'll Come Soon Enough
+        </p>
+      );
+    }
 
     return (
       <div className="localbody">
@@ -54,7 +61,7 @@ class HomeBody extends React.Component {
           <div className="center-body">
             <div className="upcoming">
               <h3>Your Upcoming Tours</h3>
-              {bookingInfo}
+              {this.bookingInfo}
             </div>
             <div className="completed">
               <h3>You Have Completed {user.completedtours} Tours</h3>
