@@ -12,6 +12,7 @@ const Stars = () => (
     enable-background="new 0 0 102.4 24"
     xmlSpace="preserve"
     fill="#d94f70"
+    className="star-icon"
   >
     <polygon points="10,4 12.5,9.3 18,10.1 14,14.2 14.9,20 10,17.3 5.1,20 6,14.2 2,10.1 7.5,9.3 " />
     <polygon points="29,4 31.5,9.3 37,10.1 33,14.2 33.9,20 29,17.3 24.1,20 25,14.2 21,10.1 26.5,9.3 " />

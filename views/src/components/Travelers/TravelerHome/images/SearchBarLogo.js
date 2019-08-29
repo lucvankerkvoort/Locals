@@ -11,6 +11,7 @@ const SearchBarLogoSVG = () => (
     viewBox="0 0 100 125"
     style={{ background: "new 0 0 100 100" }}
     xmlSpace="preserve"
+    className="traveler-home-search-icon"
   >
     <path
       style={{ fill: "#FFF" }}

@@ -1,3 +1,5 @@
-svg {
+.star-icon {
   margin-left: 1.2vw;
+  position: relative;
+  top: -3vh;
 }

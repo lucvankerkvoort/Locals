@@ -2,7 +2,7 @@
   display: inline-flex;
   background: linear-gradient(360deg, #304352, #d7d2cc);
   width: 76.2vw;
-  height: 90.7vh;
+  height: 89.8vh;
   position: relative;
   flex-direction: column;
   padding: 2em;
@@ -37,11 +37,17 @@
   overflow: hidden;
   overflow-y: auto;
 }
+
 .profile-body {
   height: 70%;
   width: 100%;
   display: flex;
   justify-content: flex-end;
+}
+
+.tips-tricks-section {
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 
 .upcoming {
