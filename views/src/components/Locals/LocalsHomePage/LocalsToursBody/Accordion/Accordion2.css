@@ -2,9 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 3px;
-  border-bottom-style: solid;
-  border-color: black;
 }
 
 .local-tours-small-match-container {
