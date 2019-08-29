@@ -17,6 +17,12 @@
 
 .traveler-next-tour-accordion {
   background: #d94f70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px;
+  border-bottom-style: solid;
+  border-color: black;
 }
 
 .traveler-upcoming-tours {
@@ -32,15 +38,15 @@
   background: #d94f70;
   overflow-y: auto;
   height: 46.9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .warning-message-traveler-tour {
   display: inline-flex;
   background: white;
-  padding: 10px;
-  position: relative;
-  left: 40%;
-  text-align: center;
+  padding: 0.5em;
   border-radius: 10px;
   box-shadow: 6px 6px 25px black;
 }

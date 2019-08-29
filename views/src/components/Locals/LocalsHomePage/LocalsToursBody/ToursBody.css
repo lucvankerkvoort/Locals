@@ -17,6 +17,12 @@
 
 .local-next-tour-accordion {
   background: #d94f70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px;
+  border-bottom-style: solid;
+  border-color: black;
 }
 
 .local-upcoming-tours {
@@ -30,15 +36,15 @@
 
 .local-upcoming-tours-accordions {
   background: #d94f70;
+  height: 42vh;
   overflow-y: auto;
-  /* height: 47.45vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .warning-message-local-tours {
   display: inline-flex;
-  position: relative;
-  left: 40%;
-  text-align: center;
   background: white;
   border-radius: 10px;
   padding: 10px;

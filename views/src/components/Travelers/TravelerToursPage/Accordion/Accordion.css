@@ -2,12 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 3px;
-  border-bottom-style: solid;
-  border-color: black; */
-  border: 3px;
-  border-bottom-style: solid;
-  border-color: black;
 }
 
 .traveler-tours-small-match-container {
