@@ -59,28 +59,13 @@
   /* background-color: #2196f3; */
 }
 
-.local-tours-grid-item-left {
-  font-weight: bold;
-  font-size: 0.8em;
-  text-align: center;
-  position: relative;
-  top: 25%;
-}
-
 .local-tours-grid-item-center {
   font-weight: bold;
   font-size: 0.8em;
   text-align: center;
   position: relative;
   top: 25%;
-}
-
-.local-tours-grid-item-right {
-  font-weight: bold;
-  font-size: 0.8em;
-  text-align: center;
-  position: relative;
-  top: 25%;
+  left: 7vw;
 }
 
 .local-tours-accordion-section {
