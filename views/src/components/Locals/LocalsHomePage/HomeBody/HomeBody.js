@@ -7,9 +7,15 @@ class HomeBody extends React.Component {
   state = {
     address: JSON.parse(localStorage.getItem("address")),
     dates: JSON.parse(localStorage.getItem("dates")),
-    booking: JSON.parse(localStorage.getItem("localBooking"))
+    booking: JSON.parse(localStorage.getItem("localBooking")),
+    tips: [
+      "Set your availability in the calendar page so travelers can find you",
+      "try to make your tour info as descriptive as possible to attract the most customers",
+      "Have you been with us for a while and still have to receive your first booking? try lowering your rate"
+    ]
   };
   bookingInfo;
+  renderTip;
 
   render() {
     console.log(this.state.booking);
@@ -43,6 +49,8 @@ class HomeBody extends React.Component {
       );
     }
 
+    const rendering = Math.floor(Math.random() * this.state.tips.length);
+    this.renderTip = this.state.tips[rendering];
     return (
       <div className="localbody">
         <div className="profile">
@@ -57,6 +65,7 @@ class HomeBody extends React.Component {
         <div className="profile-body">
           <div className="FAQ">
             <h3>Tips and Tricks</h3>
+            <p>{this.renderTip}</p>
           </div>
           <div className="center-body">
             <div className="upcoming">
