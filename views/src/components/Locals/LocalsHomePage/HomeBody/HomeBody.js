@@ -9,9 +9,9 @@ class HomeBody extends React.Component {
     dates: JSON.parse(localStorage.getItem("dates")),
     booking: JSON.parse(localStorage.getItem("localBooking")),
     tips: [
-      "Set your availability in the calendar page so travelers can find you",
-      "try to make your tour info as descriptive as possible to attract the most customers",
-      "Have you been with us for a while and still have to receive your first booking? try lowering your rate"
+      "Set your availability in the calendar page so travelers can find you!",
+      "Try to make your tour info as descriptive as possible to attract the most customers!",
+      "Been with us for a while and still have yet to receive your first booking? Try lowering your rate!"
     ]
   };
   bookingInfo;
@@ -44,7 +44,7 @@ class HomeBody extends React.Component {
     } else {
       this.bookingInfo = (
         <p className="warning-message-local-home">
-          No Bookings Just Yet, Don't worry They'll Come Soon Enough
+          No Bookings Just Yet, Don't worry They'll Come Soon Enough!
         </p>
       );
     }
@@ -65,7 +65,7 @@ class HomeBody extends React.Component {
         <div className="profile-body">
           <div className="FAQ">
             <h3>Tips and Tricks</h3>
-            <p>{this.renderTip}</p>
+            <p className="tips-tricks-section">{this.renderTip}</p>
           </div>
           <div className="center-body">
             <div className="upcoming">

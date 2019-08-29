@@ -26,6 +26,7 @@ class ToursBody extends React.Component {
         </p>
       );
     }
+
     return (
       <div className="local-body-container">
         <div className="local-next-tour">Next Tour</div>
