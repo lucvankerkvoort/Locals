@@ -32,6 +32,11 @@
 
 .card-header-title {
   text-align: center;
+  color: #0099f2;
+}
+
+.card-header-title:active {
+  color: red;
 }
 
 .card-footer {
