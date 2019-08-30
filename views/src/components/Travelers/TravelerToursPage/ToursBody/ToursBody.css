@@ -26,6 +26,7 @@
 }
 
 .traveler-upcoming-tours {
+  display: flex;
   text-align: center;
   font-size: 2em;
   padding: 3vh;
