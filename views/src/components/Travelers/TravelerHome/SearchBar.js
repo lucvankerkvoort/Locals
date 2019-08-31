@@ -1,6 +1,6 @@
 import React from "react";
 import "./SearchBar.css";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 import SearchBarLogoSVG from "./images/SearchBarLogo";
 
 const google = window.google;

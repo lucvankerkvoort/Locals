@@ -51,7 +51,6 @@ class MapContainer extends React.Component {
           console.log(localStart);
           console.log(localEnd);
           if (localStart <= startDate && localEnd >= endDate) {
-            // it will only reach here if dates are valid
             usersThatMatchDate.push(response);
             console.log("usersThatMatchDate", usersThatMatchDate);
             break;

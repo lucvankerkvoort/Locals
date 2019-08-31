@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Route } from "react-router-dom";
 import TravelerHome from "./TravelerHome/TravelerHome";
 import Settings from "./TravelersSettingsPage/SettingsBody/SettingsBody";
 import MapContainer from "./TravelerSearchPage/MapContainer/MapContainer";
