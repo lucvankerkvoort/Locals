@@ -78,9 +78,7 @@ class HomeBody extends React.Component {
           </div>
           <div className="rating">
             <h2>Rating</h2>
-            <div className="star-container">
-              <Stars />
-            </div>
+            <Stars />
           </div>
         </div>
       </div>

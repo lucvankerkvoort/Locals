@@ -71,8 +71,6 @@ label {
   padding: 10px;
   box-shadow: 6px 6px 10px dimgrey;
   background: white;
-  /* overflow: hidden;
-  z-index: 21; */
 }
 .registration-wrapper {
   display: flex;
