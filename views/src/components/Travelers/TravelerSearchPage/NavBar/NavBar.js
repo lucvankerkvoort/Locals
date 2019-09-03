@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import Content from "./NavCategories/Content";
 import NavCategories from "./NavCategories/NavCategories";
 
