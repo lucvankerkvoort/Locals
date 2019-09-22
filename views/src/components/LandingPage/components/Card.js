@@ -9,7 +9,10 @@ class Card extends React.Component {
   };
   render() {
     return (
-      <article onClick={this.handleChange} className="card">
+      <article
+        onClick={this.handleChange}
+        className={`card ${this.props.value}-home-button`}
+      >
         <div>
           <Link to="/login">
             <CardHeader cardTitle={this.props.details} />
