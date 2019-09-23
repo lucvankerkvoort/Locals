@@ -18,17 +18,13 @@ class StartDateInput extends React.Component {
   render() {
     return (
       <div className="traveler-home-start-date-container">
-        <div className="traveler-home-start-date-search">
-          <form>
-            <DatePicker
-              className="traveler-home-start-date-searchTerm"
-              selected={this.state.startDate}
-              onChange={this.handleChange}
-              name="startDate"
-              dateFormat="MM/dd/yyyy"
-            />
-          </form>
-        </div>
+        <DatePicker
+          className="traveler-home-start-date-searchTerm"
+          selected={this.state.startDate}
+          onChange={this.handleChange}
+          name="startDate"
+          dateFormat="MM/dd/yyyy"
+        />
       </div>
     );
   }
