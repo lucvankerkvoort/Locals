@@ -1,10 +1,18 @@
 .traveler-home-dates-container {
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  flex-direction: row;
   z-index: 15;
-  width: 21%;
-  position: absolute;
-  top: 57%;
-  left: 50.5%;
-  transform: translate(-50%, -50%);
+  width: 210px;
+}
+
+@media only screen and (min-width: 768px) {
+  .traveler-home-dates-container {
+    width: 320px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .traveler-home-dates-container {
+    width: 360px;
+  }
 }

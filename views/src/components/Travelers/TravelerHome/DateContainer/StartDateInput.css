@@ -3,17 +3,22 @@
   z-index: 15;
 }
 
-.traveler-home-start-date-search {
-  width: 70%;
+.traveler-home-start-date-searchTerm {
+  width: 80% !important;
 }
 
-.traveler-home-start-date-searchTerm {
-  width: 100%;
-  border: 3px solid #d94f70;
-  padding: 5px;
-  height: 20px;
-  border-radius: 5px 5px 5px 5px;
-  outline: none;
-  color: rgb(53, 50, 50);
-  font-weight: bold;
+@media only screen and (min-width: 768px) {
+  .traveler-home-start-date-searchTerm {
+    width: 80% !important;
+    border: 5px solid #d94f70 !important;
+    font-size: 0.7em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .traveler-home-start-date-searchTerm {
+    width: 85% !important;
+    height: 25px !important;
+    font-size: 0.8em !important;
+  }
 }

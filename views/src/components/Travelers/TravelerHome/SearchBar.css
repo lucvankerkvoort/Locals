@@ -5,6 +5,12 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.traveler-home-wrap {
+  width: 210px;
+  z-index: 15;
+  margin-bottom: 0.5em;
+}
+
 .traveler-home-search {
   width: 100%;
   position: relative;
@@ -39,11 +45,32 @@ body {
   font-size: 20px;
 }
 
-.traveler-home-wrap {
-  width: 23%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 15;
+@media only screen and (min-width: 768px) {
+  .traveler-home-wrap {
+    width: 320px;
+    margin-bottom: 1em;
+  }
+  .traveler-home-searchTerm {
+    border: 5px solid #d94f70;
+    height: 25px;
+    font-size: 1em;
+  }
+  .traveler-home-searchButton {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .traveler-home-wrap {
+    width: 360px;
+  }
+  .traveler-home-searchTerm {
+    border: 5px solid #d94f70;
+    height: 30px;
+  }
+  .traveler-home-searchButton {
+    width: 52px;
+    height: 50px;
+  }
 }
