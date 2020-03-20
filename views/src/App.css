@@ -8,19 +8,114 @@
   font-style: normal;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "champagne__limousinesregular", sans-serif;
+/* Landing Page CSS */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-image: url("./landingPage.jpg"); */
+  max-width: 100%;
+  background-size: 100% 100%;
+  color: black;
 }
 
-body {
-  font-family: "champagne__limousinesregular", sans-serif;
+.box1,
+.box2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50vh;
 }
 
-input {
-  font-family: "champagne__limousinesregular", sans-serif;
+.card {
+  background: white;
+  box-shadow: 2px 2px 5px black;
+  border-radius: 8px;
+  width: 40%;
+}
+
+.traveler-home-button {
+  margin-bottom: -5em;
+}
+
+.local-home-button {
+  margin-top: -5em;
+}
+
+.card-header-title {
+  text-align: center;
+  color: #0099f2;
+  font-size: 1em;
+}
+
+.card-header-title:active {
+  color: red;
+}
+
+.card-footer {
+  padding: 10px;
+  background-color: white;
+  cursor: pointer;
+  text-align: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.traveler-btn {
+  color: black;
+  font-weight: 600;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  .box1,
+  .box2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    width: 100%;
+    height: 100vh;
+  }
+  .card {
+    width: 55%;
+  }
+  .traveler-home-button,
+  .local-home-button {
+    margin: 0;
+  }
+  .card-header-title {
+    font-size: 1.2em;
+  }
+  .card-footer {
+    padding: 20px;
+  }
+  .traveler-btn {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .card {
+    width: 50%;
+  }
+  .card-header-title {
+    font-size: 1.4em;
+  }
+  .card-footer {
+    padding: 25px;
+  }
+  .traveler-btn {
+    font-size: 1.8em;
+  }
 }
