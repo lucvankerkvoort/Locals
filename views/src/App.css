@@ -9,7 +9,27 @@
 }
 
 /* Landing Page CSS */
+.landingpage {
+  height: 100vh;
+  background: white;
+}
+.welcome-message {
+  color: white;
+  display: flex;
+  padding-top: 25px;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 
+  height: 20%;
+}
+.welcome-title {
+  color: white;
+  font-family: "champagne__limousinesregular";
+  line-height: 0em;
+  font-size: 2.5em;
+}
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -17,22 +37,30 @@
   justify-content: center;
   /* background-image: url("./landingPage.jpg"); */
   max-width: 100%;
-  background-size: 100% 100%;
+  background-size: 100%;
   color: black;
 }
 
 .box1,
 .box2 {
   display: flex;
+  color: white;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 50vh;
+  height: 40vh;
+}
+
+.box1 h3,
+.box2 h3 {
+  font-size: 1.5em;
+  font-family: "champagne__limousinesregular";
 }
 
 .card {
   background: white;
-  box-shadow: 2px 2px 5px black;
+  box-shadow: 3px 3px 5px black;
   border-radius: 8px;
   width: 40%;
 }
@@ -45,23 +73,12 @@
   margin-top: -5em;
 }
 
-.card-header-title {
-  text-align: center;
-  color: #0099f2;
-  font-size: 1em;
-}
-
-.card-header-title:active {
-  color: red;
-}
-
 .card-footer {
   padding: 10px;
   background-color: white;
   cursor: pointer;
   text-align: center;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-radius: 5px;
 }
 
 .traveler-btn {
@@ -69,8 +86,40 @@
   font-weight: 600;
   background-color: white;
   border: none;
+  font-family: "champagne__limousinesregular";
   cursor: pointer;
   font-size: 1.2em;
+}
+
+.landingpage-footer {
+  display: flex;
+  background: white;
+  height: 33vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.top-section-landingpage {
+  display: flex;
+  background-image: linear-gradient(
+    to bottom,
+    #283d89,
+    #274a97,
+    #2557a4,
+    #2364b1,
+    #2171be,
+    #1382cb,
+    #0292d8,
+    #00a3e3,
+    #00baed,
+    #00d1f2,
+    #26e6f3,
+    #5ffbf1
+  );
+  border-bottom: 25px solid black;
+  flex-direction: column;
 }
 
 @media only screen and (min-width: 768px) {
@@ -83,9 +132,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: white;
     width: 100%;
-    height: 100vh;
   }
   .card {
     width: 55%;
@@ -95,6 +142,7 @@
     margin: 0;
   }
   .card-header-title {
+    text-decoration: none !important;
     font-size: 1.2em;
   }
   .card-footer {
@@ -110,6 +158,7 @@
     width: 50%;
   }
   .card-header-title {
+    color: black;
     font-size: 1.4em;
   }
   .card-footer {

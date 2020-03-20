@@ -1,6 +1,5 @@
 import React from "react";
 import CardFooter from "./CardFooter";
-import CardHeader from "./CardHeader";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 class Card extends React.Component {
@@ -15,7 +14,6 @@ class Card extends React.Component {
       >
         <div>
           <Link to="/login">
-            <CardHeader cardTitle={this.props.details} />
             <CardFooter />
           </Link>
         </div>
