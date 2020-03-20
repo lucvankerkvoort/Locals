@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../LandingPage/components/Card";
+import Card from "./components/Card";
 import "./LandingPage.css";
 
 class LandingPage extends React.Component {

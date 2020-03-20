@@ -1,5 +1,4 @@
 import React from "react";
-import "./Accordion2.css";
 
 const Accordion = props => {
   return (

@@ -27,7 +27,7 @@
 }
 
 .local-homepage-photo {
-  background: url("../Images/match-photo1.jpg");
+  background: url("./match-photo1.jpg");
   width: 10vw;
   height: 12vh;
   margin: 0 auto;

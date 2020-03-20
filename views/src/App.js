@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import LandingPage from "./components/LandingPage/LandingPage";
+import LandingPage from "./pages/Landing";
 import LoginPage from "./components/LoginPage/LoginPage";
 import LocalsHomePage from "./components/Locals/LocalsHomePage/LocalsHomePage";
 import TravelerRouter from "./components/Travelers/TravelerRouter";

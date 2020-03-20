@@ -1,5 +1,5 @@
 import React from "react";
-import Accordion from "../Accordion/Accordion";
+import Accordion from "../../../General/Accordion/Accordion";
 import "./HomeBody.css";
 import Stars from "./Stars";
 
