@@ -1,10 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LandingPage from "./pages/Landing";
-import LoginPage from "./components/LoginPage/LoginPage";
+import LoginPage from "./pages/Login";
 import LocalsHomePage from "./components/Locals/LocalsHomePage/LocalsHomePage";
 import TravelerRouter from "./components/Travelers/TravelerRouter";
-import { withCookies } from "react-cookie";
 import "./App.css";
 
 class App extends React.Component {
