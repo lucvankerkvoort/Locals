@@ -1,6 +1,6 @@
 import React from "react";
-import SearchBar from "./SearchBar";
-import DateContainer from "./DateContainer/DateContainer";
+import SearchBar from "../../General/Searchbar";
+import DateContainer from "../../General/DateContainer";
 import { travelerArray } from "./images/backgroundImages/index";
 import BackgroundSlideshow from "react-background-slideshow";
 import "./TravelerHome.css";

@@ -11,18 +11,9 @@ import Picture3 from "./Local3.jpg";
 import Picture4 from "./Local4.jpg";
 import Picture5 from "./Local5.jpg";
 
+import pic1 from "./landing1.jpg";
+import pic2 from "./landing2.jpg";
+
 export const travellerArray = [Image1, Image2, Image3, Image4, Image5, Image6];
 export const localArray = [Picture1, Picture2, Picture3, Picture4, Picture5];
-export const both = [
-  Picture1,
-  Picture2,
-  Picture3,
-  Picture4,
-  Picture5,
-  Image1,
-  Image2,
-  Image3,
-  Image4,
-  Image5,
-  Image6
-];
+export const landing = [pic1, pic2];

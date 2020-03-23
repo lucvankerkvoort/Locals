@@ -1,7 +1,6 @@
 import React from "react";
-import "./SearchBar.css";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import SearchBarLogoSVG from "./images/SearchBarLogo";
+import SearchBarLogoSVG from "../../Travelers/TravelerHome/images/SearchBarLogo";
 
 const google = window.google;
 
@@ -32,17 +31,17 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="traveler-home-wrap">
-        <div className="traveler-home-search">
+      <div className="searchbar-wrapper">
+        <div className="searchbar-general">
           <input
             ref={this.autocompleteInput}
             type="text"
-            className="traveler-home-searchTerm"
+            className="searchterm"
             placeholder="Enter your destination here"
             onChange={this.props.handleChange}
           />
           <Link to="/travelerhome/search">
-            <button type="submit" className="traveler-home-searchButton">
+            <button type="submit" className="searchbutton">
               <SearchBarLogoSVG />
             </button>
           </Link>
