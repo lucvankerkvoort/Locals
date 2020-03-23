@@ -8,6 +8,9 @@
   font-style: normal;
 }
 
+button {
+  background: orange;
+}
 /* Landing Page CSS */
 .landingpage {
   height: 100vh;
@@ -436,7 +439,7 @@ input {
 /* Searchbar */
 
 .searchbar-wrapper {
-  width: 500px;
+  width: 60vw;
   z-index: 15;
   margin-bottom: 0.5em;
 }
@@ -477,30 +480,30 @@ input {
 }
 
 @media only screen and (min-width: 768px) {
-  .traveler-home-wrap {
+  .searchbar-wrapper {
     width: 320px;
     margin-bottom: 1em;
   }
-  .traveler-home-searchTerm {
+  .searchterm {
     border: 5px solid rgba(250, 250, 250, 0.7);
     height: 25px;
     font-size: 1em;
   }
-  .traveler-home-searchButton {
+  .searchbutton {
     width: 45px;
     height: 45px;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .traveler-home-wrap {
+  .searchbar-wrapper {
     width: 360px;
   }
-  .traveler-home-searchTerm {
+  .searchterm {
     border: 5px solid rgba(250, 250, 250, 0.7);
     height: 30px;
   }
-  .traveler-home-searchButton {
+  .searchbutton {
     width: 52px;
     height: 50px;
   }
@@ -532,8 +535,10 @@ input {
   z-index: 15;
 }
 
+.traveler-home-start-date-searchTerm,
 .traveler-home-end-date-searchTerm {
   width: 80% !important;
+  border: 2px solid rgba(250, 250, 250, 0.7);
   margin-left: 5px;
 }
 

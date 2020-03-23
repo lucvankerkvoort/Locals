@@ -1,8 +1,6 @@
 import React from "react";
 import SearchBar from "../../General/Searchbar";
 import DateContainer from "../../General/DateContainer";
-import { travelerArray } from "./images/backgroundImages/index";
-import BackgroundSlideshow from "react-background-slideshow";
 import "./TravelerHome.css";
 
 class TravelerHome extends React.Component {
@@ -30,21 +28,17 @@ class TravelerHome extends React.Component {
     if (this.state.check) {
       this.handleDates();
     }
-    let pictures = <BackgroundSlideshow images={travelerArray} />;
     return (
-      <div className="background">
-        {pictures}
-        <div className="components-container">
-          <SearchBar
-            handleChange={this.handleChange}
-            onPlaceChanged={this.showPlaceDetails.bind(this)}
-            value={this.state.value}
-          />
-          <DateContainer
-            handleStartDate={this.handleStartDate}
-            handleEndDate={this.handleEndDate}
-          />
-        </div>
+      <div className="components-container">
+        <SearchBar
+          handleChange={this.handleChange}
+          onPlaceChanged={this.showPlaceDetails.bind(this)}
+          value={this.state.value}
+        />
+        <DateContainer
+          handleStartDate={this.handleStartDate}
+          handleEndDate={this.handleEndDate}
+        />
       </div>
     );
   }
