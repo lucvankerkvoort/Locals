@@ -12,12 +12,19 @@ class InputForm extends React.Component {
     address: "",
     bio: "",
     tourinfo: "",
-    rate: 0
+    rate: 0,
+    message: "Password is not long enough",
+    passwordLength: false
   };
   handleSubmit = event => {
+    console.log(event);
     event.preventDefault();
-    console.log(this.state);
-    this.props.handleRegistration(this.state);
+    if (this.state.password.length > 8) {
+      this.props.handleRegistration(this.state);
+      this.setState({ passwordLength: false });
+    } else {
+      this.setState({ passwordLength: true });
+    }
   };
 
   handleClose = () => {
@@ -28,7 +35,6 @@ class InputForm extends React.Component {
     this.setState({ [input]: value });
   };
   render() {
-    console.log(this.state);
     if (this.props.user === "local") {
       return (
         <div className="input-form">
@@ -36,6 +42,7 @@ class InputForm extends React.Component {
             Close
           </p>
           <h1>Local Registration</h1>
+          {this.state.passwordLength ? this.state.message : null}
           {local.map((question, i) => (
             <Question
               storeData={this.handleChange}
@@ -47,7 +54,6 @@ class InputForm extends React.Component {
             />
           ))}
           <br />
-
           <button
             className="local-registration-btn"
             onClick={this.handleSubmit}
@@ -63,6 +69,7 @@ class InputForm extends React.Component {
             Close
           </p>
           <h1>Traveler Registration</h1>
+          {this.state.passwordLength ? this.state.message : null}
           {traveler.map((question, i) => (
             <Question
               storeData={this.handleChange}
