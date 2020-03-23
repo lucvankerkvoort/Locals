@@ -1,4 +1,6 @@
 import React from "react";
+import { both } from "../components/General/images/index";
+import BackgroundSlideshow from "react-background-slideshow";
 import Card from "../components/General/Card/Card";
 
 class LandingPage extends React.Component {
@@ -9,6 +11,7 @@ class LandingPage extends React.Component {
   render() {
     return (
       <div className="landingpage">
+        <BackgroundSlideshow images={both} />
         <div className="top-section-landingpage">
           <div className="welcome-message">
             <h3 className="welcome-title">Welcome to LocalGuides</h3>
