@@ -4,7 +4,6 @@ import API from "../../../controller/index";
 
 class Registration extends React.Component {
   handleSubmit = form => {
-    console.log(form);
     if (form.tourinfo === "") {
       console.log("pushin into travelers");
       const traveler = {
@@ -16,8 +15,6 @@ class Registration extends React.Component {
       API.pushTravelers(traveler).then(res => console.log(res));
       this.props.close(false);
     } else {
-      console.log(form);
-      console.log("pushin into locals");
       API.pushLocals(form).then(res => console.log(res));
       this.props.close(false);
     }

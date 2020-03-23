@@ -1,6 +1,4 @@
 import React from "react";
-import "./questions.css";
-import "../style.css";
 
 class Question extends React.Component {
   handleChange = event => {
