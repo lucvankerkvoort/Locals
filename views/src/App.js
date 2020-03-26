@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/General/NavBar/NavBar";
 import LandingPage from "./pages/Landing";
 import LoginPage from "./pages/Login";
 import LocalsHomePage from "./components/Locals/LocalsHomePage/LocalsHomePage";
@@ -15,7 +16,18 @@ class App extends React.Component {
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" render={() => <LandingPage />} />
+            <Route
+              exact
+              path="/"
+              render={() => {
+                return (
+                  <div>
+                    <Navbar />
+                    <LandingPage />
+                  </div>
+                );
+              }}
+            />
             <Route
               path="/login"
               render={props => (

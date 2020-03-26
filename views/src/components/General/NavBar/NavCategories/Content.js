@@ -3,14 +3,13 @@ import "./content.css";
 
 class Content extends React.Component {
   render() {
-    const { user } = this.props;
-    console.log(user);
+    // const { user } = this.props;
     return (
       <div className="content">
         <div className="image" />
         <div className="names">
-          <p>Username: {user.username}</p>
-          <p>Name: {user.name}</p>
+          <p>Username: {/*user.username*/}</p>
+          <p>Name: {/*user.name*/}</p>
         </div>
       </div>
     );

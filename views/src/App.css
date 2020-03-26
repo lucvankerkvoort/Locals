@@ -27,12 +27,12 @@ button {
   text-align: center;
   align-items: center;
   justify-content: center;
-  z-index: 15;
+  /* z-index: 15; */
 }
 .welcome-title {
   font-family: "champagne__limousinesregular";
   line-height: 0em;
-  z-index: 15;
+  /* z-index: 15; */
 }
 .wrapper {
   display: flex;
@@ -673,4 +673,29 @@ input {
     height: 25px !important;
     font-size: 0.8em !important;
   }
+}
+
+/* Navbar */
+
+.navbar {
+  display: flex;
+  width: 100%;
+  font-family: "champagne__limousinesregular";
+  height: 10vh;
+  background: white;
+  box-shadow: slategrey;
+}
+
+.navbar-logo {
+  padding: 0px 10px;
+}
+
+.elements {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.elements h3 {
+  padding: 0px 10px;
 }

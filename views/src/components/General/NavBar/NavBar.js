@@ -1,21 +1,20 @@
 import React from "react";
-import "./style.css";
 import Content from "./NavCategories/Content";
 import NavCategories from "./NavCategories/NavCategories";
 
 class Navbar extends React.Component {
-  handleNavbar = input => {
-    this.props.status.history.push(input);
-  };
   render() {
     console.log(this.props.user);
     return (
-      <div className="wrapper-login">
-        <div className="navbar">
-          <h3 className="title">Locals</h3>
-          <Content user={this.props.user} />
-          <br />
-          <NavCategories handleNav={this.handleNavbar} />
+      <div className="navbar">
+        <div className="navbar-logo">
+          <h2>TourBuddy</h2>
+        </div>
+        <div className="elements">
+          <h3>Become a Local</h3>
+          <h3>Sign Up</h3>
+          <h3>Login</h3>
+          <h3>Help</h3>
         </div>
       </div>
     );
@@ -23,4 +22,3 @@ class Navbar extends React.Component {
 }
 
 export default Navbar;
-// Navbar: (avatarslot, calendar, tours, settings)

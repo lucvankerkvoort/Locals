@@ -1,10 +1,10 @@
 .element {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   cursor: pointer;
   align-self: flex-start;
   object-fit: contain;
-  width: 90%;
+  width: 100%;
   overflow: hidden;
   margin-left: 15px;
 }
