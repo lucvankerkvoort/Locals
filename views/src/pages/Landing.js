@@ -4,10 +4,23 @@ import DateContainer from "../components/General/DateContainer";
 import Section from "../components/General/Sections";
 
 class LandingPage extends React.Component {
-  handleChange = input => {
-    console.log("input inside Landingpage", input);
-    this.props.handleChange(input);
+  state = {
+    place: "",
+    startDate: new Date(),
+    endDate: new Date(),
+    check: false
   };
+
+  showPlaceDetails = place => {
+    let location = place.geometry.location;
+    let lat = location.lat();
+    let lng = location.lng();
+
+    localStorage.setItem("lat", lat);
+    localStorage.setItem("lng", lng);
+    console.log(lat, lng);
+  };
+
   render() {
     return (
       <div className="landingpage">
@@ -18,7 +31,11 @@ class LandingPage extends React.Component {
         <div className="wrapper">
           <div className="searchbar-landingpage">
             <h2>Search the Globe</h2>
-            <Searchbar />
+            <Searchbar
+              handleChange={this.handleChange}
+              onPlaceChanged={this.showPlaceDetails.bind(this)}
+              value={this.state.value}
+            />
             <DateContainer />
           </div>
         </div>

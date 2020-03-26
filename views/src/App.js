@@ -8,30 +8,14 @@ import "./App.css";
 
 class App extends React.Component {
   state = {
-    user: "",
-    currentUser: ""
+    user: "traveler"
   };
-
-  handleChange = input => {
-    this.setState({ user: input });
-    localStorage.setItem("type", input);
-  };
-
-  handleUser = input => {
-    this.setState({ currentUser: input });
-    localStorage.setItem("currentUser", JSON.stringify(input));
-  };
-
   render() {
     return (
       <Router>
         <div>
           <Switch>
-            <Route
-              exact
-              path="/"
-              render={() => <LandingPage handleChange={this.handleChange} />}
-            />
+            <Route exact path="/" render={() => <LandingPage />} />
             <Route
               path="/login"
               render={props => (

@@ -12,7 +12,6 @@ class SearchBar extends React.Component {
     };
     this.autocompleteInput = React.createRef();
     this.autocomplete = null;
-    this.handlePlaceChanged = this.handlePlaceChanged.bind(this);
   }
 
   componentDidMount = () => {

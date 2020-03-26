@@ -6,7 +6,7 @@ class Content extends React.Component {
     const { user } = this.props;
     const style = {
       alignSelf: "center",
-      background: `url(${user.avatar})`,
+      // background: `url(${user.avatar})`,
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
       height: "5em",
@@ -19,10 +19,8 @@ class Content extends React.Component {
       <div className="content">
         <div className="image" style={style} />
         <div className="names">
-          <h3>{user.username}</h3>
-          <h3>
-            {user.firstname} {user.lastname}
-          </h3>
+          {/* <h3>{user.username}</h3> */}
+          <h3>{/* {user.firstname} {user.lastname} */}</h3>
         </div>
       </div>
     );
