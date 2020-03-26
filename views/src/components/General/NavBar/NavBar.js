@@ -1,5 +1,4 @@
 import React from "react";
-import Content from "./NavCategories/Content";
 import NavCategories from "./NavCategories/NavCategories";
 
 class Navbar extends React.Component {

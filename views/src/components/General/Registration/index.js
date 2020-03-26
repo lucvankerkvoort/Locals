@@ -20,7 +20,7 @@ class Registration extends React.Component {
     }
   };
   handleCloser = () => {
-    this.props.close(false);
+    this.props.close(false, this.props.user);
   };
   render() {
     console.log(this.props);

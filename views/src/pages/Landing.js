@@ -2,13 +2,16 @@ import React from "react";
 import Searchbar from "../components/General/Searchbar";
 import DateContainer from "../components/General/DateContainer";
 import Section from "../components/General/Sections";
+import Registration from "../components/General/Registration";
 
 class LandingPage extends React.Component {
   state = {
     place: "",
     startDate: new Date(),
     endDate: new Date(),
-    check: false
+    check: false,
+    showTravelerReg: false,
+    showLocalReg: false
   };
 
   showPlaceDetails = place => {
@@ -21,6 +24,16 @@ class LandingPage extends React.Component {
     console.log(lat, lng);
   };
 
+  openRegistration = input => {
+    input === "traveler"
+      ? this.setState({ showTravelerReg: true })
+      : this.setState({ showLocalReg: true });
+  };
+  closeRegistration = (input, type) => {
+    type === "traveler"
+      ? this.setState({ showTravelerReg: input })
+      : this.setState({ showLocalReg: input });
+  };
   render() {
     return (
       <div className="landingpage">
@@ -62,6 +75,12 @@ class LandingPage extends React.Component {
               picture="reachout"
               section="section-right"
             />
+            <button onClick={this.openRegistration}>
+              Sign Up Here As a Traveler
+            </button>
+            {this.state.showTravelerReg ? (
+              <Registration close={this.closeRegistration} user="traveler" />
+            ) : null}
           </div>
           <div className="landingpage-side">
             <h2>Guide</h2>
@@ -85,6 +104,12 @@ class LandingPage extends React.Component {
               picture="money"
               section="section"
             />
+            <button onClick={this.openRegistration}>
+              Sign Up Here As a Local
+            </button>
+            {this.state.showLocalReg ? (
+              <Registration close={this.closeRegistration} user="local" />
+            ) : null}
           </div>
         </div>
       </div>
