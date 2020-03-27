@@ -23,7 +23,7 @@ class Registration extends React.Component {
     this.props.close(false, this.props.user);
   };
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div className="registration-wrapper">
         <div className="registration">

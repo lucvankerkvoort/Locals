@@ -37,6 +37,8 @@ export const subtext = {
       Build a guided tour of your city.
       <br />
       Use your favorite spots that you want to show off.
+      <br />
+      Create stunning experiences to share with travelers
     </p>
   ),
   connect2: (

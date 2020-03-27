@@ -447,7 +447,7 @@ label {
   /* justify-content: center; */
   padding: 1em;
   border: none;
-  overflow: scroll;
+  /* overflow: scroll; */
   max-height: 100vh;
   text-align: center;
 }
@@ -513,7 +513,7 @@ input {
     align-items: center;
     justify-content: center;
     border: none;
-    /* overflow: none; */
+    overflow: none;
     text-align: center;
   }
 }
@@ -525,7 +525,7 @@ input {
     width: 50vw;
     height: 50vh;
     align-items: center;
-    /* overflow: auto; */
+    overflow: none;
     text-align: center;
     border: 2px solid black;
     border-radius: 5px;

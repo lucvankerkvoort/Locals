@@ -10,6 +10,7 @@ class LandingPage extends React.Component {
     startDate: new Date(),
     endDate: new Date(),
     check: false,
+    user: "",
     showTravelerReg: false,
     showLocalReg: false
   };
@@ -21,13 +22,14 @@ class LandingPage extends React.Component {
 
     localStorage.setItem("lat", lat);
     localStorage.setItem("lng", lng);
-    console.log(lat, lng);
   };
 
-  openRegistration = input => {
-    input === "traveler"
-      ? this.setState({ showTravelerReg: true })
-      : this.setState({ showLocalReg: true });
+  openRegistration = event => {
+    let clickedElement = event.target;
+    const targetElement = document.getElementsByClassName("local-reg")[0];
+    clickedElement === targetElement
+      ? this.setState({ showLocalReg: true })
+      : this.setState({ showTravelerReg: true });
   };
   closeRegistration = (input, type) => {
     type === "traveler"
@@ -75,7 +77,7 @@ class LandingPage extends React.Component {
               picture="reachout"
               section="section-right"
             />
-            <button onClick={this.openRegistration}>
+            <button className="travel-reg" onClick={this.openRegistration}>
               Sign Up Here As a Traveler
             </button>
             {this.state.showTravelerReg ? (
@@ -104,7 +106,7 @@ class LandingPage extends React.Component {
               picture="money"
               section="section"
             />
-            <button onClick={this.openRegistration}>
+            <button className="local-reg" onClick={this.openRegistration}>
               Sign Up Here As a Local
             </button>
             {this.state.showLocalReg ? (
