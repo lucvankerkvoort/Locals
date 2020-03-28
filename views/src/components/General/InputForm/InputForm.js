@@ -57,9 +57,7 @@ class InputForm extends React.Component {
           />
         ))}
         <br />
-        <button className="registration-btn" onClick={this.handleSubmit}>
-          Submit
-        </button>
+        <button onClick={this.handleSubmit}>Submit</button>
       </div>
     );
   }

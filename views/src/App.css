@@ -16,6 +16,7 @@ button {
   font-family: "champagne__limousinesregular";
   border: none;
   background: white;
+  color: black;
   font-size: 1.2em;
   font-weight: bold;
   padding: 20px;
@@ -196,11 +197,11 @@ button:active {
   background: url("./components/General/images/memories.jpg");
 }
 .reachout {
-  background: url("./components/General/images/reachout1.jpg");
+  background: url("./components/General/images/reachout3.jpg");
 }
 
 .sights {
-  background: url("./components/General/images/sights1.jpg");
+  background: url("./components/General/images/sights3.jpg");
 }
 .connect2 {
   background: url("./components/General/images/connect2.jpg");
@@ -444,7 +445,6 @@ label {
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
-
   position: relative;
   padding: 1em;
   border: none;
@@ -453,6 +453,15 @@ label {
   text-align: center;
 }
 
+.input-form h1 {
+  font-family: "champagne__limousinesregular";
+  color: black;
+  text-shadow: none;
+}
+
+.input-form button {
+  padding: 10px 20px;
+}
 .warning {
   position: absolute;
   left: 36%;
@@ -479,17 +488,6 @@ input {
   padding: 0.5em;
 }
 
-.registration-btn {
-  background: linear-gradient(60deg, #122169, #2d758c);
-  border: 0px;
-  border-radius: 24px;
-  padding: 0.5em 1em;
-  color: white;
-  box-shadow: 0px 0px 5px #122169;
-  font-family: "champagne__limousinesregular", sans-serif;
-  cursor: pointer;
-}
-
 /* Questions */
 .registration-questions {
   display: inline-block;
@@ -499,6 +497,7 @@ input {
 .register-label {
   position: relative;
   bottom: 0.5vh;
+  font-family: "champagne__limousinesregular";
 }
 
 @media only screen and (min-width: 768px) {
