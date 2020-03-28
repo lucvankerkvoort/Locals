@@ -1,12 +1,5 @@
-.element {
-  display: flex;
-  flex-direction: column;
+.navbarElement {
   cursor: pointer;
-  align-self: flex-start;
-  object-fit: contain;
-  width: 100%;
-  overflow: hidden;
-  margin-left: 15px;
 }
 
 .elementName {

@@ -4,32 +4,32 @@ import tours from "./images/tours.png";
 import home from "./images/home.png";
 
 export const elements = {
+  homePage: [
+    { name: "Become a local" },
+    { name: "Sign Up" },
+    { name: "Login" },
+    { name: "Help" }
+  ],
   local: [
     {
-      name: "Home",
-      pic: home
+      name: "Home"
     },
     {
-      name: "Settings",
-      pic: settings
+      name: "Settings"
     },
     {
-      name: "Calendar",
-      pic: calendar
+      name: "Calendar"
     },
     {
-      name: "Tours",
-      pic: tours
+      name: "Tours"
     }
   ],
   traveler: [
     {
-      name: "Settings",
-      pic: settings
+      name: "Settings"
     },
     {
-      name: "Tours",
-      pic: tours
+      name: "Tours"
     }
   ]
 };

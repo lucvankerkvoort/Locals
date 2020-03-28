@@ -8,7 +8,8 @@
   font-style: normal;
 }
 
-h2 {
+h2,
+h1 {
   font-family: "champagne__limousinesregular";
 }
 button {
@@ -298,21 +299,21 @@ button:active {
   background: rgba(250, 250, 250, 0.7);
   padding: 2em;
   box-shadow: 6px 6px 10px gray;
-  z-index: 15;
 }
 
 .login-text {
   margin-top: -1vh;
 }
 
-.body {
+.loginpage {
   display: flex;
+  position: fixed;
   height: 100vh;
   width: 100%;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  z-index: 15;
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .background {
@@ -320,11 +321,9 @@ button:active {
   background-size: cover;
 }
 
-h1 {
-  text-shadow: 2px 2px gold;
-}
 .title {
-  z-index: 2;
+  color: white;
+  text-shadow: 2px 2px 3px black;
 }
 
 label {
@@ -335,6 +334,12 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.form button {
+  padding: 10px 15px;
+}
+#registerbtn {
+  margin-top: 25px;
 }
 
 .login-btn {
@@ -483,7 +488,6 @@ label {
 input {
   color: black;
   border: 0 solid black;
-  border-radius: 24px;
   box-shadow: 2px 4px 6px gray;
   padding: 0.5em;
 }
@@ -533,7 +537,6 @@ input {
 
 .searchbar-wrapper {
   width: 60vw;
-  z-index: 15;
   margin-bottom: 0.5em;
 }
 
@@ -608,7 +611,6 @@ input {
 .traveler-home-dates-container {
   display: flex;
   flex-direction: row;
-  z-index: 15;
   width: 210px;
 }
 
@@ -626,7 +628,6 @@ input {
 
 .traveler-home-end-date-container {
   width: 100%;
-  z-index: 15;
 }
 
 .traveler-home-start-date-searchTerm,
@@ -656,7 +657,6 @@ input {
 
 .traveler-home-start-date-container {
   width: 100%;
-  z-index: 15;
 }
 
 .traveler-home-start-date-searchTerm {
