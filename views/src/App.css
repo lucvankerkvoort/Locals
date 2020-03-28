@@ -358,7 +358,7 @@ label {
   align-content: center;
   justify-content: center;
   padding: 10px;
-  box-shadow: 6px 6px 10px dimgrey;
+  box-shadow: 12px 12px 5px black;
   background: white;
 }
 .registration-wrapper {
