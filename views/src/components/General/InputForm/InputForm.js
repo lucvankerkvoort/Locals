@@ -1,9 +1,10 @@
 import React from "react";
-import { local, traveler } from "./elements";
+import { questions } from "./elements";
 import Question from "./questions/questions";
 
 class InputForm extends React.Component {
   state = {
+    title: this.props.user === "local" ? "Local" : "Traveler",
     firstname: "",
     lastname: "",
     username: "",
@@ -35,61 +36,32 @@ class InputForm extends React.Component {
     this.setState({ [input]: value });
   };
   render() {
-    if (this.props.user === "local") {
-      return (
-        <div className="input-form">
-          <p className="close" onClick={this.handleClose}>
-            Close
-          </p>
-          <h1>Local Registration</h1>
+    return (
+      <div className="input-form">
+        <p className="close" onClick={this.handleClose}>
+          Close
+        </p>
+
+        <p className="warning">
           {this.state.passwordLength ? this.state.message : null}
-          {local.map((question, i) => (
-            <Question
-              storeData={this.handleChange}
-              key={i}
-              name={question.name}
-              label={question.label}
-              type={question.type}
-              placeholder={question.placeholder}
-            />
-          ))}
-          <br />
-          <button
-            className="local-registration-btn"
-            onClick={this.handleSubmit}
-          >
-            Submit
-          </button>
-        </div>
-      );
-    } else {
-      return (
-        <div className="input-form">
-          <p className="close" onClick={this.handleClose}>
-            Close
-          </p>
-          <h1>Traveler Registration</h1>
-          {this.state.passwordLength ? this.state.message : null}
-          {traveler.map((question, i) => (
-            <Question
-              storeData={this.handleChange}
-              key={i}
-              name={question.name}
-              label={question.label}
-              type={question.type}
-              placeholder={question.placeholder}
-            />
-          ))}
-          <br />
-          <button
-            className="traveler-registration-btn"
-            onClick={this.handleSubmit}
-          >
-            Submit
-          </button>
-        </div>
-      );
-    }
+        </p>
+        <h1>{this.state.title} Registration</h1>
+        {questions[this.props.user].map((question, i) => (
+          <Question
+            storeData={this.handleChange}
+            key={i}
+            name={question.name}
+            label={question.label}
+            type={question.type}
+            placeholder={question.placeholder}
+          />
+        ))}
+        <br />
+        <button className="registration-btn" onClick={this.handleSubmit}>
+          Submit
+        </button>
+      </div>
+    );
   }
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { local, traveler } from "../../../General/InputForm/elements";
+import { questions } from "../../../General/InputForm/elements";
 import "./style.css";
 import API from "../../../../controller";
 
@@ -8,8 +8,6 @@ class Settings extends React.Component {
 
   handleClick = event => {
     event.preventDefault();
-    console.log(this.state);
-    console.log(this.props);
     API.updateLocal(this.props.user._id, this.state).then(result => {
       console.log(result);
     });
@@ -21,19 +19,12 @@ class Settings extends React.Component {
     this.setState({ [name]: event.target.value });
   };
   render() {
-    console.log(this.state);
-    let user;
-    if (this.props.user.type === "Local") {
-      user = local;
-    } else {
-      user = traveler;
-    }
     return (
       <div className="local-settings">
         <h2> Here you can change your existing settings.</h2>
         <div className="local-setting-body">
           <form className="big-form-container">
-            {user.map((question, i) => {
+            {questions[this.props.user.type].map((question, i) => {
               return (
                 <div className="local-settings-form" key={i}>
                   <label className="local-settings-label">

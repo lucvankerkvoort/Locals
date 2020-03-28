@@ -1,5 +1,5 @@
 import React from "react";
-import { local, traveler } from "../../../General/InputForm/elements";
+import { questions } from "../../../General/InputForm/elements";
 import "./style.css";
 import API from "../../../../controller/index";
 
@@ -22,19 +22,12 @@ class Settings extends React.Component {
   };
 
   render() {
-    console.log(this.state);
-    let user;
-    if (this.props.user.type === "Local") {
-      user = local;
-    } else {
-      user = traveler;
-    }
     return (
       <div className="traveler-settings">
         <div className="traveler-setting-body">
           <form className="form-big-container">
             <p> Here you can change your existing settings.</p>
-            {user.map((question, i) => {
+            {questions[this.props.user].map((question, i) => {
               return (
                 <div className="traveler-settings-form" key={i}>
                   <label className="traveler-settings-label">
