@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/General/NavBar/NavBar";
 import LandingPage from "./pages/Landing";
-import LoginPage from "./pages/Login";
+import LoginPage from "./components/General/Login";
 import LocalsHomePage from "./components/Locals/LocalsHomePage/LocalsHomePage";
-import TravelerRouter from "./components/Travelers/TravelerRouter";
+import TravelerRouter from "./pages/Traveler";
 import "./App.css";
 
 class App extends React.Component {
@@ -15,13 +15,17 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          <Navbar />
           <Switch>
             <Route
               exact
               path="/"
               render={props => {
-                return <LandingPage {...props} />;
+                return (
+                  <div>
+                    <Navbar {...props} />
+                    <LandingPage {...props} />;
+                  </div>
+                );
               }}
             />
             <Route

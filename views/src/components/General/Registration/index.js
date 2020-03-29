@@ -5,7 +5,6 @@ import API from "../../../controller/index";
 class Registration extends React.Component {
   handleSubmit = form => {
     if (form.tourinfo === "") {
-      console.log("pushin into travelers");
       const traveler = {
         firstname: form.firstname,
         lastname: form.lastname,
@@ -20,10 +19,9 @@ class Registration extends React.Component {
     }
   };
   handleCloser = () => {
-    this.props.close(false, this.props.user);
+    this.props.close(false, this.props.user, "register");
   };
   render() {
-    // console.log(this.props);
     return (
       <div className="registration-wrapper">
         <div className="registration">

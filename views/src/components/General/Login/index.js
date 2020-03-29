@@ -1,6 +1,6 @@
 import React from "react";
-import API from "../controller";
-import Registration from "../components/General/Registration";
+import API from "../../../controller";
+import Registration from "../Registration";
 
 class Login extends React.Component {
   state = {
@@ -38,6 +38,9 @@ class Login extends React.Component {
     this.setState({ [name]: event.target.value });
   };
 
+  close = () => {
+    this.props.close(false, this.props.user, "login");
+  };
   handleSubmit = event => {
     event.preventDefault();
     let user = {
@@ -63,6 +66,9 @@ class Login extends React.Component {
   render() {
     return (
       <div className="loginpage">
+        <p className="close-login" onClick={this.close}>
+          x
+        </p>
         <div className="title">
           <h1>{this.state.title}</h1>
         </div>

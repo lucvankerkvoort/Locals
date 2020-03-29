@@ -1,6 +1,6 @@
 import React from "react";
 import Registration from "../../Registration/";
-import Login from "../../../../pages/Login";
+import Login from "../../Login";
 
 class NavbarItems extends React.Component {
   state = {
@@ -10,9 +10,11 @@ class NavbarItems extends React.Component {
   };
 
   opening = element => {
-    if (this.state.user === "local") {
-      this.setState({ [element]: true });
-    }
+    this.setState({ [element]: true });
+  };
+
+  close = (input, user, type) => {
+    this.setState({ [type]: input });
   };
 
   handleClick = () => {
@@ -22,6 +24,14 @@ class NavbarItems extends React.Component {
       case "Become a local":
         this.setState({ user: "local" });
         this.opening("register");
+        break;
+      case "Sign Up":
+        this.setState({ user: "traveler" });
+        this.opening("register");
+        break;
+      case "Login":
+        this.opening("login");
+        this.setState({ user: "local" });
         break;
       case "Home":
         this.props.handleNav(`/${url}`);
@@ -41,13 +51,23 @@ class NavbarItems extends React.Component {
   };
 
   render() {
+    console.log("state", this.state);
     // conditional to see whether the user is a local or a traveller and filter through to check which one of these we need
 
     return (
-      <div onClick={this.handleClick} className="navbarElement">
-        <h3 className="elementName">{this.props.name}</h3>
-        {this.state.login ? <Login user={this.state.user} /> : null}
-        {this.state.register ? <Registration user={this.state.user} /> : null}
+      <div className="navbarElement">
+        <h3 onClick={this.handleClick} className="elementName">
+          {this.props.name}
+        </h3>
+        <div>
+          {this.state.login ? (
+            <Login user={this.state.user} close={this.close} />
+          ) : null}
+
+          {this.state.register ? (
+            <Registration user={this.state.user} close={this.close} />
+          ) : null}
+        </div>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 .local-dates-container {
   display: grid;
   grid-template-columns: auto auto;
-  z-index: 15;
+  /* z-index: 15; */
   width: 20%;
   position: absolute;
   top: 12%;

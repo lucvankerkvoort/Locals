@@ -12,6 +12,9 @@ h2,
 h1 {
   font-family: "champagne__limousinesregular";
 }
+p {
+  font-family: Helvetica, sans-serif;
+}
 button {
   text-decoration: none;
   font-family: "champagne__limousinesregular";
@@ -295,12 +298,29 @@ button:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
   background: rgba(250, 250, 250, 0.7);
   padding: 2em;
   box-shadow: 6px 6px 10px gray;
 }
 
+.close-login {
+  position: absolute;
+  line-height: 0px;
+  font-size: 2em;
+  font-weight: bold;
+  top: 0px;
+  right: 15px;
+  color: white;
+  cursor: pointer;
+  text-shadow: 2px 2px 15px white;
+}
+
+.close-login:hover {
+  text-shadow: 5px 5px 20px white;
+}
+.close-login:active {
+  color: black;
+}
 .login-text {
   margin-top: -1vh;
 }
@@ -308,16 +328,18 @@ button:active {
 .loginpage {
   display: flex;
   position: fixed;
+  top: 0px;
+  left: 0px;
   height: 100vh;
   width: 100%;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background: rgba(0, 0, 0, 0.8);
+  z-index: 2;
 }
 
 .background {
-  z-index: 1;
   background-size: cover;
 }
 
@@ -326,9 +348,9 @@ button:active {
   text-shadow: 2px 2px 3px black;
 }
 
-label {
+/* label {
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 .form {
   display: flex;
@@ -364,8 +386,8 @@ label {
   align-content: center;
   justify-content: center;
   padding: 10px;
-  box-shadow: 12px 12px 5px black;
-  background: white;
+  box-shadow: 12px 12px 15px gray;
+  background: rgba(250, 250, 250, 0.7);
 }
 .registration-wrapper {
   display: flex;
@@ -702,4 +724,219 @@ input {
 
 .elements h3 {
   padding: 0px 10px;
+}
+
+.navbarElement {
+  cursor: pointer;
+}
+
+.elementName {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 1em;
+}
+
+.elementContainer {
+  width: 2em;
+  height: 2em;
+  align-self: center;
+}
+
+/* Searchpage */
+
+.traveler-search-huge-match-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px;
+  border-bottom-style: solid;
+  border-color: black;
+}
+
+.traveler-search-small-match-container {
+  width: 55vw;
+  border: 0 solid rgba(255, 255, 255, 0.7);
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  background: rgba(252, 199, 199);
+  border-radius: 10px;
+  box-shadow: 6px 6px 25px dimgray;
+}
+
+.traveler-search-match-1 {
+  display: flex;
+}
+
+.traveler-search-photo-big-container {
+  width: 10vw;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 3.5vw;
+}
+
+.traveler-search-photo {
+  /* background: url("../../Images/match-photo1.jpg"); */
+  width: 10vw;
+  height: 13vh;
+  left: 0.5vh;
+  position: relative;
+  top: 2.4vh;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: 3px 3px 20px dimgray;
+}
+
+.traveler-search-matches-info-container {
+  width: 30vw;
+  height: 12.5vh;
+  display: grid;
+  grid-template-columns: auto auto;
+  position: relative;
+  left: 9vw;
+  top: 2vh;
+}
+
+.traveler-search-grid-item-top-left {
+  font-weight: bold;
+  font-size: 0.8em;
+  text-align: center;
+  position: relative;
+  top: 25%;
+}
+
+.traveler-search-grid-item-top-right {
+  font-weight: bold;
+  font-size: 0.8em;
+  text-align: center;
+  position: relative;
+  top: 25%;
+}
+
+.traveler-search-grid-item-bottom-left {
+  font-weight: bold;
+  font-size: 0.8em;
+  text-align: center;
+  position: relative;
+  top: 25%;
+}
+
+.traveler-search-grid-item-bottom-right {
+  font-weight: bold;
+  font-size: 0.8em;
+  text-align: center;
+  position: relative;
+  top: 25%;
+}
+
+.traveler-search-accordion-section {
+  text-align: center;
+  position: relative;
+}
+
+.traveler-search-accordion {
+  background: rgba(252, 199, 199, 0.7);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.6s ease;
+}
+
+.traveler-search-accordion:hover,
+.active {
+  background-color: #f8bbbb;
+}
+
+.traveler-search-accordion__icon {
+  margin-left: auto;
+  transition: transform 0.6s ease;
+}
+
+.traveler-search-rotate {
+  transform: rotate(180deg);
+}
+
+.traveler-search-accordion__content {
+  background-color: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+.traveler-search-accordion__text {
+  /* font-family: "Open Sans", sans-serif; */
+  font-weight: 400;
+  font-size: 0.8em;
+  padding: 9px;
+}
+
+/* BookButton */
+.traveler-search-button {
+  background: linear-gradient(60deg, #122169, #2d758c);
+  border: 0px;
+  border-radius: 24px;
+  padding: 0.5em 1em;
+  color: white;
+  box-shadow: 0px 0px 5px #122169;
+  font-family: "champagne__limousinesregular", sans-serif;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  bottom: 1vh;
+}
+
+.traveler-search-button:hover {
+  box-shadow: 0 0 0;
+  transform: scale(1.1);
+}
+
+/* accordion2 */
+.local-homepage-huge-match-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.local-homepage-small-match-container {
+  width: 33vw;
+  border: 0 solid rgba(255, 255, 255, 0.7);
+  margin-bottom: 3vh;
+  background: rgba(252, 199, 199);
+  border-radius: 10px;
+  box-shadow: 6px 6px 25px dimgray;
+}
+
+.local-homepage-match-1 {
+  display: flex;
+  height: 17vh;
+}
+
+.local-homepage-photo-big-container {
+  width: 26vw;
+  height: 17vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.local-homepage-photo {
+  /* background: url("./match-photo1.jpg"); */
+  width: 10vw;
+  height: 12vh;
+  margin: 0 auto;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: 3px 3px 20px dimgray;
+}
+
+.local-homepage-traveler-name-container {
+  width: 30vw;
+  height: 17vh;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
