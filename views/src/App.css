@@ -997,10 +997,11 @@ input {
   padding-right: 1vw;
 }
 
-.upcoming {
+.tours {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "champagne__limousinesregular";
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.7);
   box-shadow: 6px 6px 10px gray;
@@ -1010,7 +1011,7 @@ input {
   text-align: center;
 }
 
-.upcoming-body {
+.tours-body {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1089,4 +1090,10 @@ input {
   background-position: center;
   color: white;
   text-shadow: 1px 1px 2px black;
+}
+
+.traveler-tours {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px;
 }

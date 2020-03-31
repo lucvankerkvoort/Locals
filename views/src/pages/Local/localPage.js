@@ -2,6 +2,7 @@ import React from "react";
 import Accordion from "../../components/General/Accordion/Accordion";
 // import Stars from "./Stars";
 import Profile from "../../components/General/Profile";
+import Tours from "../../components/General/Tours";
 
 class LocalPage extends React.Component {
   state = {
@@ -67,23 +68,9 @@ class LocalPage extends React.Component {
             <h3>Tips and Tricks</h3>
             { <p className="tips-tricks-section">this.renderTip</p> }
           </div> */}
-          <div className="upcoming">
-            <h3>Your Upcoming Tours</h3>
-            <div className="upcoming-body">
-              <div className="avatar-aligner">
-                <div className="booker-avatar" />
-              </div>
-              <div className="booking-info">
-                <h3>Place</h3>
-                <h3>Start</h3>
-                <h3>End</h3>
-              </div>
-            </div>
-            {/* {this.bookingInfo} */}
-          </div>
-          <div className="completed">
-            <h3>Your Past Tours</h3>
-          </div>
+          <Tours title="Your Upcoming Tours" />
+
+          <Tours title="Your Upcoming Tours" />
           {/* <div className="rating"> */}
           {/* <h2>Rating</h2> */}
           {/* <Stars /> */}
