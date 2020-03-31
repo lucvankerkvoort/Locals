@@ -51,7 +51,6 @@ class NavbarItems extends React.Component {
   };
 
   render() {
-    console.log("state", this.state);
     // conditional to see whether the user is a local or a traveller and filter through to check which one of these we need
 
     return (

@@ -1,5 +1,6 @@
 import React from "react";
 import NavCategories from "./NavCategories/NavCategories";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Navbar extends React.Component {
   handleNavbar = input => {
@@ -10,7 +11,9 @@ class Navbar extends React.Component {
     return (
       <div className="navbar">
         <div className="navbar-logo">
-          <h2>TourBuddy</h2>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <h2>TourBuddy</h2>
+          </Link>
         </div>
         <div className="elements">
           <NavCategories />

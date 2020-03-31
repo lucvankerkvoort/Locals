@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 // import Settings from "./TravelersSettingsPage/SettingsBody/SettingsBody";
 import SearchPage from "./Traveler/SearchPage";
 import NavBar from "../components/General/NavBar/NavBar";
+import TravelerProfilePage from "./Traveler/TravelerPage";
 // import ToursBody from "./TravelerToursPage/ToursBody/ToursBody";
 
 class TravelerRouter extends React.Component {
@@ -69,17 +70,31 @@ class TravelerRouter extends React.Component {
           }}
         />
         {/* <Route
+          path={`${match.path}`}
+          render={props => {
+            return (
+              <div>
+                <NavBar {...props} user={this.state.currentUser} />
+                <TravelerProfilePage {...props} user={this.state.currentUser} />
+              </div>
+            );
+          }}
+        /> */}
+        <Route
           exact
           path={`${match.path}`}
           render={props => (
-            <TravelerHome
-              dates={this.dateHandler}
-              handleAddress={this.handleAddress}
-              {...props}
-              user={this.state.currentUser}
-            />
+            <div>
+              <NavBar {...props} user={this.state.currentUser} />
+              <TravelerProfilePage
+                // dates={this.dateHandler}
+                // handleAddress={this.handleAddress}
+                {...props}
+                user={this.state.currentUser}
+              />
+            </div>
           )}
-        /> */}
+        />
       </div>
     );
   }

@@ -11,6 +11,7 @@
 h2,
 h1 {
   font-family: "champagne__limousinesregular";
+  text-decoration: none;
 }
 p {
   font-family: Helvetica, sans-serif;
@@ -716,6 +717,10 @@ input {
   padding: 0px 10px;
 }
 
+.navbar-logo h2 {
+  color: black;
+}
+
 .elements {
   display: flex;
   justify-content: flex-end;
@@ -939,4 +944,149 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Local's Page */
+
+.localbody {
+  display: flex;
+  font-family: "champagne__limousinesregular";
+  flex-direction: column;
+}
+
+.profile {
+  display: inline-flex;
+  margin: 1em;
+  justify-content: center;
+}
+
+.profile-bio {
+  font-size: 0.85em;
+  padding: 1vw;
+  position: relative;
+  bottom: 2vh;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 25px;
+  align-items: center;
+  max-height: 100%;
+  white-space: normal;
+}
+.profile-banner {
+  background: url("./components/General/images/Local2.jpg");
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-position: center;
+  height: 40vh;
+  margin: 2em 0px;
+  width: 100%;
+}
+.profile-body {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tips-tricks-section {
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+.upcoming {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 6px 6px 10px gray;
+  height: 80%;
+  width: 75%;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.upcoming-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 60%;
+  height: 20vh;
+}
+.avatar-aligner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+}
+.booker-avatar {
+  background: black;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+.booking-info {
+  display: flex;
+  justify-content: space-evenly;
+  width: 75%;
+  align-items: center;
+}
+
+.rating {
+  box-shadow: 6px 6px 10px gray;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.7);
+  width: 20vw;
+  height: 100%;
+  text-align: center;
+  margin-left: 1em;
+}
+.completed {
+  display: ;
+  border-radius: 5px;
+  box-shadow: 6px 6px 10px gray;
+  height: 20%;
+  width: 50%;
+  text-align: center;
+}
+.center-body {
+  display: flex;
+  width: 40vw;
+  height: 100%;
+  flex-direction: column;
+}
+
+.localhome {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Misscelanious */
+.star-icon {
+  margin-left: 1.2vw;
+  position: relative;
+  top: -3vh;
+}
+
+/* TravelerPage */
+
+.traveler-page {
+  display: flex;
+  flex-direction: column;
+}
+.traveler-intro {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px;
+}
+.traveler-pic {
+  background: url("./components/General/images/landing1.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 1px 1px 2px black;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 class EndDateInput extends React.Component {
   state = {

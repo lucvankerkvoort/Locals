@@ -22,7 +22,7 @@ class HomeBody extends React.Component {
     const { user } = this.props;
     const style = {
       display: "flex",
-      background: `url(${user.avatar})`,
+      // background: `url(${user.avatar})`,
       backgroundPosition: "center",
       backgroundSize: "cover",
       boxShadow: "6px 6px 10px gray",

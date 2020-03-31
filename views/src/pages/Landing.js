@@ -46,11 +46,7 @@ class LandingPage extends React.Component {
         <div className="wrapper">
           <div className="searchbar-landingpage">
             <h2>Search the Globe</h2>
-            <Searchbar
-              handleChange={this.handleChange}
-              onPlaceChanged={this.showPlaceDetails.bind(this)}
-              value={this.state.value}
-            />
+            <Searchbar onPlaceChanged={this.showPlaceDetails.bind(this)} />
             <DateContainer />
           </div>
         </div>

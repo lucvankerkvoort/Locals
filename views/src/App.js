@@ -2,8 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/General/NavBar/NavBar";
 import LandingPage from "./pages/Landing";
-import LoginPage from "./components/General/Login";
-import LocalsHomePage from "./components/Locals/LocalsHomePage/LocalsHomePage";
+import Localhome from "./pages/Locals";
 import TravelerRouter from "./pages/Traveler";
 import "./App.css";
 
@@ -29,21 +28,11 @@ class App extends React.Component {
               }}
             />
             <Route
-              path="/login"
-              render={props => (
-                <LoginPage
-                  {...props}
-                  user={this.state.user}
-                  currentUser={this.handleUser}
-                />
-              )}
-            />
-            <Route
               path="/localhome"
               render={props => {
                 console.log(props);
                 return (
-                  <LocalsHomePage
+                  <Localhome
                     {...props}
                     currentUser={this.state.currentUser}
                     user={this.state.user}

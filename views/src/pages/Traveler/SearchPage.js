@@ -60,8 +60,10 @@ class SearchPage extends React.Component {
   };
 
   showPlaceDetails(place) {
-    console.log(place);
-    this.setState({ place });
+    let lat = place.geometry.location.lat();
+    let lng = place.geometry.location.lng();
+    // console.log("Place", place);
+    this.setState({ lat: lat, lng: lng });
   }
 
   handleChange = event => {
@@ -129,7 +131,6 @@ class SearchPage extends React.Component {
     }
   };
   render() {
-    console.log(this.state);
     const markers = (
       <Marker
         name={this.state.place.formatted_address}
