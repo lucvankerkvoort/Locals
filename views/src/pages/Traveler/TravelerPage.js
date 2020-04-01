@@ -27,9 +27,11 @@ class TravelerProfilePage extends React.Component {
           </div>
         </div>
         <div className="traveler-tours">
-          {<Tours title="Your Upcoming Tours" />}
+          <Tours title="Your Upcoming Tours" />
         </div>
-        <div className="traveler-profile">{/* <Profile /> */}</div>
+        <div className="traveler-profile">
+          <Profile />
+        </div>
       </div>
     );
   }

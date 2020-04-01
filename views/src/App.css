@@ -9,7 +9,8 @@
 }
 
 h2,
-h1 {
+h1,
+h4 {
   font-family: "champagne__limousinesregular";
   text-decoration: none;
 }
@@ -1037,15 +1038,6 @@ input {
   align-items: center;
 }
 
-.rating {
-  box-shadow: 6px 6px 10px gray;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.7);
-  width: 20vw;
-  height: 100%;
-  text-align: center;
-  margin-left: 1em;
-}
 .completed {
   display: ;
   border-radius: 5px;
@@ -1096,4 +1088,30 @@ input {
   display: flex;
   justify-content: center;
   margin: 50px 0px;
+}
+
+/* Profile Page */
+.profile {
+  display: flex;
+  align-items: center;
+  font-family: "champagne__limousinesregular";
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 6px 6px 10px gray;
+  height: 80%;
+  width: 75%;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.profile-avatar {
+  height: 150px;
+  width: 150px;
+  margin: 20px;
+  box-shadow: 3px 3px 5px black;
+}
+
+.traveler-profile {
+  display: flex;
+  justify-content: center;
 }
