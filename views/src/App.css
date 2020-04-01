@@ -733,7 +733,10 @@ input {
 }
 
 .navbarElement {
+  display: flex;
+  justify-content: flex-end;
   cursor: pointer;
+  width: 100%;
 }
 
 .elementName {
@@ -1114,4 +1117,17 @@ input {
 .traveler-profile {
   display: flex;
   justify-content: center;
+}
+
+/* Switch */
+
+.switch {
+  border: 2px solid black;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  top: 10vh;
+  right: 4vw;
+  position: fixed;
 }

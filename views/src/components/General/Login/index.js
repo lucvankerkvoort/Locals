@@ -9,9 +9,9 @@ class Login extends React.Component {
       this.props.user === "local"
         ? API.loginSearchLocal
         : API.loginSearchTraveler,
-    link: this.props.user === "local" ? "/localhome" : "/travelerhome",
-    user: this.props.user,
-    travelers: "",
+    link: this.props.user === "local" ? "/local" : "/traveler",
+    user: localStorage.getItem("user"),
+    getId: this.props.user === "local" ? API.getLocalById : API.getTravelerById,
     locals: "",
     username: "",
     password: "",
@@ -19,11 +19,6 @@ class Login extends React.Component {
     incorrect: "Incorrect Username or Password",
     showMessage: false
   };
-
-  componentDidMount() {
-    const user = localStorage.getItem("type");
-    this.setState({ user });
-  }
 
   closeRegistration = input => {
     this.setState({ showComponent: input });
@@ -48,22 +43,21 @@ class Login extends React.Component {
       password: this.state.password
     };
     this.state.apiCall(user).then(result => {
+      console.log(result);
       if (result.data.length <= 0) {
         this.setState({ showMessage: true });
       } else if (user.password !== result.data[0].password) {
         this.setState({ showMessage: true });
       } else {
-        for (let i = 0; i < result.data.length; i++) {
-          console.log(result.data[i]);
-          API.getLocalById(result.data[i]._id).then(result => {
-            this.props.currentUser(result.data[0]);
-            this.props.history.push(this.state.link);
-          });
-        }
+        this.state.getId(result.data[0]._id).then(result => {
+          localStorage.setItem("currentUser", JSON.stringify(result));
+          this.close();
+        });
       }
     });
   };
   render() {
+    console.log(this.state.user);
     return (
       <div className="loginpage">
         <p className="close-login" onClick={this.close}>
@@ -75,9 +69,7 @@ class Login extends React.Component {
         <div className="logincontainer">
           <h2 className="login-text">Login</h2>
           <p className="incorrect-info-text">
-            {this.state.showMessage
-              ? this.state.incorrect
-              : console.log("you're good")}
+            {this.state.showMessage ? this.state.incorrect : null}
           </p>
           <form className="form">
             <input
