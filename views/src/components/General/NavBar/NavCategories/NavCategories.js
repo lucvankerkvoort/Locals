@@ -5,7 +5,9 @@ import NavbarItems from "./Navbaritems";
 class NavCategories extends React.Component {
   // We will have to pass on the page whenever we link to a new page, so we can give the navbar its items
   state = {
-    user: "local",
+    user: localStorage.getItem("currentUser")
+      ? localStorage.getItem("currentUser")
+      : "",
     page: "homePage"
   };
   render() {

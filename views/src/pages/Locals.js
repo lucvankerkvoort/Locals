@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "../components/General/NavBar/NavBar";
-import LocalPage from "./Local/localPage";
+import ProfilePage from "./ProfilePage";
 // import Settings from "./SettingsBody/SettingsBody";
 // import Availability from "./Calendar/calendar";
 // import ToursBody from "./LocalsToursBody/ToursBody";
@@ -99,7 +99,7 @@ class Localhome extends React.Component {
           exact
           path={`${match.path}`}
           render={props => (
-            <LocalPage
+            <ProfilePage
               cookies={this.props.cookies}
               {...props}
               user={this.state.currentUser}

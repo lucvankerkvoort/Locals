@@ -28,7 +28,7 @@ class App extends React.Component {
               }}
             />
             <Route
-              path="/localhome"
+              path="/local"
               render={props => {
                 console.log(props);
                 return (
@@ -42,7 +42,7 @@ class App extends React.Component {
             />
             />
             <Route
-              path="/travelerhome"
+              path="/traveler"
               render={props => (
                 <TravelerRouter
                   {...props}

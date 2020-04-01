@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // import TravelerHome from "./TravelerHome/TravelerHome";
 // import Settings from "./TravelersSettingsPage/SettingsBody/SettingsBody";
-import SearchPage from "./Traveler/SearchPage";
+import SearchPage from "./SearchPage";
 import NavBar from "../components/General/NavBar/NavBar";
-import TravelerProfilePage from "./Traveler/TravelerPage";
+import ProfilePage from "./ProfilePage";
 // import ToursBody from "./TravelerToursPage/ToursBody/ToursBody";
 
 class TravelerRouter extends React.Component {
@@ -86,7 +86,7 @@ class TravelerRouter extends React.Component {
           render={props => (
             <div>
               <NavBar {...props} user={this.state.currentUser} />
-              <TravelerProfilePage
+              <ProfilePage
                 // dates={this.dateHandler}
                 // handleAddress={this.handleAddress}
                 {...props}

@@ -17,3 +17,5 @@ import pic2 from "./landing2.jpg";
 export const travellerArray = [Image1, Image2, Image3, Image4, Image5, Image6];
 export const localArray = [Picture1, Picture2, Picture3, Picture4, Picture5];
 export const landing = [pic1, pic2];
+
+export const profilePage = [pic1, Picture2];
