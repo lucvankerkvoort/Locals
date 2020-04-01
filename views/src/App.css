@@ -303,6 +303,7 @@ button:active {
   background: rgba(250, 250, 250, 0.7);
   padding: 2em;
   box-shadow: 6px 6px 10px gray;
+  z-index: 2;
 }
 
 .close-login {
@@ -1119,23 +1120,14 @@ input {
 }
 
 /* Switch */
-.switch {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px;
-  margin: 0px;
-}
-
-/* Switch */
 
 .switch {
-  border: 2px solid black;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   width: 100px;
   top: 10vh;
   right: 4vw;
-  position: fixed;
+  position: absolute;
+  box-shadow: 6px 6px 10px gray;
 }

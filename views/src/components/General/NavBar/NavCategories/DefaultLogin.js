@@ -1,7 +1,7 @@
 import React from "react";
 import Registration from "../../Registration";
 import Switch from "../../Switch";
-import { elements } from "./elements";
+import { elements } from "./Elements";
 
 class DefaultLogin extends React.Component {
   state = {
@@ -11,6 +11,9 @@ class DefaultLogin extends React.Component {
 
   opening = element => {
     this.setState({ [element]: true });
+    if (this.state[element]) {
+      this.setState({ [element]: false });
+    }
   };
 
   close = (input, user, type) => {

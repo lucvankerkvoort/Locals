@@ -32,7 +32,7 @@ var TravellerSchema = new Schema({
     ]
   },
   booking: { type: Array },
-  type: { type: String, default: "traveller" }
+  type: { type: String, default: "traveler" }
 });
 
 // We use MongoDB's build in module to create a container so we can export the schema

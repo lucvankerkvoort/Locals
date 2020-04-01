@@ -1,49 +1,35 @@
 import React from "react";
-import Registration from "../../Registration";
-import Switch from "../../Switch";
+import { elements } from "./Elements";
 
-class NavbarItems extends React.Component {
+class LoggedInNav extends React.Component {
   state = {
-    login: false,
-    register: false
+    user: JSON.parse(localStorage.getItem("currentUser"))
   };
 
-  handleClick = () => {
-    const propname = this.props.name;
-    switch (propname) {
-      case "Become a local":
-        this.setState({ user: "local" });
-        this.opening("register");
+  handleClick = element => {
+    switch (element) {
+      case "":
         break;
-      case "Sign Up":
-        this.setState({ user: "traveler" });
-        this.opening("register");
-        break;
+
       default:
-        console.log(propname);
+        break;
     }
   };
-
   render() {
-    // conditional to see whether the user is a local or a traveller and filter through to check which one of these we need
-
+    const userType = this.state.user.data[0].type;
     return (
       <div className="navbarElement">
-        <h3 onClick={this.handleClick} className="elementName">
-          {this.props.name}
-        </h3>
-        <div>
-          {this.state.login ? (
-            <Switch close={this.close} user={this.state.user} />
-          ) : null}
-
-          {this.state.register ? (
-            <Registration user={this.state.user} close={this.close} />
-          ) : null}
-        </div>
+        {elements[userType].map(element => (
+          <h3
+            onClick={() => this.handleClick(element.name)}
+            className="elementName"
+          >
+            {element.name}
+          </h3>
+        ))}
       </div>
     );
   }
 }
 
-export default NavbarItems;
+export default LoggedInNav;
