@@ -1,4 +1,13 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  useHistory,
+  useLocation
+} from "react-router-dom";
 import { elements } from "./Elements";
 
 class LoggedInNav extends React.Component {
@@ -8,9 +17,16 @@ class LoggedInNav extends React.Component {
 
   handleClick = element => {
     switch (element) {
-      case "":
-        break;
-
+      case "Profile":
+        return "/profile";
+      case "Account Management":
+        return "/";
+      case "Help":
+        return "/";
+      case "Switch to Guide":
+        return "/profile";
+      case "Switch to Traveler":
+        return "/profile";
       default:
         break;
     }
@@ -20,12 +36,12 @@ class LoggedInNav extends React.Component {
     return (
       <div className="navbarElement">
         {elements[userType].map(element => (
-          <h3
-            onClick={() => this.handleClick(element.name)}
-            className="elementName"
+          <Link
+            to={this.handleClick(element.name)}
+            style={{ textDecoration: "none", color: "black" }}
           >
-            {element.name}
-          </h3>
+            <h3 className="elementName">{element.name}</h3>
+          </Link>
         ))}
       </div>
     );

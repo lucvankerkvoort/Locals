@@ -19,9 +19,9 @@ class Navbar extends React.Component {
     console.log(user);
     switch (user) {
       case "traveler":
-        return <LoggedinNav user="traveler" />;
+        return <LoggedinNav user="traveler" handleNav={this.handleNavbar} />;
       case "local":
-        return <LoggedinNav user="local" />;
+        return <LoggedinNav user="local" handleNav={this.handleNavbar} />;
       default:
         return <DefaultLogin />;
     }
