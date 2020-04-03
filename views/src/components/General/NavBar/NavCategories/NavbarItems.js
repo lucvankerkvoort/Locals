@@ -37,19 +37,9 @@ class NavbarItems extends React.Component {
   handleClick = element => {
     console.log(element);
     switch (element) {
-      case "Profile":
-        return "/profile";
-      case "Account Management":
-        return "/account";
-      case "Help":
-        return "/help";
-      case "Switch to Guide":
-        return "/profile";
-      case "Switch to Traveler":
-        return "/profile";
       case "Logout":
         this.logOut();
-        return "/";
+        break;
       case "Become a local":
         this.setState({ user: "local" });
         this.opening("register");

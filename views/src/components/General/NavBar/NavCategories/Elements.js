@@ -3,7 +3,7 @@ export const elements = {
     { name: "Become a local" },
     { name: "Sign Up" },
     { name: "Login" },
-    { name: "Help" }
+    { name: "Help", link: "/help" }
   ],
   local: [
     { name: "Profile", link: "/profile" },
