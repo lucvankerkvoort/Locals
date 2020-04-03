@@ -1,35 +1,25 @@
 import React from "react";
-import LoggedinNav from "./NavCategories/LoggedInNav";
-import DefaultLogin from "./NavCategories/DefaultLogin";
+import NavbarItems from "./NavCategories/NavbarItems";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Navbar extends React.Component {
   state = {
-    user: localStorage.getItem("type")
-      ? localStorage.getItem("type")
-      : "default"
+    type: localStorage.getItem("type"),
+    link: this.type === "traveler" || this.type === "local" ? "/profile" : "/"
   };
 
-  navBarChoice = () => {
-    const { user } = this.state;
-    switch (user) {
-      case "traveler":
-        return <LoggedinNav user="traveler" handleNav={this.handleNavbar} />;
-      case "local":
-        return <LoggedinNav user="local" handleNav={this.handleNavbar} />;
-      default:
-        return <DefaultLogin />;
-    }
-  };
   render() {
+    const { link } = this.state;
     return (
       <div className="navbar">
         <div className="navbar-logo">
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to={link} style={{ textDecoration: "none" }}>
             <h2>TourBuddy</h2>
           </Link>
         </div>
-        <div className="elements">{this.navBarChoice()}</div>
+        <div className="elements">
+          <NavbarItems />
+        </div>
       </div>
     );
   }

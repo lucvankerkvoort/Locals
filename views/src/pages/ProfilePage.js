@@ -7,7 +7,7 @@ import { profilePage } from "../components/General/images/index";
 
 class ProfilePage extends React.Component {
   state = {
-    user: "local"
+    type: localStorage.getItem("type")
   };
   showPlaceDetails = place => {
     let location = place.geometry.location;

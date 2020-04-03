@@ -39,7 +39,7 @@ class SearchBar extends React.Component {
             placeholder="Enter your destination here"
             onChange={this.props.handleChange}
           />
-          <Link to="/travelerhome/search">
+          <Link to="/search">
             <button type="submit" className="searchbutton">
               <SearchBarLogoSVG />
             </button>
