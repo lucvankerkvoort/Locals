@@ -1,46 +1,52 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-  useHistory,
-  useLocation
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { elements } from "./Elements";
 
 class LoggedInNav extends React.Component {
   state = {
-    user: JSON.parse(localStorage.getItem("currentUser"))
+    type: localStorage.getItem("type")
+  };
+
+  logOut = () => {
+    localStorage.setItem("type", "");
+    window.location.reload();
   };
 
   handleClick = element => {
+    console.log(element);
     switch (element) {
       case "Profile":
         return "/profile";
       case "Account Management":
-        return "/";
+        return "/account";
       case "Help":
-        return "/";
+        return "/help";
       case "Switch to Guide":
         return "/profile";
       case "Switch to Traveler":
         return "/profile";
+      case "Logout":
+        this.logOut();
+        return "/";
       default:
         break;
     }
   };
   render() {
-    const userType = this.state.user.data[0].type;
+    const { type } = this.state;
     return (
       <div className="navbarElement">
-        {elements[userType].map(element => (
+        {elements[type].map(element => (
           <Link
-            to={this.handleClick(element.name)}
+            to={element.link}
             style={{ textDecoration: "none", color: "black" }}
           >
-            <h3 className="elementName">{element.name}</h3>
+            <h3
+              className="elementName"
+              onClick={() => this.handleClick(element.name)}
+            >
+              {element.name}
+            </h3>
           </Link>
         ))}
       </div>

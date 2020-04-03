@@ -5,18 +5,13 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Navbar extends React.Component {
   state = {
-    user: JSON.parse(localStorage.getItem("currentUser"))
-      ? JSON.parse(localStorage.getItem("currentUser"))
+    user: localStorage.getItem("type")
+      ? localStorage.getItem("type")
       : "default"
-  };
-  handleNavbar = input => {
-    this.props.status.history.push(input);
   };
 
   navBarChoice = () => {
-    const user = this.state.user.data[0].type;
-
-    console.log(user);
+    const { user } = this.state;
     switch (user) {
       case "traveler":
         return <LoggedinNav user="traveler" handleNav={this.handleNavbar} />;
@@ -27,7 +22,6 @@ class Navbar extends React.Component {
     }
   };
   render() {
-    console.log(JSON.parse(localStorage.getItem("currentUser")));
     return (
       <div className="navbar">
         <div className="navbar-logo">

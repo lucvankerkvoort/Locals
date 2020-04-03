@@ -4,6 +4,8 @@ import Navbar from "./components/General/NavBar/NavBar";
 import LandingPage from "./pages/Landing";
 import ProfilePage from "./pages/ProfilePage";
 import SearchPage from "./pages/SearchPage";
+import AccountManagement from "./pages/AccountManagement";
+import Help from "./pages/Help";
 import "./App.css";
 
 class App extends React.Component {
@@ -22,6 +24,12 @@ class App extends React.Component {
             </Route>
             <Route path="/search">
               <SearchPage />
+            </Route>
+            <Route path="/account">
+              <AccountManagement />
+            </Route>
+            <Route path="/help">
+              <Help />
             </Route>
             <Route exact path="/">
               <LandingPage />

@@ -1043,7 +1043,7 @@ input {
 }
 
 .completed {
-  display: ;
+  display: flex;
   border-radius: 5px;
   box-shadow: 6px 6px 10px gray;
   height: 20%;

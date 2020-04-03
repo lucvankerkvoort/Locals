@@ -1,5 +1,6 @@
 import React from "react";
 import API from "../../../controller";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Registration from "../Registration";
 
 class Login extends React.Component {
@@ -35,6 +36,7 @@ class Login extends React.Component {
 
   close = () => {
     this.props.close(false, this.props.user, "login");
+    window.location.reload();
   };
   handleSubmit = event => {
     event.preventDefault();
@@ -51,7 +53,21 @@ class Login extends React.Component {
         this.setState({ showMessage: true });
       } else {
         this.state.getId(result.data[0]._id).then(result => {
-          localStorage.setItem("currentUser", JSON.stringify(result));
+          console.log(result);
+          let user = result.data[0];
+          let id = user._id;
+          let type = user.type;
+          let firstname = user.firstname;
+          let lastname = user.lastname;
+          let username = user.username;
+          let password = user.password;
+
+          localStorage.setItem("id", id);
+          localStorage.setItem("type", type);
+          localStorage.setItem("firstname", firstname);
+          localStorage.setItem("lastname", lastname);
+          localStorage.setItem("username", username);
+          localStorage.setItem("password", password);
           this.close();
         });
       }
@@ -91,9 +107,11 @@ class Login extends React.Component {
             />
             <br />
             <br />
-            <button type="submit" onClick={this.handleSubmit}>
-              Submit
-            </button>
+            <Link to="/profile">
+              <button type="submit" onClick={this.handleSubmit}>
+                Submit
+              </button>
+            </Link>
             <br />
             <div className="registration-text">
               If this is your first time visiting: <br />

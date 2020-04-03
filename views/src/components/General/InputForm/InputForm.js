@@ -1,5 +1,6 @@
 import React from "react";
 import { questions } from "./elements";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Question from "./questions/questions";
 
 class InputForm extends React.Component {
@@ -57,7 +58,9 @@ class InputForm extends React.Component {
           />
         ))}
         <br />
-        <button onClick={this.handleSubmit}>Submit</button>
+        <Link to="/profile">
+          <button onClick={this.handleSubmit}>Submit</button>
+        </Link>
       </div>
     );
   }
