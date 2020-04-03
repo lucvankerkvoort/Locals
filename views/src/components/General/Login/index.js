@@ -46,28 +46,32 @@ class Login extends React.Component {
     };
 
     this.state.apiCall(user).then(result => {
-      console.log(result);
+      console.log("result", result);
       if (result.data.length <= 0) {
         this.setState({ showMessage: true });
       } else if (user.password !== result.data[0].password) {
         this.setState({ showMessage: true });
       } else {
         this.state.getId(result.data[0]._id).then(result => {
-          console.log(result);
           let user = result.data[0];
-          let id = user._id;
-          let type = user.type;
-          let firstname = user.firstname;
-          let lastname = user.lastname;
-          let username = user.username;
-          let password = user.password;
+          let info = {
+            id: user._id,
+            type: user.type,
+            firstname: user.firstname,
+            lastname: user.lastname,
+            username: user.username,
+            password: user.password,
+            booking: user.booking
+          };
+          localStorage.setItem("id", info.id);
+          localStorage.setItem("booking", info.booking);
+          localStorage.setItem("type", info.type);
+          localStorage.setItem("firstname", info.firstname);
+          localStorage.setItem("lastname", info.lastname);
+          localStorage.setItem("username", info.username);
+          localStorage.setItem("password", info.password);
+          localStorage.setItem("info", JSON.stringify("info"));
 
-          localStorage.setItem("id", id);
-          localStorage.setItem("type", type);
-          localStorage.setItem("firstname", firstname);
-          localStorage.setItem("lastname", lastname);
-          localStorage.setItem("username", username);
-          localStorage.setItem("password", password);
           this.close();
         });
       }

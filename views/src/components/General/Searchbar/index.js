@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import SearchBarLogoSVG from "../../Travelers/TravelerHome/images/SearchBarLogo";
 
 const google = window.google;
 
@@ -40,9 +39,7 @@ class SearchBar extends React.Component {
             onChange={this.props.handleChange}
           />
           <Link to="/search">
-            <button type="submit" className="searchbutton">
-              <SearchBarLogoSVG />
-            </button>
+            <button type="submit" className="searchbutton"></button>
           </Link>
         </div>
       </div>

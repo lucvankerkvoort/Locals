@@ -10,7 +10,13 @@ import "./App.css";
 
 class App extends React.Component {
   state = {
-    user: "traveler"
+    user: {
+      firstname: localStorage.getItem("firstname"),
+      lastname: localStorage.getItem("lastname"),
+      type: localStorage.getItem("type"),
+      username: localStorage.getItem("username"),
+      password: localStorage.getItem("password")
+    }
   };
 
   render() {
@@ -20,19 +26,19 @@ class App extends React.Component {
           <Navbar />
           <Switch>
             <Route path="/profile">
-              <ProfilePage />
+              <ProfilePage user={this.state.user} />
             </Route>
             <Route path="/search">
-              <SearchPage />
+              <SearchPage user={this.state.user} />
             </Route>
             <Route path="/account">
-              <AccountManagement />
+              <AccountManagement user={this.state.user} />
             </Route>
             <Route path="/help">
-              <Help />
+              <Help user={this.state.user} />
             </Route>
             <Route exact path="/">
-              <LandingPage />
+              <LandingPage user={this.state.user} />
             </Route>
           </Switch>
         </div>

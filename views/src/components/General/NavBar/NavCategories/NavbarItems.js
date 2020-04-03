@@ -9,7 +9,8 @@ class NavbarItems extends React.Component {
     login: false,
     register: false,
     type:
-      localStorage.getItem("type") === ""
+      localStorage.getItem("type") === "" ||
+      localStorage.getItem("type") === null
         ? "homePage"
         : localStorage.getItem("type")
   };
@@ -35,7 +36,6 @@ class NavbarItems extends React.Component {
   };
 
   handleClick = element => {
-    console.log(element);
     switch (element) {
       case "Logout":
         this.logOut();
@@ -57,11 +57,12 @@ class NavbarItems extends React.Component {
   };
   render() {
     const { type } = this.state;
+    console.log(type);
     return (
       <div className="navbarElement">
         {elements[type].map(element => (
           <Link
-            to={element.link ? element.link : null}
+            to={element.link ? element.link : ""}
             style={{ textDecoration: "none", color: "black" }}
           >
             <h3

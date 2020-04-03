@@ -1102,6 +1102,7 @@ input {
 .profile-section {
   display: flex;
   justify-content: center;
+  margin: 50px 0px;
 }
 /* Profile Page */
 .profile {

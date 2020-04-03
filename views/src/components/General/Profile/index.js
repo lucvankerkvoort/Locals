@@ -2,11 +2,12 @@ import React from "react";
 
 class Profile extends React.Component {
   render() {
+    const { firstname } = this.props.user;
     return (
       <div className="profile">
         <div className="profile-avatar" />
         <div className="profile-info">
-          <h2>Name</h2>
+          <h2>{firstname}</h2>
           <h2>Place</h2>
           <div className="rating" />
         </div>
