@@ -1,0 +1,86 @@
+.calendar-body {
+  width: 80%;
+  background: linear-gradient(360deg, #304352, #d7d2cc);
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar {
+  display: flex;
+  width: 100%;
+  height: 20vh;
+  margin-top: 1em;
+  align-items: center;
+  flex-direction: column;
+}
+
+.calendar-button {
+  background: linear-gradient(60deg, #122169, #2d758c);
+  border: 0px;
+  border-radius: 24px;
+  padding: 0.5em 1em;
+  color: white;
+  box-shadow: 0px 0px 5px #122169;
+  font-family: "champagne__limousinesregular", sans-serif;
+  cursor: pointer;
+  position: relative;
+  bottom: 5vh;
+}
+
+.calendar-button:hover {
+  box-shadow: 0 0 0;
+  transform: scale(1.1);
+}
+
+.react-daterange-picker__wrapper {
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 6px 6px 10px gray;
+  width: 22em;
+}
+
+.react-calendar {
+  border-radius: 5px;
+  border: none;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 6px 6px 10px gray;
+}
+.react-daterange-picker__inputGroup,
+input {
+  box-shadow: none;
+}
+
+.availability {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 46vh;
+  width: 100%;
+  padding: 1em;
+  overflow-y: auto;
+}
+
+.available-title {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.availability-container {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 6px 6px 25px dimgray;
+  padding: 2em;
+  width: 50vw;
+  border-radius: 10px;
+}
+
+.container-below-datecontainer {
+  height: 77.7vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
