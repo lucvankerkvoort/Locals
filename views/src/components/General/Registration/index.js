@@ -3,21 +3,24 @@ import InputForm from "../InputForm/InputForm";
 import API from "../../../controller/index";
 
 class Registration extends React.Component {
-  handleSubmit = form => {
-    if (form.tourinfo === "") {
-      const traveler = {
-        firstname: form.firstname,
-        lastname: form.lastname,
-        username: form.username,
-        password: form.password
-      };
-      API.pushTravelers(traveler).then(res => console.log(res));
-      this.props.close(false, this.props.user, "register");
-    } else {
-      API.pushLocals(form).then(res => console.log(res));
-      this.props.close(false, this.props.user, "register");
-    }
+  handleSubmit = (form) => {
+    console.log("form", form);
+    API.pushUser(form).then((res) => console.log(res));
+    // if () {
+    //   const traveler = {
+    //     firstname: form.firstname,
+    //     lastname: form.lastname,
+    //     username: form.username,
+    //     password: form.password,
+    //   };
+    //   API.pushTravelers(traveler).then((res) => console.log(res));
+    //   this.props.close(false, this.props.user, "register");
+    // } else {
+    //   API.pushLocals(form).then((res) => console.log(res));
+    //   this.props.close(false, this.props.user, "register");
+    // }
   };
+
   handleCloser = () => {
     this.props.close(false, this.props.user, "register");
   };

@@ -6,23 +6,16 @@ import Question from "./questions/questions";
 class InputForm extends React.Component {
   state = {
     title: this.props.user === "local" ? "Local" : "Traveler",
-    firstname: "",
-    lastname: "",
-    username: "",
-    password: "",
-    avatar: "",
-    address: "",
-    bio: "",
-    tourinfo: "",
-    rate: 0,
     message: "Password is not long enough",
-    passwordLength: false
+    info: {},
+    passwordLength: false,
   };
-  handleSubmit = event => {
-    console.log(event);
+  object = {};
+
+  handleSubmit = (event) => {
     event.preventDefault();
-    if (this.state.password.length > 8) {
-      this.props.handleRegistration(this.state);
+    if (this.object.password.length > 8) {
+      this.props.handleRegistration(this.object);
       this.setState({ passwordLength: false });
     } else {
       this.setState({ passwordLength: true });
@@ -34,7 +27,8 @@ class InputForm extends React.Component {
   };
 
   handleChange = (input, value) => {
-    this.setState({ [input]: value });
+    this.object[input] = value;
+    console.log(this.object);
   };
   render() {
     return (

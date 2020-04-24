@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      place: ""
+      place: "",
     };
     this.autocompleteInput = React.createRef();
     this.autocomplete = null;

@@ -3,12 +3,13 @@ import Tours from "../components/General/Tours";
 import Searchbar from "../components/General/Searchbar";
 import DateContainer from "../components/General/DateContainer";
 import Profile from "../components/General/Profile";
+import MyMapComponent from "../components/General/Routes";
 
 class ProfilePage extends React.Component {
   state = {
-    type: this.props.user.type
+    type: this.props.user.type,
   };
-  showPlaceDetails = place => {
+  showPlaceDetails = (place) => {
     let location = place.geometry.location;
     let lat = location.lat();
     let lng = location.lng();
@@ -55,6 +56,9 @@ class ProfilePage extends React.Component {
         ) : null}
         <div className="profile-section">
           <Profile user={user} />
+        </div>
+        <div>
+          <MyMapComponent />
         </div>
       </div>
     );

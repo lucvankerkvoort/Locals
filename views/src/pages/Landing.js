@@ -12,19 +12,20 @@ class LandingPage extends React.Component {
     check: false,
     user: "",
     showTravelerReg: false,
-    showLocalReg: false
+    showLocalReg: false,
   };
 
-  showPlaceDetails = place => {
+  showPlaceDetails = (place) => {
     let location = place.geometry.location;
+    console.log(place);
     let lat = location.lat();
     let lng = location.lng();
-
+    localStorage.setItem("place", place.formatted_address);
     localStorage.setItem("lat", lat);
     localStorage.setItem("lng", lng);
   };
 
-  openRegistration = event => {
+  openRegistration = (event) => {
     let clickedElement = event.target;
     const targetElement = document.getElementsByClassName("local-reg")[0];
     clickedElement === targetElement

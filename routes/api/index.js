@@ -1,11 +1,7 @@
 const router = require("express").Router();
-const localRoutes = require("./locals");
-const travellersRoutes = require("./travellers");
+const userRoutes = require("./user");
 
-// Locals route
-router.use("/locals", localRoutes);
-
-// Travellers route
-router.use("/traveller", travellersRoutes);
+// User route
+router.use("/user", userRoutes);
 
 module.exports = router;

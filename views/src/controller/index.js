@@ -1,62 +1,34 @@
 import axios from "axios";
 
 export default {
-  getLocals: function() {
-    return axios.get("/api/locals");
+  getAllUsers: function () {
+    return axios.get("/api/user");
   },
-  getTravelers: function() {
-    return axios.get("/api/traveller");
+  pushUser: function (data) {
+    console.log("Data", data);
+    return axios.post("/api/user", data);
   },
-  pushLocals: function(data) {
+  login: function (data) {
     console.log(data);
-    return axios.post("/api/locals", data);
+    return axios.post("/api/user/", data);
   },
-  pushTravelers: function(data) {
-    console.log(data);
-    return axios.post("/api/traveller", data);
+  getUserById: function (id) {
+    return axios.get("/api/user/" + id);
   },
-  loginSearchLocal: function(data) {
-    console.log(data);
-    return axios.post("/api/locals/login/", data);
-  },
-  loginSearchTraveler: function(data) {
-    console.log(data);
-    return axios.post("/api/traveller/login/", data);
-  },
-  getLocalById: function(id) {
-    return axios.get("/api/locals/" + id);
-  },
-  getTravelerById: function(id) {
-    return axios.get("/api/traveller/" + id);
-  },
-  updateLocal: function(id, data) {
+  updateUser: function (id, data) {
     console.log(id, data);
-    return axios.put("/api/locals/" + id, data);
+    return axios.put("/api/user/" + id, data);
   },
-  updateTraveler: function(id, data) {
-    return axios.put("/api/traveller/" + id, data);
-  },
-  pushDates: function(id, data) {
+  pushDates: function (id, data) {
     console.log("ID", id, "Data", data);
-    return axios.post("/api/locals/dates/" + id, data);
+    return axios.post("/api/user/info/" + id, data);
   },
-  searchLocals: function(data) {
-    return axios.post("/api/locals/search", data);
-  },
-  bookingLocal: function(id, data) {
+  bookingUser: function (id, data) {
     console.log(id, data);
-    return axios.post("/api/traveller/booking/" + id, data);
+    return axios.post("/api/user/info/" + id, data);
   },
-  bookingTraveler: function(id, data) {
+  deleteUserInfo: function (id, data) {
     console.log(id, data);
-    return axios.post("/api/locals/booking/" + id, data);
+    return axios.delete("/api/user/info/" + id, data);
   },
-  deleteLocalsDates: function(id, data) {
-    console.log(id, data);
-    return axios.post("/api/locals/removeDate/" + id, data);
-  },
-  deleteTravelerBooking: function(id, data) {
-    console.log(id, data);
-    return axios.post("/api/traveller/removeBooking/" + id, data);
-  }
 };
