@@ -20,3 +20,6 @@ npm start
 npm run build
 serve -s build
 ```
+
+If you want to see how you can contribute.
+Look at the Trello for this application: https://trello.com/b/tcJLbaHC/tourbuddy
