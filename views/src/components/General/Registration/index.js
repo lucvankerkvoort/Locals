@@ -6,6 +6,7 @@ class Registration extends React.Component {
   handleSubmit = (form) => {
     console.log("form", form);
     API.pushUser(form).then((res) => console.log(res));
+    this.props.close(false, this.props.user, "register");
     // if () {
     //   const traveler = {
     //     firstname: form.firstname,

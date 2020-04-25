@@ -5,30 +5,28 @@ import Registration from "../Registration";
 
 class Login extends React.Component {
   state = {
-    title: this.props.user === "local" ? "Welcome Local" : "Welcome Traveler",
-    apiCall:
-      this.props.user === "local"
-        ? API.loginSearchLocal
-        : API.loginSearchTraveler,
+    title:
+      localStorage.getItem("user") === "local"
+        ? "Welcome Local"
+        : "Welcome Traveler",
     link: this.props.user === "local" ? "/local" : "/traveler",
     user: localStorage.getItem("user"),
-    getId: this.props.user === "local" ? API.getLocalById : API.getTravelerById,
     locals: "",
     username: "",
     password: "",
     showComponent: false,
     incorrect: "Incorrect Username or Password",
-    showMessage: false
+    showMessage: false,
   };
 
-  closeRegistration = input => {
+  closeRegistration = (input) => {
     this.setState({ showComponent: input });
   };
   handleClick = () => {
     this.setState({ showComponent: true });
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
     const target = event.target;
     const name = target.name;
     this.setState({ [name]: event.target.value });
@@ -38,30 +36,30 @@ class Login extends React.Component {
     this.props.close(false, this.props.user, "login");
     window.location.reload();
   };
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     let user = {
       username: this.state.username,
-      password: this.state.password
+      password: this.state.password,
     };
 
-    this.state.apiCall(user).then(result => {
+    API.login(user).then((result) => {
       console.log("result", result);
       if (result.data.length <= 0) {
         this.setState({ showMessage: true });
       } else if (user.password !== result.data[0].password) {
         this.setState({ showMessage: true });
       } else {
-        this.state.getId(result.data[0]._id).then(result => {
+        API.getUserById(result.data[0]._id).then((result) => {
           let user = result.data[0];
           let info = {
             id: user._id,
-            type: user.type,
+            type: localStorage.getItem("user"),
             firstname: user.firstname,
             lastname: user.lastname,
             username: user.username,
             password: user.password,
-            booking: user.booking
+            booking: user.booking,
           };
           localStorage.setItem("id", info.id);
           localStorage.setItem("booking", info.booking);
@@ -72,7 +70,7 @@ class Login extends React.Component {
           localStorage.setItem("password", info.password);
           localStorage.setItem("info", JSON.stringify("info"));
 
-          this.close();
+          // this.close();
         });
       }
     });

@@ -10,7 +10,7 @@ export default {
   },
   login: function (data) {
     console.log(data);
-    return axios.post("/api/user/", data);
+    return axios.post("/api/user/login", data);
   },
   getUserById: function (id) {
     return axios.get("/api/user/" + id);
