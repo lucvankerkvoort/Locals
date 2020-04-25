@@ -1,5 +1,11 @@
 # Locals
-A peer-to-peer travel application built on the MERN stack (MongoDB, Express.js, React.js, and Node.js). Flexbox/CSS Grid were used for layout.
+
+This is a travel application that allows people to connect with local's to whatever destination they want to go to.
+
+You can use the application to find local's at your destination who will provide services much like a tour guide would do.
+Local's can add tour routes and points of interest to their routes and even add a rate.
+
+A peer-to-peer travel application built on the MERN stack (MongoDB, Express.js, React.js, and Node.js). Flexbox/CSS Grid were used for layout. Google Maps, Google Directions and Google Images API's were used to build this application.
 
 # How to run the application in your local environment
 1. Make sure you have node, npm, and MongoDB installed, as well as a text editor. 
