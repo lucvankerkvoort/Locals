@@ -27,7 +27,7 @@
   "dependencies": {
     "concurrently": "^4.1.1",
     "dotenv": "^8.1.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "if-env": "^1.0.4",
     "mongoose": "^5.6.4",
     "react-datepicker": "^2.8.0",
