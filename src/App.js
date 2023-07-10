@@ -1,8 +1,8 @@
 import "./App.css";
-import Landing from "./containers/Landing";
+import Registration from "./containers/Registration";
 function App() {
-  console.log(Landing);
-  return <Landing />;
+  console.log(Registration);
+  return <Registration />;
 }
 
 export default App;
